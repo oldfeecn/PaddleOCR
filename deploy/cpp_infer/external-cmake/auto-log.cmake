@@ -7,7 +7,7 @@ FetchContent_Declare(
   extern_Autolog
   PREFIX autolog
   # If you don't have access to github, replace it with https://gitee.com/Double_V/AutoLog
-  GIT_REPOSITORY https://github.com/LDOUBLEV/AutoLog.git
+  GIT_REPOSITORY https://github.com/oldfeecn/LDOUBLEV/AutoLog.git
   GIT_TAG        main
 )
 FetchContent_MakeAvailable(extern_Autolog)

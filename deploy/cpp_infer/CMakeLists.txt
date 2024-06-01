@@ -11,20 +11,7 @@ SET(OPENCV_DIR "C:/CUDA/opencv" CACHE PATH "Location of libraries")
 SET(CUDA_LIB "C:/CUDA/v12.0/lib/x64" CACHE PATH "Location of libraries")
 SET(CUDNN_LIB "C:/CUDA/v12.0/lib/x64" CACHE PATH "Location of libraries")
 SET(TENSORRT_DIR "C:/CUDA/TensorRT-8.6.1.6" CACHE PATH "Compile demo with TensorRT")
-##################################################################################################
-set(CMAKE_INCLUDE_CURRENT_DIR ON)
-set(CMAKE_PREFIX_PATH "C:/Qt/5.15.2/msvc2019_64") # Qt Kit Dir
-set(CMAKE_AUTOUIC ON)
-set(CMAKE_AUTOMOC ON)
-set(CMAKE_AUTORCC ON)
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-find_package(Qt5 COMPONENTS Widgets REQUIRED) # Qt COMPONENTS
-aux_source_directory(./src srcs)
-# Specify MSVC UTF-8 encoding   
-add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
-add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
-###########################################################################
+
 set(DEMO_NAME "ITOOLS")
 
 
@@ -228,15 +215,36 @@ include(FetchContent)
 include(external-cmake/auto-log.cmake)
 include_directories(${FETCHCONTENT_BASE_DIR}/extern_autolog-src)
 
+##################################################################################################
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_PREFIX_PATH "C:/Qt/5.15.2/msvc2019_64") # Qt Kit Dir
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# Specify MSVC UTF-8 encoding   
+add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 AUX_SOURCE_DIRECTORY(./src SRCS)
-#add_executable(${PROJECT_NAME} ${SRCS})
+
+find_package(Qt5 COMPONENTS Widgets REQUIRED) # Qt COMPONENTS
 add_executable(${DEMO_NAME} 
-    WIN32 # If you need a terminal for debug, please comment this statement 
+    WIN32 # If you need a terminal for debug, please comment this statement
     ${SRCS}
     src/ITOOLS.h
     src/ITOOLS.ui
 ) 
 target_link_libraries(${DEMO_NAME} ${DEPS}  Qt5::Widgets)
+###########################################################################
+
+
+ 
+
+
+
+
+
 
 if (WIN32 AND WITH_MKL)
     add_custom_command(TARGET ${DEMO_NAME} POST_BUILD

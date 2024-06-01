@@ -1,18 +1,31 @@
-project(ppocr CXX C)
 cmake_minimum_required(VERSION 3.14)
 
+project(ITOOLS LANGUAGES CXX)
 option(WITH_MKL        "Compile demo with MKL/OpenBlas support, default use MKL."       ON)
-option(WITH_GPU        "Compile demo with GPU/CPU, default use CPU."                    OFF)
+option(WITH_GPU        "Compile demo with GPU/CPU, default use CPU."                    ON)
 option(WITH_STATIC_LIB "Compile demo with static/shared library, default use static."   ON)
-option(WITH_TENSORRT "Compile demo with TensorRT."   OFF)
+option(WITH_TENSORRT "Compile demo with TensorRT."   ON)
 
-SET(PADDLE_LIB "" CACHE PATH "Location of libraries")
-SET(OPENCV_DIR "" CACHE PATH "Location of libraries")
-SET(CUDA_LIB "" CACHE PATH "Location of libraries")
-SET(CUDNN_LIB "" CACHE PATH "Location of libraries")
-SET(TENSORRT_DIR "" CACHE PATH "Compile demo with TensorRT")
-
-set(DEMO_NAME "ppocr")
+SET(PADDLE_LIB "C:/CUDA/paddle_inference" CACHE PATH "Location of libraries")
+SET(OPENCV_DIR "C:/CUDA/opencv" CACHE PATH "Location of libraries")
+SET(CUDA_LIB "C:/CUDA/v12.0/lib/x64" CACHE PATH "Location of libraries")
+SET(CUDNN_LIB "C:/CUDA/v12.0/lib/x64" CACHE PATH "Location of libraries")
+SET(TENSORRT_DIR "C:/CUDA/TensorRT-8.6.1.6" CACHE PATH "Compile demo with TensorRT")
+##################################################################################################
+set(CMAKE_INCLUDE_CURRENT_DIR ON)
+set(CMAKE_PREFIX_PATH "C:/Qt/5.15.2/msvc2019_64") # Qt Kit Dir
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+find_package(Qt5 COMPONENTS Widgets REQUIRED) # Qt COMPONENTS
+aux_source_directory(./src srcs)
+# Specify MSVC UTF-8 encoding   
+add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
+add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
+###########################################################################
+set(DEMO_NAME "ITOOLS")
 
 
 macro(safe_set_static_flag)
@@ -151,12 +164,12 @@ if(WITH_STATIC_LIB)
         ${PADDLE_LIB}/paddle/lib/paddle_inference${CMAKE_STATIC_LIBRARY_SUFFIX})
   else()
     set(DEPS
-        ${PADDLE_LIB}/paddle/lib/libpaddle_inference${CMAKE_STATIC_LIBRARY_SUFFIX})
+        ${PADDLE_LIB}/paddle/lib/libpaddle_inference${CMAKE_SHARED_LIBRARY_SUFFIX})
   endif()
 else()
   if(WIN32)
     set(DEPS
-        ${PADDLE_LIB}/paddle/lib/paddle_inference${CMAKE_SHARED_LIBRARY_SUFFIX})
+        ${PADDLE_LIB}/paddle/lib/paddle_inference${CMAKE_STATIC_LIBRARY_SUFFIX})
   else()
     set(DEPS
         ${PADDLE_LIB}/paddle/lib/libpaddle_inference${CMAKE_SHARED_LIBRARY_SUFFIX})
@@ -216,11 +229,19 @@ include(external-cmake/auto-log.cmake)
 include_directories(${FETCHCONTENT_BASE_DIR}/extern_autolog-src)
 
 AUX_SOURCE_DIRECTORY(./src SRCS)
-add_executable(${DEMO_NAME} ${SRCS})
-target_link_libraries(${DEMO_NAME} ${DEPS})
+#add_executable(${PROJECT_NAME} ${SRCS})
+add_executable(${DEMO_NAME} 
+    WIN32 # If you need a terminal for debug, please comment this statement 
+    ${SRCS}
+    src/ITOOLS.h
+    src/ITOOLS.ui
+) 
+target_link_libraries(${DEMO_NAME} ${DEPS}  Qt5::Widgets)
 
 if (WIN32 AND WITH_MKL)
     add_custom_command(TARGET ${DEMO_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PADDLE_LIB}/paddle/lib/paddle_inference.dll ./paddle_inference.dll
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PADDLE_LIB}/paddle/lib/common.dll ./common.dll
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PADDLE_LIB}/third_party/install/mklml/lib/mklml.dll ./mklml.dll
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PADDLE_LIB}/third_party/install/mklml/lib/libiomp5md.dll ./libiomp5md.dll
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PADDLE_LIB}/third_party/install/mkldnn/lib/mkldnn.dll ./mkldnn.dll

@@ -238,14 +238,6 @@ add_executable(${DEMO_NAME}
 target_link_libraries(${DEMO_NAME} ${DEPS}  Qt5::Widgets)
 ###########################################################################
 
-
- 
-
-
-
-
-
-
 if (WIN32 AND WITH_MKL)
     add_custom_command(TARGET ${DEMO_NAME} POST_BUILD
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PADDLE_LIB}/paddle/lib/paddle_inference.dll ./paddle_inference.dll

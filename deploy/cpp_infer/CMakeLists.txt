@@ -217,6 +217,7 @@ include_directories(${FETCHCONTENT_BASE_DIR}/extern_autolog-src)
 
 ##################################################################################################
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
 set(CMAKE_PREFIX_PATH "C:/Qt/5.15.2/msvc2019_64") # Qt Kit Dir
 set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
@@ -226,16 +227,49 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 # Specify MSVC UTF-8 encoding   
 add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
-AUX_SOURCE_DIRECTORY(./src SRCS)
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED) # Qt COMPONENTS
+aux_source_directory(./src/qt_src SRCS)
+aux_source_directory(./src SRCS)
+aux_source_directory(./src/qt_src SRCS)
+
+FILE(GLOB QT_INC "src/qt_include/*.h")
+list(APPEND CMAKE_AUTOUIC_SEARCH_PATHS "src/ui")
+
+
+find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
+find_package(Qt${QT_VERSION_MAJOR}
+    COMPONENTS
+        Core
+        Gui
+        Widgets
+        Sql
+        Network
+        Xml
+        SerialPort
+        WinExtras
+        REQUIRED
+)
+
 add_executable(${DEMO_NAME} 
-    WIN32 # If you need a terminal for debug, please comment this statement
-    ${SRCS}
-    src/ITOOLS.h
-    src/ITOOLS.ui
+    WIN32 # If you need a terminal for debug, please comment this statement  
+    ${SRCS} 
+    ${QT_INC} 
+    src/ITOOLS.pro
 ) 
-target_link_libraries(${DEMO_NAME} ${DEPS}  Qt5::Widgets)
+target_include_directories(${DEMO_NAME} PUBLIC
+                                          src/include src/qt_include)
+
+target_link_libraries(${DEMO_NAME} PUBLIC
+        ${DEPS}
+        Qt::Core
+        Qt::Gui
+        Qt::Widgets
+        Qt${QT_VERSION_MAJOR}::Sql
+        Qt${QT_VERSION_MAJOR}::Network
+        Qt${QT_VERSION_MAJOR}::Xml
+        Qt${QT_VERSION_MAJOR}::SerialPort
+        Qt${QT_VERSION_MAJOR}::WinExtras    
+)
 ###########################################################################
 
 if (WIN32 AND WITH_MKL)

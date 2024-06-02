@@ -5,6 +5,7 @@ ITOOLS::ITOOLS(QWidget* parent)
     , ui(new Ui_ITOOLS)
 {
     ui->setupUi(this);
+     
 }
 
 ITOOLS::~ITOOLS()

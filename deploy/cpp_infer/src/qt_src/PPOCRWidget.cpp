@@ -119,7 +119,7 @@ PPOCRWidget::~PPOCRWidget()
 			QString directory = QFileDialog::getExistingDirectory(
 			this, 
 			tr("Open Directory"), 
-			"/home", 
+			ui.lineEdit_output->text(), 
 			QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
 		);
 		if (!directory.isEmpty()) {
@@ -140,7 +140,7 @@ PPOCRWidget::~PPOCRWidget()
 				QString directory = QFileDialog::getExistingDirectory(
 					this,
 					tr("Open Directory"),
-					"/home",
+					ui.lineEdit_image_dir->text(),
 					QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
 				);
 				if (!directory.isEmpty()) {
@@ -247,6 +247,120 @@ PPOCRWidget::~PPOCRWidget()
 					ui.det_db_unclip_ratio->setText("1.5");
 				}
 			});
+			//选择检测模型
+				connect(ui.det_model_dir, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				haveChangeFun("select det_model_dir dir");
+				haveChangeFun(textA);
+			});
+		connect(ui.det_model_dir_btn, &QPushButton::clicked,
+			this, [this](bool checked) {
+				QString directory = QFileDialog::getExistingDirectory(
+					this,
+					tr("Open Directory"),
+					ui.det_model_dir->text(),
+					QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+				);
+				if (!directory.isEmpty()) {
+					// 用户选择了一个目录，directory 变量包含了目录的路径
+					// 在这里处理选择的目录
+						//haveChangeFun(directory);
+					ui.det_model_dir->setText(directory);
+				}
+			});
+		//rec  Tab 
+		connect(ui.cls_batch_num, &QSpinBox::textChanged,
+		this, [this](QString textA) {
+			haveChangeFun(textA);
+		});
+		//rec  Tab 
+		connect(ui.cls_thresh, &QSpinBox::textChanged,
+		this, [this](QString textA) {
+			haveChangeFun(textA);
+		});
+		connect(ui.cls_thresh, &QDoubleSpinBox::textChanged,
+		this, [this](int textA) {
+			haveChangeFun(textA);
+		});
+		connect(ui.use_angle_cls, &QCheckBox::stateChanged,
+		this, [this](int textA) {
+			haveChangeFun(textA);
+		});
+		//选择分类模型
+		connect(ui.cls_model_dir, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				haveChangeFun("select cls_model_dir dir");
+				haveChangeFun(textA);
+			});
+		connect(ui.cls_model_dir_btn, &QPushButton::clicked,
+			this, [this](bool checked) {
+				QString directory = QFileDialog::getExistingDirectory(
+					this,
+					tr("Open Directory"),
+					ui.cls_model_dir->text(),
+					QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+				);
+				if (!directory.isEmpty()) {
+					// 用户选择了一个目录，directory 变量包含了目录的路径
+					// 在这里处理选择的目录
+						//haveChangeFun(directory);
+					ui.cls_model_dir->setText(directory);
+				}
+			});
+		//rec识别
+		connect(ui.rec_img_w, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				try
+				{
+					haveChangeFun(textA.toInt());
+				}
+				catch (const std::exception&)
+				{
+					haveChangeFun("rec_img_w value error exception");
+					ui.limit_side_len->setText("960");
+				}
+			});
+			connect(ui.rec_img_h, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				try
+				{
+					haveChangeFun(textA.toInt());
+				}
+				catch (const std::exception&)
+				{
+					haveChangeFun("rec_img_w value error exception");
+					ui.limit_side_len->setText("960");
+				}
+			});
+		connect(ui.rec_batch_num, &QSpinBox::textChanged,
+		 this, [this](QString textA) {
+			haveChangeFun(textA);
+		 });  
+		 connect(ui.rec_batch_num, &QSpinBox::textChanged,
+		 this, [this](QString textA) {
+			haveChangeFun(textA);
+		 });  
+		 		connect(ui.rec_model_dir, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				haveChangeFun("select cls_model_dir dir");
+				haveChangeFun(textA);
+			});
+		connect(ui.rec_model_dir_btn, &QPushButton::clicked,
+			this, [this](bool checked) {
+				QString directory = QFileDialog::getExistingDirectory(
+					this,
+					tr("Open Directory"),
+					ui.rec_model_dir->text(),
+					QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+				);
+				if (!directory.isEmpty()) {
+					// 用户选择了一个目录，directory 变量包含了目录的路径
+					// 在这里处理选择的目录
+						//haveChangeFun(directory);
+					ui.rec_model_dir->setText(directory);
+				}
+			});
+		//选择识别文字库文件
 
  }
 

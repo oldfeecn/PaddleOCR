@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>722</width>
+    <width>692</width>
     <height>586</height>
    </rect>
   </property>
@@ -23,7 +23,7 @@
       <bool>false</bool>
      </property>
      <property name="currentIndex">
-      <number>1</number>
+      <number>5</number>
      </property>
      <widget class="QWidget" name="tab_arg">
       <attribute name="title">
@@ -497,7 +497,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton">
+            <widget class="QPushButton" name="det_model_dir_btn">
              <property name="text">
               <string>选择检测模型目录</string>
              </property>
@@ -597,9 +597,9 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="cls_model_dir_btn">
              <property name="text">
-              <string>PushButton</string>
+              <string>选择分类模型</string>
              </property>
             </widget>
            </item>
@@ -650,9 +650,9 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_3">
+            <widget class="QPushButton" name="rec_model_dir_btn">
              <property name="text">
-              <string>PushButton</string>
+              <string>选择识别模型</string>
              </property>
             </widget>
            </item>
@@ -733,9 +733,9 @@
             </widget>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_4">
+            <widget class="QPushButton" name="rec_char_dict_path_btn">
              <property name="text">
-              <string>PushButton</string>
+              <string>选择文字库文件</string>
              </property>
             </widget>
            </item>

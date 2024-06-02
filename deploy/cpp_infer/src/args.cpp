@@ -46,6 +46,7 @@ DEFINE_int32(cls_batch_num, 1, "cls_batch_num.");
 // recognition related
 DEFINE_string(rec_model_dir, "", "Path of rec inference model.");
 DEFINE_int32(rec_batch_num, 6, "rec_batch_num.");
+//注意 ppocr默认使用PP-OCRv3模型，识别模型使用的输入shape为3,48,320, 如需使用旧版本的PP-OCR模型，则需要设置参数--rec_img_h=32。
 DEFINE_string(rec_char_dict_path, "../../ppocr/utils/ppocr_keys_v1.txt",
               "Path of dictionary.");
 DEFINE_int32(rec_img_h, 48, "rec image height");
@@ -62,11 +63,13 @@ DEFINE_double(layout_nms_threshold, 0.5, "Threshold of nms.");
 DEFINE_string(table_model_dir, "", "Path of table struture inference model.");
 DEFINE_int32(table_max_len, 488, "max len size of input image.");
 DEFINE_int32(table_batch_num, 1, "table_batch_num.");
+
 DEFINE_bool(merge_no_span_structure, true,
             "Whether merge <td> and </td> to <td></td>");
 DEFINE_string(table_char_dict_path,
               "../../ppocr/utils/dict/table_structure_dict_ch.txt",
               "Path of dictionary.");
+
 
 // ocr forward related
 DEFINE_bool(det, true, "Whether use det in forward.");

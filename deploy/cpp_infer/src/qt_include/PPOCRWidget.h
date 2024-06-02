@@ -11,6 +11,8 @@ public:
 	PPOCRWidget(QWidget *parent = nullptr);
 	~PPOCRWidget();
 
+	void Init();
+
 private:
 	Ui::PPOCRWidgetClass ui;
 };

@@ -38,6 +38,9 @@
       <property name="contextMenuPolicy">
        <enum>Qt::NoContextMenu</enum>
       </property>
+      <property name="autoFillBackground">
+       <bool>true</bool>
+      </property>
       <property name="tabPosition">
        <enum>QTabWidget::North</enum>
       </property>
@@ -55,12 +58,12 @@
       </property>
       <widget class="PPOCRWidget" name="myqtabWidgetPage1">
        <attribute name="title">
-        <string>text</string>
+        <string>PPOCR</string>
        </attribute>
       </widget>
       <widget class="QWidget" name="myqtabWidgetPage2">
        <attribute name="title">
-        <string/>
+        <string>键盘鼠标</string>
        </attribute>
       </widget>
      </widget>

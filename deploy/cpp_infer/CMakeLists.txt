@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-
+set(CMAKE_COLOR_MAKEFILE ON)# 启用彩色输出
 project(ITOOLS LANGUAGES CXX)
 option(WITH_MKL        "Compile demo with MKL/OpenBlas support, default use MKL."       ON)
 option(WITH_GPU        "Compile demo with GPU/CPU, default use CPU."                    ON)
@@ -231,8 +231,9 @@ add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 aux_source_directory(./src/qt_src SRCS)
 aux_source_directory(./src SRCS)
 aux_source_directory(./src/qt_src SRCS)
-
+aux_source_directory(./src/ui SRCS)
 FILE(GLOB QT_INC "src/qt_include/*.h")
+FILE(GLOB UI_FILES "./src/ui/*.ui") 
 list(APPEND CMAKE_AUTOUIC_SEARCH_PATHS "src/ui")
 
 

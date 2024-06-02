@@ -254,7 +254,7 @@ add_executable(${DEMO_NAME}
     WIN32 # If you need a terminal for debug, please comment this statement  
     ${SRCS} 
     ${QT_INC} 
-    src/ITOOLS.pro
+    src/Resource.qrc
 ) 
 target_include_directories(${DEMO_NAME} PUBLIC
                                           src/include src/qt_include)

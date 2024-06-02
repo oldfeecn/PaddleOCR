@@ -9,4 +9,5 @@ class MyQTabWidget  : public QWidget
 public:
 	MyQTabWidget(QWidget *parent);
 	~MyQTabWidget();
+	void Init();
 };

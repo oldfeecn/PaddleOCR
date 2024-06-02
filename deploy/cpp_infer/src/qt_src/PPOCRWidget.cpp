@@ -4,8 +4,13 @@
 PPOCRWidget::PPOCRWidget(QWidget *parent)
 	: QWidget(parent)
 {
+	
 	ui.setupUi(this);
+	setAutoFillBackground(false);
+	ui.tabWidget->setAutoFillBackground(false);
+	setStyleSheet("background-color:#FFFFFF");
 	Init();
+	ConncetSightInit();
 }
 
 PPOCRWidget::~PPOCRWidget()
@@ -56,3 +61,210 @@ PPOCRWidget::~PPOCRWidget()
 	 FLAGS_table = ui.table->checkState();
 	 FLAGS_layout = ui.layout->checkState();
  }
+
+ void PPOCRWidget::ConncetSightInit()
+ {
+	 connect(ui.checkBox_use_gpu, &QCheckBox::stateChanged,
+		 this, [this](int textA) {
+			 haveChangeFun(textA);
+		 });
+	 connect(ui.checkBox_use_tensorrt, &QCheckBox::stateChanged,
+		 this, [this](int textA) {
+			 haveChangeFun(textA);
+		 });
+	 connect(ui.checkBox_enable_mkldnn, &QCheckBox::stateChanged,
+		 this, [this](int textA) {
+			 haveChangeFun(textA);
+		 });
+	 connect(ui.checkBox_benchmark, &QCheckBox::stateChanged,
+		 this, [this](int textA) {
+			 haveChangeFun(textA);
+		 });
+	connect(ui.comboBox_precision, &QComboBox::textActivated,
+		 this, [this](QString textA) {
+			haveChangeFun(textA);
+		 });
+	connect(ui.spinBox_gpu_id, &QSpinBox::textChanged,
+		 this, [this](QString textA) {
+			haveChangeFun(textA);
+		 });  
+	connect(ui.cpu_threads, &QSpinBox::textChanged,
+		this, [this](QString textA) {
+			haveChangeFun(textA);
+		});
+	connect(ui.lineEdit_gpu_mem, &QLineEdit::textChanged,
+		this, [this](QString textA) {
+			try
+			{
+				haveChangeFun(textA.toInt());
+			}
+			catch (const std::exception&)
+			{
+				haveChangeFun("init text to int error");
+			}
+			
+		});
+	connect(ui.type, &QComboBox::textActivated,
+		this, [this](QString textA) {
+			haveChangeFun(textA);
+		});
+	//输出文件路径
+	connect(ui.lineEdit_output, &QLineEdit::textChanged,
+		this, [this](QString textA) {
+			haveChangeFun("select outpue dir");
+			haveChangeFun(textA);
+		});	
+		connect(ui.pushButton_5, &QPushButton::clicked,
+		this, [this](bool checked ) {
+			QString directory = QFileDialog::getExistingDirectory(
+			this, 
+			tr("Open Directory"), 
+			"/home", 
+			QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+		);
+		if (!directory.isEmpty()) {
+		// 用户选择了一个目录，directory 变量包含了目录的路径
+		// 在这里处理选择的目录
+			//haveChangeFun(directory);
+			ui.lineEdit_output->setText(directory);
+		}		
+		});	
+		//打开图片列表
+		connect(ui.lineEdit_image_dir, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				haveChangeFun("select outpue dir");
+				haveChangeFun(textA);
+			});
+		connect(ui.pushButton_select_img, &QPushButton::clicked,
+			this, [this](bool checked) {
+				QString directory = QFileDialog::getExistingDirectory(
+					this,
+					tr("Open Directory"),
+					"/home",
+					QFileDialog::ShowDirsOnly | QFileDialog::DontResolveSymlinks
+				);
+				if (!directory.isEmpty()) {
+					// 用户选择了一个目录，directory 变量包含了目录的路径
+					// 在这里处理选择的目录
+						//haveChangeFun(directory);
+					ui.lineEdit_image_dir->setText(directory);
+				}
+			});
+		//det检测
+		connect(ui.det, &QCheckBox::stateChanged,
+			this, [this](int textA) {
+				if (textA) {
+					ui.type->setCurrentIndex(0);
+					ui.layout->setChecked(false);
+					ui.table->setChecked(false);
+				}
+				haveChangeFun(textA);
+			});
+		connect(ui.rec, &QCheckBox::stateChanged,
+			this, [this](int textA) {
+				if (textA) {
+					ui.type->setCurrentIndex(0);
+					ui.layout->setChecked(false);
+					ui.table->setChecked(false);
+				}
+				haveChangeFun(textA);
+			});
+		connect(ui.cls, &QCheckBox::stateChanged,
+			this, [this](int textA) {
+				haveChangeFun(textA);
+			});
+		connect(ui.layout, &QCheckBox::stateChanged,
+			this, [this](int textA) {
+				
+				if (textA) {
+					ui.type->setCurrentIndex(1);
+					ui.det->setChecked(false);
+					ui.rec->setChecked(false);
+				}
+				
+				haveChangeFun(textA);
+				
+			});
+		connect(ui.table, &QCheckBox::stateChanged,
+			this, [this](int textA) {
+				if (textA ) {
+					ui.type->setCurrentIndex(1);
+					ui.det->setChecked(false);
+					ui.rec->setChecked(false);
+				}
+				haveChangeFun(textA);
+			});
+		connect(ui.visualize, &QCheckBox::stateChanged,
+			this, [this](int textA) {		
+				haveChangeFun(textA);
+			});
+		//det Tab
+		connect(ui.det_db_thresh, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				try
+				{
+					haveChangeFun(textA.toDouble());
+				}
+				catch (const std::exception&)
+				{
+					haveChangeFun("det_db_thresh value error exception");
+					ui.det_db_thresh->setText("0.3");
+				}
+			});
+		connect(ui.det_db_box_thresh, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				try
+				{
+					haveChangeFun(textA.toDouble());
+				}
+				catch (const std::exception&)
+				{
+					haveChangeFun("det_db_box_thresh value error exception");
+					ui.det_db_box_thresh->setText("0.6");
+				}
+			});
+		connect(ui.limit_side_len, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				try
+				{
+					haveChangeFun(textA.toInt());
+				}
+				catch (const std::exception&)
+				{
+					haveChangeFun("limit_side_len value error exception");
+					ui.limit_side_len->setText("960");
+				}
+			});
+		connect(ui.det_db_unclip_ratio, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				try
+				{
+					haveChangeFun(textA.toDouble());
+				}
+				catch (const std::exception&)
+				{
+					haveChangeFun("det_db_unclip_ratio value error exception");
+					ui.det_db_unclip_ratio->setText("1.5");
+				}
+			});
+
+ }
+
+ void PPOCRWidget::haveChangeFun(QString value)
+ {
+	 haveChange = true;
+	 ui.logTextEdit->appendText(QString("%1").arg(value));
+ }
+
+ void PPOCRWidget::haveChangeFun(int value)
+ {
+	 haveChange = true;
+	 ui.logTextEdit->appendText(QString("%1").arg(value));
+ }
+
+ void PPOCRWidget::haveChangeFun(double value)
+ {
+	 haveChange = true;
+	 ui.logTextEdit->appendText(QString("%1").arg(value));
+ }
+

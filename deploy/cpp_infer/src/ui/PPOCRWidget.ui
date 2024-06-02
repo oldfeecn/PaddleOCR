@@ -20,10 +20,10 @@
       <enum>Qt::NoFocus</enum>
      </property>
      <property name="autoFillBackground">
-      <bool>true</bool>
+      <bool>false</bool>
      </property>
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="tab_arg">
       <attribute name="title">
@@ -174,7 +174,14 @@
              <item>
               <widget class="QLineEdit" name="lineEdit_output">
                <property name="text">
-                <string>./output/</string>
+                <string>E:\output</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButton_5">
+               <property name="text">
+                <string>打开</string>
                </property>
               </widget>
              </item>
@@ -307,7 +314,7 @@
            <item>
             <layout class="QHBoxLayout" name="horizontalLayout_3">
              <item>
-              <widget class="QPlainTextEdit" name="plainTextEdit">
+              <widget class="LogTextEdit" name="logTextEdit">
                <property name="minimumSize">
                 <size>
                  <width>50</width>
@@ -492,7 +499,7 @@
            <item>
             <widget class="QPushButton" name="pushButton">
              <property name="text">
-              <string>PushButton</string>
+              <string>选择检测模型目录</string>
              </property>
             </widget>
            </item>
@@ -986,6 +993,13 @@
   </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>LogTextEdit</class>
+   <extends>QPlainTextEdit</extends>
+   <header>LogTextEdit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

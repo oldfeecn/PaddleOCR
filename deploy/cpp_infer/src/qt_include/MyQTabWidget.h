@@ -1,8 +1,8 @@
 #pragma once
 
+#include <QTabWidget>
 #include <QWidget>
-
-class MyQTabWidget  : public QWidget
+class MyQTabWidget  : public QTabWidget
 {
 	Q_OBJECT
 

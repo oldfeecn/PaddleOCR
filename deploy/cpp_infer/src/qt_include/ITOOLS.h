@@ -1,9 +1,10 @@
 #pragma once
 #include "ui_ITOOLS.h"
 #include <QMainWindow>
-#include <EGlobalVariable.h>
+#include "EGlobalVariable.h"
 #include <qsystemtrayicon.h>
 #include <QMenu>
+
 class ITOOLS : public QMainWindow {
     Q_OBJECT
     

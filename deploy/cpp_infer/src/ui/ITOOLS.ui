@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>965</width>
-    <height>620</height>
+    <width>973</width>
+    <height>637</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -37,7 +37,7 @@
      <number>0</number>
     </property>
     <item row="0" column="0">
-     <widget class="QTabWidget" name="myqtabWidget">
+     <widget class="MyQTabWidget" name="myqtabWidget">
       <property name="focusPolicy">
        <enum>Qt::TabFocus</enum>
       </property>
@@ -54,7 +54,7 @@
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <property name="tabsClosable">
        <bool>false</bool>
@@ -62,14 +62,19 @@
       <property name="movable">
        <bool>false</bool>
       </property>
-      <widget class="PPOCRWidget" name="myqtabWidgetPage1">
+      <widget class="PPOCRWidget" name="ppocr_tab">
        <attribute name="title">
         <string>PPOCR</string>
        </attribute>
       </widget>
-      <widget class="QWidget" name="myqtabWidgetPage2">
+      <widget class="KeyMouseWidget" name="mouse_tab">
        <attribute name="title">
         <string>键盘鼠标</string>
+       </attribute>
+      </widget>
+      <widget class="vncTabWidget" name="vnc_tab">
+       <attribute name="title">
+        <string>VNC</string>
        </attribute>
       </widget>
      </widget>
@@ -83,6 +88,24 @@
    <class>PPOCRWidget</class>
    <extends>QWidget</extends>
    <header>PPOCRWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>MyQTabWidget</class>
+   <extends>QTabWidget</extends>
+   <header>MyQTabWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>vncTabWidget</class>
+   <extends>QWidget</extends>
+   <header>vnctabwidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>KeyMouseWidget</class>
+   <extends>QWidget</extends>
+   <header>KeyMouseWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

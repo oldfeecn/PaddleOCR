@@ -1,5 +1,4 @@
 #include "PPOCRWidget.h"
-#include <include/args.h>
 
 PPOCRWidget::PPOCRWidget(QWidget *parent)
 	: QWidget(parent)
@@ -11,6 +10,131 @@ PPOCRWidget::PPOCRWidget(QWidget *parent)
 	setStyleSheet("background-color:#FFFFFF");
 	Init();
 	ConncetSightInit();
+}
+
+void PPOCRWidget::Myocr(std::vector<cv::String> &cv_all_img_names) {
+	if(!ocr){
+		ocr=new PPOCR();
+	};
+  if (FLAGS_benchmark) {
+    ocr->reset_timer();
+  }
+  std::vector<cv::Mat> img_list;
+  std::vector<cv::String> img_names;
+  for (int i = 0; i < cv_all_img_names.size(); ++i) {
+    cv::Mat img = cv::imread(cv_all_img_names[i], cv::IMREAD_COLOR);
+    if (!img.data) {
+      std::cerr << "[ERROR] image read failed! image path: "
+                << cv_all_img_names[i] << std::endl;
+      continue;
+    }
+    img_list.push_back(img);
+    img_names.push_back(cv_all_img_names[i]);
+  }
+	
+  std::vector<std::vector<OCRPredictResult>> ocr_results =
+      ocr->ocr(img_list, FLAGS_det, FLAGS_rec, FLAGS_cls);
+
+  for (int i = 0; i < img_names.size(); ++i) {
+    std::cout << "predict img: " << cv_all_img_names[i] << std::endl;
+    Utility::print_result(ocr_results[i]);
+	Myprint_result(ocr_results[i]);
+    if (FLAGS_visualize && FLAGS_det) {
+      std::string file_name = Utility::basename(img_names[i]);
+      cv::Mat srcimg = img_list[i];
+      Utility::VisualizeBboxes(srcimg, ocr_results[i],
+                               FLAGS_output + "/" + file_name);
+    }
+  }
+  if (FLAGS_benchmark) {
+    ocr->benchmark_log(cv_all_img_names.size());
+  }
+}
+void PPOCRWidget::Myprint_result(const std::vector<OCRPredictResult> &ocr_result) {
+ 
+  QString detText;
+  ui.logTextEdit->appendText(QString("共识别到 %1 个目标：").arg(ocr_result.size()));
+  for (int i = 0; i < ocr_result.size(); i++) {
+	detText="";
+	detText.append(QString("%1 . rect( ").arg(i));
+    // det
+    std::vector<std::vector<int>> boxes = ocr_result[i].box;
+    if (boxes.size() > 0) {
+      //printf("%d %d %d %d  ", boxes[i][0][0], boxes[i][0][1], boxes[i][2][0], boxes[i][2][1]);     //左上 右下
+	  detText.append(QString("%1,%2,%3,%4 ){ ").arg(boxes[0][0]).arg(boxes[0][1]).arg(boxes[2][0]).arg(boxes[2][1]));
+	  //detText.append(QString("[ %1,%2 ]").arg(boxes[0][0]).arg(boxes[0][1]));
+    }
+    // rec
+    if (ocr_result[i].score != -1.0) {
+				detText.append(ocr_result[i].text.c_str());
+				detText.append(" }");
+				detText.append(QString(" (%1)").arg(ocr_result[i].score));
+    }
+	ui.logTextEdit->appendPlainText(detText);
+    // cls
+    if (ocr_result[i].cls_label != -1) {
+     // std::cout << "cls label: " << ocr_result[i].cls_label
+      //          << " cls score: " << ocr_result[i].cls_score;
+    }
+    
+  }
+}
+
+
+void PPOCRWidget::structure(std::vector<cv::String> &cv_all_img_names) {
+  PaddleOCR::PaddleStructure engine;
+
+  if (FLAGS_benchmark) {
+    engine.reset_timer();
+  }
+
+  for (int i = 0; i < cv_all_img_names.size(); i++) {
+    std::cout << "predict img: " << cv_all_img_names[i] << std::endl;
+    cv::Mat img = cv::imread(cv_all_img_names[i], cv::IMREAD_COLOR);
+    if (!img.data) {
+      std::cerr << "[ERROR] image read failed! image path: "
+                << cv_all_img_names[i] << std::endl;
+      continue;
+    }
+
+    std::vector<StructurePredictResult> structure_results = engine.structure(
+        img, FLAGS_layout, FLAGS_table, FLAGS_det && FLAGS_rec);
+
+    for (int j = 0; j < structure_results.size(); j++) {
+      std::cout << j << "\ttype: " << structure_results[j].type
+                << ", region: [";
+      std::cout << structure_results[j].box[0] << ","
+                << structure_results[j].box[1] << ","
+                << structure_results[j].box[2] << ","
+                << structure_results[j].box[3] << "], score: ";
+      std::cout << structure_results[j].confidence << ", res: ";
+
+      if (structure_results[j].type == "table") {
+        std::cout << structure_results[j].html << std::endl;
+        if (structure_results[j].cell_box.size() > 0 && FLAGS_visualize) {
+          std::string file_name = Utility::basename(cv_all_img_names[i]);
+
+          Utility::VisualizeBboxes(img, structure_results[j],
+                                   FLAGS_output + "/" + std::to_string(j) +
+                                       "_" + file_name);
+        }
+      } else {
+        std::cout << "count of ocr result is : "
+                  << structure_results[j].text_res.size() << std::endl;
+        if (structure_results[j].text_res.size() > 0) {
+          std::cout << "********** print ocr result "
+                    << "**********" << std::endl;
+          //Utility::print_result(structure_results[j].text_res);
+		  Myprint_result(structure_results[j].text_res);
+          std::cout << "********** end print ocr result "
+                    << "**********" << std::endl;
+        }
+      }
+    }
+  }
+  if (FLAGS_benchmark) {
+    engine.benchmark_log(cv_all_img_names.size());
+  }
 }
 
 PPOCRWidget::~PPOCRWidget()
@@ -147,9 +271,39 @@ PPOCRWidget::~PPOCRWidget()
 					// 用户选择了一个目录，directory 变量包含了目录的路径
 					// 在这里处理选择的目录
 						//haveChangeFun(directory);
+					FLAGS_image_dir=directory.toStdString();
+					test1();
 					ui.lineEdit_image_dir->setText(directory);
+
 				}
 			});
+		connect(ui.oneimg_lineEdit, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				haveChangeFun("select oneimg_lineEdit dir");
+				haveChangeFun(textA);
+			});
+			//oneImg
+		connect(ui.oneimg_btn, &QPushButton::clicked,
+			this, [this](bool checked) {
+				// ... 在你的函数中使用以下代码
+				QString fileName = QFileDialog::getOpenFileName(
+					this, // 父窗口指针，可以是任何QWidget的子类的对象指针
+					"Open File", // 标题
+					ui.oneimg_lineEdit->text(), // 起始目录
+					"Images (*.png *.xpm *.jpg);" // 文件过滤器
+					//All Files (*.*);;;Images (*.png *.xpm *.jpg);;Documents (*.doc *.odt)
+				);
+				if (!fileName.isEmpty()) {
+					// 用户选择了一个目录，directory 变量包含了目录的路径
+					// 在这里处理选择的目录
+						//haveChangeFun(directory);
+					FLAGS_image_dir=fileName.toStdString();
+					test1();
+					ui.oneimg_lineEdit->setText(fileName);
+					
+					
+				}
+			});	
 		//det检测
 		connect(ui.det, &QCheckBox::stateChanged,
 			this, [this](int textA) {
@@ -274,12 +428,12 @@ PPOCRWidget::~PPOCRWidget()
 			haveChangeFun(textA);
 		});
 		//rec  Tab 
-		connect(ui.cls_thresh, &QSpinBox::textChanged,
+		/*connect(ui.cls_thresh, &QDoubleSpinBox::textChanged,
 		this, [this](QString textA) {
 			haveChangeFun(textA);
-		});
+		});*/
 		connect(ui.cls_thresh, &QDoubleSpinBox::textChanged,
-		this, [this](int textA) {
+		this, [this](QString textA) {
 			haveChangeFun(textA);
 		});
 		connect(ui.use_angle_cls, &QCheckBox::stateChanged,
@@ -336,10 +490,7 @@ PPOCRWidget::~PPOCRWidget()
 		 this, [this](QString textA) {
 			haveChangeFun(textA);
 		 });  
-		 connect(ui.rec_batch_num, &QSpinBox::textChanged,
-		 this, [this](QString textA) {
-			haveChangeFun(textA);
-		 });  
+		
 		 		connect(ui.rec_model_dir, &QLineEdit::textChanged,
 			this, [this](QString textA) {
 				haveChangeFun("select cls_model_dir dir");
@@ -361,9 +512,124 @@ PPOCRWidget::~PPOCRWidget()
 				}
 			});
 		//选择识别文字库文件
+		connect(ui.rec_char_dict_path, &QLineEdit::textChanged,
+			this, [this](QString textA) {
+				haveChangeFun("select rec_char_dict_path file");
+				haveChangeFun(textA);
+			});
+		
+		connect(ui.rec_char_dict_path_btn, &QPushButton::clicked,
+			this, [this](bool checked) {			
+				// ... 在你的函数中使用以下代码
+				QString fileName = QFileDialog::getOpenFileName(
+					this, // 父窗口指针，可以是任何QWidget的子类的对象指针
+					"Open File", // 标题
+					ui.rec_char_dict_path->text(), // 起始目录
+					"Text Files (*.txt);" // 文件过滤器
+					//All Files (*.*);;;Images (*.png *.xpm *.jpg);;Documents (*.doc *.odt)
+				);
+				if (!fileName.isEmpty()) {
+					// 用户选择了一个目录，directory 变量包含了目录的路径
+					// 在这里处理选择的目录
+						//haveChangeFun(directory);
+					ui.rec_model_dir->setText(fileName);
+				}
+			});
+
+
 
  }
+ void PPOCRWidget::check_params() {
+	 if (FLAGS_det) {
+		 if (FLAGS_det_model_dir.empty() || FLAGS_image_dir.empty()) {
+			 std::cout << "Usage[det]: ./ppocr "
+				 "--det_model_dir=/PATH/TO/DET_INFERENCE_MODEL/ "
+				 << "--image_dir=/PATH/TO/INPUT/IMAGE/" << std::endl;
+			 exit(1);
+		 }
+	 }
+	 if (FLAGS_rec) {
+		 std::cout
+			 << "In PP-OCRv3, rec_image_shape parameter defaults to '3, 48, 320',"
+			 "if you are using recognition model with PP-OCRv2 or an older "
+			 "version, "
+			 "please set --rec_image_shape='3,32,320"
+			 << std::endl;
+		 if (FLAGS_rec_model_dir.empty() || FLAGS_image_dir.empty()) {
+			 std::cout << "Usage[rec]: ./ppocr "
+				 "--rec_model_dir=/PATH/TO/REC_INFERENCE_MODEL/ "
+				 << "--image_dir=/PATH/TO/INPUT/IMAGE/" << std::endl;
+			 exit(1);
+		 }
+	 }
+	 if (FLAGS_cls && FLAGS_use_angle_cls) {
+		 if (FLAGS_cls_model_dir.empty() || FLAGS_image_dir.empty()) {
+			 std::cout << "Usage[cls]: ./ppocr "
+				 << "--cls_model_dir=/PATH/TO/REC_INFERENCE_MODEL/ "
+				 << "--image_dir=/PATH/TO/INPUT/IMAGE/" << std::endl;
+			 exit(1);
+		 }
+	 }
+	 if (FLAGS_table) {
+		 if (FLAGS_table_model_dir.empty() || FLAGS_det_model_dir.empty() ||
+			 FLAGS_rec_model_dir.empty() || FLAGS_image_dir.empty()) {
+			 std::cout << "Usage[table]: ./ppocr "
+				 << "--det_model_dir=/PATH/TO/DET_INFERENCE_MODEL/ "
+				 << "--rec_model_dir=/PATH/TO/REC_INFERENCE_MODEL/ "
+				 << "--table_model_dir=/PATH/TO/TABLE_INFERENCE_MODEL/ "
+				 << "--image_dir=/PATH/TO/INPUT/IMAGE/" << std::endl;
+			 exit(1);
+		 }
+	 }
+	 if (FLAGS_layout) {
+		 if (FLAGS_layout_model_dir.empty() || FLAGS_image_dir.empty()) {
+			 std::cout << "Usage[layout]: ./ppocr "
+				 << "--layout_model_dir=/PATH/TO/LAYOUT_INFERENCE_MODEL/ "
+				 << "--image_dir=/PATH/TO/INPUT/IMAGE/" << std::endl;
+			 exit(1);
+		 }
+	 }
+	 if (FLAGS_precision != "fp32" && FLAGS_precision != "fp16" &&
+		 FLAGS_precision != "int8") {
+		 std::cout << "precison should be 'fp32'(default), 'fp16' or 'int8'. "
+			 << std::endl;
+		 exit(1);
+	 }
+ }
+void PPOCRWidget::test1(){
+	ui.logTextEdit->setPlainText("");
+	if(haveChange){
+		//Init();
+	}
+	auto start = std::chrono::system_clock::now();
+	check_params();
+  if (!Utility::PathExists(FLAGS_image_dir)) {
+    std::cerr << "[ERROR] image path not exist! image_dir: " << FLAGS_image_dir
+              << std::endl;
+    exit(1);
+  }
+  std::vector<cv::String> cv_all_img_names;
+  cv::glob(FLAGS_image_dir, cv_all_img_names);
+  std::cout << "total images num: " << cv_all_img_names.size() << std::endl;
 
+  if (!Utility::PathExists(FLAGS_output)) {
+    Utility::CreateDir(FLAGS_output);
+  }
+  if (FLAGS_type == "ocr") {
+    Myocr(cv_all_img_names);
+  } else if (FLAGS_type == "structure") {
+    structure(cv_all_img_names);
+  } else {
+    std::cout << "only value in ['ocr','structure'] is supported" << std::endl;
+  }
+  auto end = std::chrono::system_clock::now();
+   auto duration =
+                std::chrono::duration_cast<std::chrono::microseconds>(end - start);
+			double	time= double(duration.count()) *
+                std::chrono::microseconds::period::num /
+                std::chrono::microseconds::period::den;
+  ui.logTextEdit->appendPlainText(QString("共耗时： %1 ").arg(time));
+}
  void PPOCRWidget::haveChangeFun(QString value)
  {
 	 haveChange = true;

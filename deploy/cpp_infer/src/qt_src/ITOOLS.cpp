@@ -1,6 +1,5 @@
 #include "ITOOLS.h"
 
-
 ITOOLS::ITOOLS(QWidget* parent)
     : QMainWindow(parent)
     , ui(new Ui_ITOOLS)
@@ -9,10 +8,12 @@ ITOOLS::ITOOLS(QWidget* parent)
     InitUiLogo();
     setStyleSheet("background-color:#FFFFCC");
     //ui->myqtabWidget->setAutoFillBackground(false);
+   
 }
 
 ITOOLS::~ITOOLS()
 {
+    // 关闭设备
     delete ui; 
 }
 

@@ -13,7 +13,7 @@
 // limitations under the License.
 
 #include <dirent.h>
-#include <include/utility.h>
+#include "include/utility.h"
 #include <iostream>
 #include <ostream>
 
@@ -23,6 +23,7 @@
 #include <direct.h>
 #else
 #include <sys/stat.h>
+#include "utility.h"
 #endif
 
 namespace PaddleOCR {

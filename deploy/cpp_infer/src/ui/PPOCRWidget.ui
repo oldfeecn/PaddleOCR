@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>692</width>
+    <width>757</width>
     <height>586</height>
    </rect>
   </property>
@@ -23,7 +23,7 @@
       <bool>false</bool>
      </property>
      <property name="currentIndex">
-      <number>5</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="tab_arg">
       <attribute name="title">
@@ -41,6 +41,9 @@
                <property name="text">
                 <string>use_gpu</string>
                </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item>
@@ -48,12 +51,18 @@
                <property name="text">
                 <string>use_tensorrt</string>
                </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item>
               <widget class="QCheckBox" name="checkBox_enable_mkldnn">
                <property name="text">
                 <string>enable_mkldnn</string>
+               </property>
+               <property name="checked">
+                <bool>true</bool>
                </property>
               </widget>
              </item>
@@ -128,7 +137,7 @@
              <item>
               <widget class="QLineEdit" name="lineEdit_gpu_mem">
                <property name="text">
-                <string>4000</string>
+                <string>8000</string>
                </property>
               </widget>
              </item>
@@ -197,14 +206,14 @@
                <item>
                 <widget class="QLineEdit" name="lineEdit_image_dir">
                  <property name="text">
-                  <string>D:\CFSL\身份证\杨立祥\杨立祥120222198708230630.jpg</string>
+                  <string>D:\CFSL\身份证\杨立祥</string>
                  </property>
                 </widget>
                </item>
                <item>
                 <widget class="QPushButton" name="pushButton_select_img">
                  <property name="text">
-                  <string>选择图片</string>
+                  <string>选择图片目录</string>
                  </property>
                 </widget>
                </item>
@@ -242,6 +251,9 @@
                <property name="text">
                 <string>cls</string>
                </property>
+               <property name="checked">
+                <bool>true</bool>
+               </property>
               </widget>
              </item>
              <item>
@@ -260,11 +272,32 @@
              </item>
              <item>
               <widget class="QCheckBox" name="visualize">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
                <property name="text">
                 <string>visualize</string>
                </property>
                <property name="checked">
-                <bool>true</bool>
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </item>
+           <item>
+            <layout class="QHBoxLayout" name="horizontalLayout_86">
+             <item>
+              <widget class="QLineEdit" name="oneimg_lineEdit">
+               <property name="text">
+                <string>C:\CUDA\PaddleOCR\deploy\cpp_infer\docs\imgs\result.jpg</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="oneimg_btn">
+               <property name="text">
+                <string>单张图片</string>
                </property>
               </widget>
              </item>
@@ -576,6 +609,9 @@
              <property name="text">
               <string>use_angle_cls</string>
              </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
             </widget>
            </item>
           </layout>
@@ -728,7 +764,7 @@
            <item>
             <widget class="QLineEdit" name="rec_char_dict_path">
              <property name="text">
-              <string>../../ppocr/utils/ppocr_keys_v1.txt</string>
+              <string>C:\CUDA\PaddleOCR\ppocr\utils\ppocr_keys_v1.txt</string>
              </property>
             </widget>
            </item>

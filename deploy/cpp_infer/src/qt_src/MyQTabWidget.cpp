@@ -1,7 +1,7 @@
 #include "MyQTabWidget.h"
 
 MyQTabWidget::MyQTabWidget(QWidget *parent)
-	: QWidget(parent)
+	: QTabWidget(parent)
 {
 	//setStyleSheet("background-color:#FFFFCC");
 }

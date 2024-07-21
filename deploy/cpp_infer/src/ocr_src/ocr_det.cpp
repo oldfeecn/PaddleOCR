@@ -12,7 +12,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-#include <include/ocr_det.h>
+#include "include/ocr_det.h"
 
 namespace PaddleOCR {
 
@@ -32,8 +32,11 @@ void DBDetector::LoadModel(const std::string &model_dir) {
       if (this->precision_ == "int8") {
         precision = paddle_infer::Config::Precision::kInt8;
       }
-      config.EnableTensorRtEngine(1 << 30, 1, 20, precision, false, false);
+      config.EnableTensorRtEngine(1 << 30, 1, 20, precision, use_tensorrt_, false);
       if (!Utility::PathExists("./trt_det_shape.txt")) {
+        std::cout << "no find trt_cls_shape.txt "
+				 << "creat "
+				 << "======" << std::endl;
         config.CollectShapeRangeInfo("./trt_det_shape.txt");
       } else {
         config.EnableTunedTensorRtDynamicShape("./trt_det_shape.txt", true);

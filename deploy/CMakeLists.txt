@@ -215,21 +215,6 @@ include(FetchContent)
 include(external-cmake/auto-log.cmake)
 include_directories(${FETCHCONTENT_BASE_DIR}/extern_autolog-src)
 
-# 设置 Windows SDK 路径和版本
-set(WINDOWS_SDK_PATH "C:/Program Files (x86)/Windows Kits/10")
-set(WINDOWS_SDK_VERSION "10.0.19041.0")
-
-include_directories(
-    "${WINDOWS_SDK_PATH}/Include/${WINDOWS_SDK_VERSION}/ucrt"
-    "${WINDOWS_SDK_PATH}/Include/${WINDOWS_SDK_VERSION}/shared"
-    "${WINDOWS_SDK_PATH}/Include/${WINDOWS_SDK_VERSION}/um"
-    "${WINDOWS_SDK_PATH}/Include/${WINDOWS_SDK_VERSION}/winrt"
-)
-
-link_directories(
-    "${WINDOWS_SDK_PATH}/Lib/${WINDOWS_SDK_VERSION}/ucrt/x64"
-    "${WINDOWS_SDK_PATH}/Lib/${WINDOWS_SDK_VERSION}/um/x64"
-)
 ##################################################################################################
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
@@ -243,12 +228,10 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_compile_options("$<$<C_COMPILER_ID:MSVC>:/utf-8>")
 add_compile_options("$<$<CXX_COMPILER_ID:MSVC>:/utf-8>")
 
-aux_source_directory(./src/qt_src SRCS1)
+aux_source_directory(./src/qt_src SRCS)
 aux_source_directory(./src SRCS)
-aux_source_directory(./src/ocr_src SRCS)
 
 aux_source_directory(./src/ui SRCS)
-
 FILE(GLOB QT_INC "src/qt_include/*.h")
 FILE(GLOB UI_FILES "./src/ui/*.ui") 
 list(APPEND CMAKE_AUTOUIC_SEARCH_PATHS "src/ui")
@@ -268,18 +251,31 @@ find_package(Qt${QT_VERSION_MAJOR}
         REQUIRED
 )
 
-
 add_executable(${DEMO_NAME} 
     WIN32 # If you need a terminal for debug, please comment this statement  
     ${SRCS} 
-    ${SRCS1} 
     ${QT_INC} 
     ${UI_FILES} 
     src/Resource.qrc
 ) 
 target_include_directories(${DEMO_NAME} PUBLIC
-                                          ssrc/include src/qt_include)
+                                          src/include src/qt_include)
+# ���� Windows SDK �� MDK �Ŀ�Ͱ���·��
+set(WINDOWS_SDK_PATH "C:/Program Files (x86)/Windows Kits/10")
+set(WINDOWS_SDK_VERSION "10.0.19041.0")  # ���滻Ϊʵ�ʰ�װ�� SDK �汾
+# ����·��
+include_directories(
+    "${WINDOWS_SDK_PATH}/Include/${WINDOWS_SDK_VERSION}/ucrt"
+    "${WINDOWS_SDK_PATH}/Include/${WINDOWS_SDK_VERSION}/shared"
+    "${WINDOWS_SDK_PATH}/Include/${WINDOWS_SDK_VERSION}/um"
+    "${WINDOWS_SDK_PATH}/Include/${WINDOWS_SDK_VERSION}/winrt"
+)
 
+# ��·��
+link_directories(
+    "${WINDOWS_SDK_PATH}/Lib/${WINDOWS_SDK_VERSION}/ucrt/x64"
+    "${WINDOWS_SDK_PATH}/Lib/${WINDOWS_SDK_VERSION}/um/x64"
+)
 target_link_libraries(${DEMO_NAME} PUBLIC
         ${DEPS}
         Qt::Core
@@ -290,10 +286,7 @@ target_link_libraries(${DEMO_NAME} PUBLIC
         Qt${QT_VERSION_MAJOR}::Xml
         Qt${QT_VERSION_MAJOR}::SerialPort
         Qt${QT_VERSION_MAJOR}::WinExtras 
-        d3d11
-        dxgi
-        d3dcompiler
-        dwmapi 
+        dwmapi ${D3D11_LIB} ${DXGI_LIB} ${D3D_COMPILER_LIB} 
         cfgmgr32
         setupapi
         kernel32
@@ -308,7 +301,8 @@ target_link_libraries(${DEMO_NAME} PUBLIC
         uuid
         odbc32
         odbccp32
-        swdevice     
+        swdevice 
+        
 )
 ###########################################################################
 
@@ -325,7 +319,7 @@ if (WIN32 AND WITH_MKL)
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_det_shape.txt ./release/trt_det_shape.txt
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_rec_shape.txt ./release/trt_rec_shape.txt
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_rec_shape.txt ./release/trt_cls_shape.txt
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/src/dll/DeviceManager.dll ./release/DeviceManager.dll
+        #COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/src/dll/DeviceManager.dll ./release/DeviceManager.dll
     )
 endif()
 

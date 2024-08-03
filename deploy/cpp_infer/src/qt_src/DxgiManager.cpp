@@ -8,62 +8,57 @@ DxgiManager::DxgiManager()
 
 DxgiManager::~DxgiManager()
 {
-    if (m_duplication) {
-        m_duplication->Release();
-        m_duplication = nullptr;
-    }
-    delete m_texture;
+    cleanup();
 }
 
 bool DxgiManager::init(uint outputIndex)
 {
+    // ����֮ǰ����Դ
+    cleanup();
+
     D3D_FEATURE_LEVEL feat = D3D_FEATURE_LEVEL_11_0;
-    HRESULT hr = D3D11CreateDevice(nullptr, D3D_DRIVER_TYPE_HARDWARE, nullptr, 0, nullptr, 0, D3D11_SDK_VERSION, &m_device, &feat, &m_context);
+    HRESULT hr = D3D11CreateDevice(nullptr, D3D_DRIVER_TYPE_HARDWARE, nullptr, 0, &feat, 1, D3D11_SDK_VERSION, &m_device, nullptr, &m_context);
     if (FAILED(hr)) {
         m_lastError = "Failed to D3D11CreateDevice ErrorCode = " + QString::number(hr, 16);
         return false;
     }
 
-    IDXGIDevice *dxgiDevice = nullptr;
+    IDXGIDevice* dxgiDevice = nullptr;
     hr = m_device->QueryInterface(__uuidof(IDXGIDevice), reinterpret_cast<void**>(&dxgiDevice));
     if (FAILED(hr)) {
-        m_lastError = "Failed to QueryInterface IDXGIOutput6 ErrorCode = " + QString::number(hr, 16);
-        m_device->Release();
-        m_context->Release();
+        m_lastError = "Failed to QueryInterface IDXGIDevice ErrorCode = " + QString::number(hr, 16);
+        cleanup();
         return false;
     }
 
-    IDXGIAdapter *dxgiAdapter = nullptr;
+    IDXGIAdapter* dxgiAdapter = nullptr;
     hr = dxgiDevice->GetParent(__uuidof(IDXGIAdapter), reinterpret_cast<void**>(&dxgiAdapter));
     dxgiDevice->Release();
     if (FAILED(hr)) {
         m_lastError = "Failed to Get IDXGIAdapter ErrorCode = " + QString::number(hr, 16);
-        m_device->Release();
-        m_context->Release();
+        cleanup();
         return false;
     }
 
-    QVector<IDXGIOutput *> outputs;
-    IDXGIOutput *dxgiOutput = nullptr;
+    QVector<IDXGIOutput*> outputs;
+    IDXGIOutput* dxgiOutput = nullptr;
     for (uint i = 0; dxgiAdapter->EnumOutputs(i, &dxgiOutput) != DXGI_ERROR_NOT_FOUND; ++i) {
         outputs.push_back(dxgiOutput);
     }
     dxgiAdapter->Release();
     if (outputIndex >= outputs.size()) {
         m_lastError = "Invalid output index!";
-        m_device->Release();
-        m_context->Release();
+        cleanup();
         return false;
     }
     dxgiOutput = outputs.at(outputIndex);
 
-    IDXGIOutput6 *dxgiOutput6 = nullptr;
+    IDXGIOutput6* dxgiOutput6 = nullptr;
     hr = dxgiOutput->QueryInterface(__uuidof(IDXGIOutput6), reinterpret_cast<void**>(&dxgiOutput6));
     dxgiOutput->Release();
     if (FAILED(hr)) {
         m_lastError = "Failed to QueryInterface IDXGIOutput6 ErrorCode = " + QString::number(hr, 16);
-        m_device->Release();
-        m_context->Release();
+        cleanup();
         return false;
     }
 
@@ -71,8 +66,7 @@ bool DxgiManager::init(uint outputIndex)
     dxgiOutput6->Release();
     if (FAILED(hr)) {
         m_lastError = "Failed to DuplicateOutput ErrorCode = " + QString::number(hr, 16);
-        m_device->Release();
-        m_context->Release();
+        cleanup();
         return false;
     }
 
@@ -81,7 +75,8 @@ bool DxgiManager::init(uint outputIndex)
     m_texture = new DxgiTextureStaging(m_device, m_context);
     if (desc.DesktopImageInSystemMemory) {
         qDebug() << "Desc: CPU shared with GPU";
-    } else {
+    }
+    else {
         qDebug() << "Desc: CPU not shared with GPU";
     }
 
@@ -95,11 +90,23 @@ QString DxgiManager::lastError() const
 
 QPixmap DxgiManager::grabScreen()
 {
-    IDXGIResource *desktopRes = nullptr;
+    IDXGIResource* desktopRes = nullptr;
     DXGI_OUTDUPL_FRAME_INFO frameInfo;
     HRESULT hr = m_duplication->AcquireNextFrame(100, &frameInfo, &desktopRes);
     if (FAILED(hr)) {
-        m_lastError = "Failed to AcquireNextFrame ErrorCode = " + QString::number(hr, 16);
+        if (hr == DXGI_ERROR_ACCESS_LOST || hr == DXGI_ERROR_INVALID_CALL) {
+            qDebug() << "Device lost or invalid call. Reinitializing...";
+            if (init()) {
+                return grabScreen(); // ���³��Բ�����Ļ
+            }
+            else {
+                qDebug() << "Failed to reinitialize DXGI Manager.";
+            }
+        }
+        else {
+            m_lastError = "Failed to AcquireNextFrame ErrorCode = " + QString::number(hr, 16);
+            //qDebug() << m_lastError;
+        }
         return QPixmap();
     }
 
@@ -108,4 +115,24 @@ QPixmap DxgiManager::grabScreen()
     m_duplication->ReleaseFrame();
 
     return pixmap;
+}
+
+void DxgiManager::cleanup()
+{
+    if (m_duplication) {
+        m_duplication->Release();
+        m_duplication = nullptr;
+    }
+    if (m_texture) {
+        delete m_texture;
+        m_texture = nullptr;
+    }
+    if (m_context) {
+        m_context->Release();
+        m_context = nullptr;
+    }
+    if (m_device) {
+        m_device->Release();
+        m_device = nullptr;
+    }
 }

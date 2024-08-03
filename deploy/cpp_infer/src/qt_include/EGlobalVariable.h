@@ -25,7 +25,7 @@ public:
     }
 public:
     static EGlobalVariable* instance();
-
+    static QMap<QString, QList<int>> keyMap;
 
 public:
     QString get_localmachine_ip();

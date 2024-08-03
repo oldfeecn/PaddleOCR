@@ -24,18 +24,29 @@ vncTabWidget::vncTabWidget(QWidget *parent)
     connect(ui.startVMBtn, &QPushButton::clicked,
         this, [this](bool checked) {
             // 虚拟机路径
-            vmPath = "D:\\神盾虚拟机\\神盾WIN7随机硬件版.vmx";
+            vmPath = "D:\\神盾虚拟机\\810648297\\810648297.vmx";
             startVM(vmPath);
 		});
     //启动虚拟机
     connect(ui.moveVMBtn, &QPushButton::clicked,
         this, [this](bool checked) {
             moveVMAndMoveToScreen(2);
-		});    
+		});   
+         //连接键盘
+    connect(ui.keyMouseBtnOpen, &QPushButton::clicked,
+        this, [this](bool checked) {
+            ui.vnc_widget->openVIDPID();
+           	});   
+         //断开键盘
+    connect(ui.keyMouseBtnClose, &QPushButton::clicked,
+        this, [this](bool checked) {
+            ui.vnc_widget->CloseVIDPID();
+		});   
+
     
 }
 void vncTabWidget::moveVMAndMoveToScreen(int screenIndex) {
-    findWindowByTitle(QString("神盾WIN7随机硬件版 - VMware Workstation"));
+    findWindowByTitle(QString("810648297 - VMware Workstation"));
 }
 void vncTabWidget::startVM(const QString& vmPath) {
         // 启动虚拟机

@@ -1,906 +1,830 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>KeyMouseWidgetClass</class>
- <widget class="QMainWindow" name="KeyMouseWidgetClass">
+ <class>KeyMouseWidget</class>
+ <widget class="QWidget" name="KeyMouseWidget">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1857</width>
-    <height>772</height>
+    <width>1542</width>
+    <height>754</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>KeyMouseWidget</string>
   </property>
-  <widget class="QWidget" name="centralWidget">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>2483</width>
-     <height>814</height>
-    </rect>
-   </property>
-   <layout class="QGridLayout" name="gridLayout_12">
-    <item row="0" column="0">
-     <layout class="QGridLayout" name="gridLayout_11">
-      <item row="0" column="0">
-       <layout class="QHBoxLayout" name="horizontalLayout_11">
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
-          <item>
-           <widget class="QGroupBox" name="groupBox">
-            <property name="title">
-             <string>打开盒子方式</string>
-            </property>
-            <layout class="QGridLayout" name="gridLayout_3">
-             <item row="0" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout">
-               <item>
-                <widget class="QLineEdit" name="dll_lineEdit">
-                 <property name="text">
-                  <string>C:\CUDA\PaddleOCR\deploy\cpp_infer\src\dll\msdk.dll</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="dll_button">
-                 <property name="text">
-                  <string>加载DLL</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="1" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_2">
-               <item>
-                <widget class="QLabel" name="label">
-                 <property name="text">
-                  <string>标识VID:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="vid_edit">
-                 <property name="text">
-                  <string>1001</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_2">
-                 <property name="text">
-                  <string>标识PID:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="pid_edit">
-                 <property name="text">
-                  <string>2001</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_Open_VidPid_btn">
-                 <property name="text">
-                  <string>打开指定VID_PID</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_SetNewVidPid_btn">
-                 <property name="text">
-                  <string>修改VID_PID</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_ResetVidPid_btn">
-                 <property name="text">
-                  <string>重置VID_PID</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="2" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_3">
-               <item>
-                <widget class="QLabel" name="label_3">
-                 <property name="text">
-                  <string>端口:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QComboBox" name="box_num">
-                 <item>
-                  <property name="text">
-                   <string>1</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>2</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>3</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>4</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>5</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>6</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>7</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>8</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>9</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>10</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>11</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>12</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>13</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>14</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>15</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>16</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>17</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>18</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>19</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>20</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>21</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>22</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>23</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>24</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>25</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>26</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>27</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>28</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>29</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>30</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>31</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>32</string>
-                  </property>
-                 </item>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_Open_btn">
-                 <property name="text">
-                  <string>打开设备_序号</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_Close_btn">
-                 <property name="text">
-                  <string>关闭端口</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_ScanAndOpen_btn">
-                 <property name="toolTip">
-                  <string>M_ScanAndOpen_btn</string>
-                 </property>
-                 <property name="statusTip">
-                  <string>M_ScanAndOpen</string>
-                 </property>
-                 <property name="text">
-                  <string>扫描盒子</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="dll_button_5">
-                 <property name="text">
-                  <string>查看盒子设备</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-            </layout>
-           </widget>
+  <property name="autoFillBackground">
+   <bool>true</bool>
+  </property>
+  <layout class="QGridLayout" name="gridLayout_11">
+   <item row="0" column="0">
+    <layout class="QHBoxLayout" name="horizontalLayout_11">
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QGroupBox" name="groupBox">
+         <property name="title">
+          <string>打开盒子方式</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QLineEdit" name="dll_lineEdit">
+              <property name="text">
+               <string>dll\msdk.dll</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="dll_button">
+              <property name="text">
+               <string>加载DLL</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
           </item>
-          <item>
-           <widget class="QGroupBox" name="groupBox_2">
-            <property name="title">
-             <string>当前设备保存信息</string>
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>标识VID:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="vid_edit">
+              <property name="text">
+               <string>1001</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>标识PID:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="pid_edit">
+              <property name="text">
+               <string>2001</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_Open_VidPid_btn">
+              <property name="text">
+               <string>打开指定VID_PID</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_SetNewVidPid_btn">
+              <property name="text">
+               <string>修改VID_PID</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_ResetVidPid_btn">
+              <property name="text">
+               <string>重置VID_PID</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>端口:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QComboBox" name="box_num">
+              <item>
+               <property name="text">
+                <string>1</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>2</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>3</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>4</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>5</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>6</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>7</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>8</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>9</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>10</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>11</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>12</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>13</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>14</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>15</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>16</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>17</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>18</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>19</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>20</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>21</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>22</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>23</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>24</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>25</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>26</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>27</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>28</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>29</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>30</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>31</string>
+               </property>
+              </item>
+              <item>
+               <property name="text">
+                <string>32</string>
+               </property>
+              </item>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_Open_btn">
+              <property name="text">
+               <string>打开设备_序号</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_Close_btn">
+              <property name="text">
+               <string>关闭端口</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_ScanAndOpen_btn">
+              <property name="toolTip">
+               <string>M_ScanAndOpen_btn</string>
+              </property>
+              <property name="statusTip">
+               <string>M_ScanAndOpen</string>
+              </property>
+              <property name="text">
+               <string>扫描盒子</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="dll_button_5">
+              <property name="text">
+               <string>查看盒子设备</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBox_2">
+         <property name="title">
+          <string>当前设备保存信息</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="5" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_15">
+            <item>
+             <widget class="QLabel" name="label_16">
+              <property name="text">
+               <string>    数据:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="ucp_data_edit">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_WrEncData_btn">
+              <property name="text">
+               <string>写入数据NO</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_RdEncData_btn">
+              <property name="text">
+               <string>读取数据NO</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="4" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_14">
+            <item>
+             <widget class="QLabel" name="label_15">
+              <property name="text">
+               <string>    密码:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="upc_pwd_edit">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_ChkSupportEnc_btn">
+              <property name="text">
+               <string>是否支持加密</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_SetPw_btn">
+              <property name="text">
+               <string>设置密码</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_VerifyPw_btn">
+              <property name="text">
+               <string>验证密码</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_ChkPwStat_btn">
+              <property name="text">
+               <string>密码状态</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="7" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QLabel" name="label_8">
+              <property name="text">
+               <string>产品序号:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="M_GetDevSn_edit">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_InitParam_btn">
+              <property name="text">
+               <string>初始化设备参数</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QLabel" name="label_6">
+              <property name="text">
+               <string>主控名称:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="ucp_boxName_edit_1">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_GetProdStr_btn">
+              <property name="text">
+               <string>设备名称NO</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="0" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QLabel" name="label_4">
+              <property name="text">
+               <string>主控VID:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="M_GetVid_edit1">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>主控PID:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="M_GetVid_edit2">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_GetVidPid_btn">
+              <property name="text">
+               <string>获取VID_PID</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="6" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>产品型号:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="dll_lineEdit_7">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="8" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <item>
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>生产日期:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="dll_lineEdit_9">
+              <property name="enabled">
+               <bool>false</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_ChkSupportMdy_btn">
+              <property name="text">
+               <string>盒子是否可修改</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_12">
+            <item>
+             <widget class="QLabel" name="label_11">
+              <property name="text">
+               <string>被控名称:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="ucp_boxName_edit_2">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_SetProdStr_btn">
+              <property name="text">
+               <string>修改</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="1" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_13">
+            <item>
+             <widget class="QLabel" name="label_12">
+              <property name="text">
+               <string>被控VID:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="M_GetVid_edit3">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_13">
+              <property name="text">
+               <string>被控PID:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLineEdit" name="M_GetVid_edit4">
+              <property name="enabled">
+               <bool>true</bool>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_SetNewVidPid_btn_2">
+              <property name="text">
+               <string>修改VID_PID</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="10" column="0">
+           <widget class="LogTextEdit" name="log_textEdit">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>20</height>
+             </size>
             </property>
-            <layout class="QGridLayout" name="gridLayout_2">
-             <item row="5" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_15">
-               <item>
-                <widget class="QLabel" name="label_16">
-                 <property name="text">
-                  <string>    数据:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="ucp_data_edit">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_WrEncData_btn">
-                 <property name="text">
-                  <string>写入数据NO</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_RdEncData_btn">
-                 <property name="text">
-                  <string>读取数据NO</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="4" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_14">
-               <item>
-                <widget class="QLabel" name="label_15">
-                 <property name="text">
-                  <string>    密码:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="upc_pwd_edit">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_ChkSupportEnc_btn">
-                 <property name="text">
-                  <string>是否支持加密</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_SetPw_btn">
-                 <property name="text">
-                  <string>设置密码</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_VerifyPw_btn">
-                 <property name="text">
-                  <string>验证密码</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_ChkPwStat_btn">
-                 <property name="text">
-                  <string>密码状态</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="7" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_7">
-               <item>
-                <widget class="QLabel" name="label_8">
-                 <property name="text">
-                  <string>产品序号:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="M_GetDevSn_edit">
-                 <property name="enabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_InitParam_btn">
-                 <property name="text">
-                  <string>初始化设备参数</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="2" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_5">
-               <item>
-                <widget class="QLabel" name="label_6">
-                 <property name="text">
-                  <string>主控名称:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="ucp_boxName_edit_1">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_GetProdStr_btn">
-                 <property name="text">
-                  <string>设备名称NO</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="0" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_4">
-               <item>
-                <widget class="QLabel" name="label_4">
-                 <property name="text">
-                  <string>主控VID:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="M_GetVid_edit1">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_5">
-                 <property name="text">
-                  <string>主控PID:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="M_GetVid_edit2">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_GetVidPid_btn">
-                 <property name="text">
-                  <string>获取VID_PID</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="6" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_6">
-               <item>
-                <widget class="QLabel" name="label_7">
-                 <property name="text">
-                  <string>产品型号:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="dll_lineEdit_7">
-                 <property name="enabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="8" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_8">
-               <item>
-                <widget class="QLabel" name="label_9">
-                 <property name="text">
-                  <string>生产日期:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="dll_lineEdit_9">
-                 <property name="enabled">
-                  <bool>false</bool>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_ChkSupportMdy_btn">
-                 <property name="text">
-                  <string>盒子是否可修改</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="3" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_12">
-               <item>
-                <widget class="QLabel" name="label_11">
-                 <property name="text">
-                  <string>被控名称:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="ucp_boxName_edit_2">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_SetProdStr_btn">
-                 <property name="text">
-                  <string>修改</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="1" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_13">
-               <item>
-                <widget class="QLabel" name="label_12">
-                 <property name="text">
-                  <string>被控VID:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="M_GetVid_edit3">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLabel" name="label_13">
-                 <property name="text">
-                  <string>被控PID:</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QLineEdit" name="M_GetVid_edit4">
-                 <property name="enabled">
-                  <bool>true</bool>
-                 </property>
-                 <property name="text">
-                  <string/>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_SetNewVidPid_btn_2">
-                 <property name="text">
-                  <string>修改VID_PID</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="10" column="0">
-              <widget class="MyLogTextEdit" name="log_textEdit">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>20</height>
-                </size>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Sunken</enum>
-               </property>
-               <property name="verticalScrollBarPolicy">
-                <enum>Qt::ScrollBarAlwaysOn</enum>
-               </property>
-              </widget>
-             </item>
-            </layout>
+            <property name="frameShadow">
+             <enum>QFrame::Sunken</enum>
+            </property>
+            <property name="verticalScrollBarPolicy">
+             <enum>Qt::ScrollBarAlwaysOn</enum>
+            </property>
            </widget>
           </item>
          </layout>
-        </item>
-        <item>
-         <layout class="QVBoxLayout" name="verticalLayout_3">
-          <item>
-           <widget class="QGroupBox" name="groupBox_4">
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <item>
+        <widget class="QGroupBox" name="groupBox_4">
+         <property name="title">
+          <string>键盘函数</string>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_5">
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupBox_3">
             <property name="title">
-             <string>键盘函数</string>
+             <string>数据验证</string>
             </property>
-            <layout class="QGridLayout" name="gridLayout_5">
+            <layout class="QGridLayout" name="gridLayout_4">
              <item row="0" column="0">
-              <widget class="QGroupBox" name="groupBox_3">
-               <property name="title">
-                <string>数据验证</string>
-               </property>
-               <layout class="QGridLayout" name="gridLayout_4">
-                <item row="0" column="0">
-                 <layout class="QVBoxLayout" name="verticalLayout_2">
-                  <item>
-                   <widget class="QLineEdit" name="ucp_UserData_edit">
-                    <property name="text">
-                     <string>0123456789</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="M_SetUserData_btn">
-                    <property name="text">
-                     <string>写入用户数据</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <widget class="QPushButton" name="M_VerifyUserData_btn">
-                    <property name="text">
-                     <string>验证用户数据</string>
-                    </property>
-                   </widget>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_17">
-                    <item>
-                     <widget class="QLabel" name="label_19">
-                      <property name="text">
-                       <string>DLL内部参数:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QComboBox" name="M_SetParam_cbox">
-                      <item>
-                       <property name="text">
-                        <string>单击按键0</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>多个按键2</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>单击鼠标8</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>多次单击击鼠标10</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>双击鼠标左键12</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>多次上级鼠标左键14</string>
-                       </property>
-                      </item>
-                      <item>
-                       <property name="text">
-                        <string>鼠标移动轨迹=20</string>
-                       </property>
-                      </item>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                  <item>
-                   <layout class="QHBoxLayout" name="horizontalLayout_18">
-                    <item>
-                     <widget class="QLabel" name="label_20">
-                      <property name="text">
-                       <string>随机最小值:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="dll_key_min_2">
-                      <property name="minimumSize">
-                       <size>
-                        <width>30</width>
-                        <height>20</height>
-                       </size>
-                      </property>
-                      <property name="text">
-                       <string>50</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLabel" name="label_21">
-                      <property name="text">
-                       <string>随机最大值:</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QLineEdit" name="dll_key_max_2">
-                      <property name="text">
-                       <string>80</string>
-                      </property>
-                     </widget>
-                    </item>
-                    <item>
-                     <widget class="QPushButton" name="M_SetParam_btn">
-                      <property name="text">
-                       <string>设置</string>
-                      </property>
-                     </widget>
-                    </item>
-                   </layout>
-                  </item>
-                 </layout>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <layout class="QVBoxLayout" name="verticalLayout_4">
+              <layout class="QVBoxLayout" name="verticalLayout_2">
                <item>
-                <widget class="QGroupBox" name="groupBox_6">
-                 <property name="title">
-                  <string>键盘函数</string>
+                <widget class="QLineEdit" name="ucp_UserData_edit">
+                 <property name="text">
+                  <string>0123456789</string>
                  </property>
-                 <layout class="QGridLayout" name="gridLayout">
-                  <item row="3" column="0">
-                   <widget class="QGroupBox" name="groupBox_8">
-                    <property name="title">
-                     <string>接口采用的KeyCode是windows的KeyCode，新开发程序建议再使用</string>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="M_SetUserData_btn">
+                 <property name="text">
+                  <string>写入用户数据</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="M_VerifyUserData_btn">
+                 <property name="text">
+                  <string>验证用户数据</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_17">
+                 <item>
+                  <widget class="QLabel" name="label_19">
+                   <property name="text">
+                    <string>DLL内部参数:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="M_SetParam_cbox">
+                   <item>
+                    <property name="text">
+                     <string>单击按键0</string>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_7">
-                     <item row="0" column="0">
-                      <layout class="QHBoxLayout" name="horizontalLayout_34"/>
-                     </item>
-                     <item row="1" column="0">
-                      <layout class="QHBoxLayout" name="horizontalLayout_35">
-                       <item>
-                        <widget class="QPushButton" name="M_KeyPress2_btn">
-                         <property name="text">
-                          <string>单击监控键</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="M_KeyDown2_btn">
-                         <property name="text">
-                          <string>按下a键</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="M_KeyUp2_btn">
-                         <property name="text">
-                          <string>弹起a键</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="M_KeyState2_btn">
-                         <property name="text">
-                          <string>读取a键状态</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
-                  <item row="2" column="0">
-                   <widget class="QGroupBox" name="groupBox_9">
-                    <property name="title">
-                     <string>接口采用的HidKeyCode是USB键盘的KeyCode，不是windows的KeyCode</string>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>多个按键2</string>
                     </property>
-                    <layout class="QGridLayout" name="gridLayout_8">
-                     <item row="0" column="0">
-                      <layout class="QHBoxLayout" name="horizontalLayout_38"/>
-                     </item>
-                     <item row="2" column="0">
-                      <layout class="QHBoxLayout" name="horizontalLayout_37">
-                       <item>
-                        <widget class="QPushButton" name="M_KeyPress_btn">
-                         <property name="text">
-                          <string>单击监控键</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="M_KeyDown_btn">
-                         <property name="text">
-                          <string>按下a键</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="M_KeyUp_btn">
-                         <property name="text">
-                          <string>弹起a键</string>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
-                        <widget class="QPushButton" name="M_KeyState_btn">
-                         <property name="text">
-                          <string>读取a键状态</string>
-                         </property>
-                        </widget>
-                       </item>
-                      </layout>
-                     </item>
-                    </layout>
-                   </widget>
-                  </item>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>单击鼠标8</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>多次单击击鼠标10</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>双击鼠标左键12</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>多次上级鼠标左键14</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>鼠标移动轨迹=20</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_18">
+                 <item>
+                  <widget class="QLabel" name="label_20">
+                   <property name="text">
+                    <string>随机最小值:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="dll_key_min_2">
+                   <property name="minimumSize">
+                    <size>
+                     <width>30</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                   <property name="text">
+                    <string>50</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_21">
+                   <property name="text">
+                    <string>随机最大值:</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="dll_key_max_2">
+                   <property name="text">
+                    <string>80</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="M_SetParam_btn">
+                   <property name="text">
+                    <string>设置</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_4">
+            <item>
+             <widget class="QGroupBox" name="groupBox_6">
+              <property name="title">
+               <string>键盘函数</string>
+              </property>
+              <layout class="QGridLayout" name="gridLayout">
+               <item row="3" column="0">
+                <widget class="QGroupBox" name="groupBox_8">
+                 <property name="title">
+                  <string>接口采用的KeyCode是windows的KeyCode，新开发程序建议再使用</string>
+                 </property>
+                 <layout class="QGridLayout" name="gridLayout_7">
                   <item row="0" column="0">
-                   <layout class="QHBoxLayout" name="horizontalLayout_33"/>
+                   <layout class="QHBoxLayout" name="horizontalLayout_34"/>
                   </item>
                   <item row="1" column="0">
-                   <layout class="QHBoxLayout" name="horizontalLayout_9">
+                   <layout class="QHBoxLayout" name="horizontalLayout_35">
                     <item>
-                     <widget class="QLabel" name="label_10">
+                     <widget class="QPushButton" name="M_KeyPress2_btn">
                       <property name="text">
-                       <string>监控按键:</string>
+                       <string>单击监控键</string>
                       </property>
                      </widget>
                     </item>
                     <item>
-                     <widget class="KeyMouseQLineEdit" name="KeyCode_edit">
+                     <widget class="QPushButton" name="M_KeyDown2_btn">
                       <property name="text">
-                       <string/>
+                       <string>按下a键</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="M_KeyUp2_btn">
+                      <property name="text">
+                       <string>弹起a键</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="M_KeyState2_btn">
+                      <property name="text">
+                       <string>读取a键状态</string>
                       </property>
                      </widget>
                     </item>
@@ -909,539 +833,594 @@
                  </layout>
                 </widget>
                </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_36">
-                 <item>
-                  <widget class="QPushButton" name="M_KeyInputStringGBK_btn">
-                   <property name="text">
-                    <string>中文(GBK编码)英文混合</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="M_KeyInputStringUnicode_btn">
-                   <property name="text">
-                    <string>中文(Unicode编码)英文</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QPushButton" name="M_KeyInputString_btn">
-                   <property name="text">
-                    <string>ASCII字符串</string>
-                   </property>
-                  </widget>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_ReleaseAllKey_btn">
-                 <property name="text">
-                  <string>抬起所有按键</string>
+               <item row="2" column="0">
+                <widget class="QGroupBox" name="groupBox_9">
+                 <property name="title">
+                  <string>接口采用的HidKeyCode是USB键盘的KeyCode，不是windows的KeyCode</string>
                  </property>
+                 <layout class="QGridLayout" name="gridLayout_8">
+                  <item row="0" column="0">
+                   <layout class="QHBoxLayout" name="horizontalLayout_38"/>
+                  </item>
+                  <item row="2" column="0">
+                   <layout class="QHBoxLayout" name="horizontalLayout_37">
+                    <item>
+                     <widget class="QPushButton" name="M_KeyPress_btn">
+                      <property name="text">
+                       <string>单击监控键</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="M_KeyDown_btn">
+                      <property name="text">
+                       <string>按下a键</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="M_KeyUp_btn">
+                      <property name="text">
+                       <string>弹起a键</string>
+                      </property>
+                     </widget>
+                    </item>
+                    <item>
+                     <widget class="QPushButton" name="M_KeyState_btn">
+                      <property name="text">
+                       <string>读取a键状态</string>
+                      </property>
+                     </widget>
+                    </item>
+                   </layout>
+                  </item>
+                 </layout>
                 </widget>
                </item>
-               <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_16">
+               <item row="0" column="0">
+                <layout class="QHBoxLayout" name="horizontalLayout_33"/>
+               </item>
+               <item row="1" column="0">
+                <layout class="QHBoxLayout" name="horizontalLayout_9">
                  <item>
-                  <widget class="QPushButton" name="onKeyMouseInfo_btn">
+                  <widget class="QLabel" name="label_10">
                    <property name="text">
-                    <string>键鼠消息回调</string>
+                    <string>监控按键:</string>
                    </property>
                   </widget>
                  </item>
                  <item>
-                  <widget class="QPushButton" name="noKeyMouseInfo_btn">
+                  <widget class="KeyMouseQLineEdit" name="KeyCode_edit">
                    <property name="text">
-                    <string>卸载键鼠消息回调</string>
+                    <string/>
                    </property>
                   </widget>
                  </item>
                 </layout>
                </item>
               </layout>
-             </item>
-             <item row="3" column="0">
-              <layout class="QHBoxLayout" name="horizontalLayout_10">
-               <item>
-                <widget class="QPushButton" name="M_CapsLockLedState_btn">
-                 <property name="text">
-                  <string>读取大小写</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_NumLockLedState_btn">
-                 <property name="text">
-                  <string>读取小键盘</string>
-                 </property>
-                </widget>
-               </item>
-               <item>
-                <widget class="QPushButton" name="M_ScrollLockLedState_btn">
-                 <property name="text">
-                  <string>滚动锁屏键</string>
-                 </property>
-                </widget>
-               </item>
-              </layout>
-             </item>
-             <item row="2" column="0">
-              <widget class="MyLogTextEdit" name="keyMouse_edit">
-               <property name="minimumSize">
-                <size>
-                 <width>0</width>
-                 <height>100</height>
-                </size>
-               </property>
-               <property name="html">
-                <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_36">
+              <item>
+               <widget class="QPushButton" name="M_KeyInputStringGBK_btn">
+                <property name="text">
+                 <string>中文(GBK编码)英文混合</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="M_KeyInputStringUnicode_btn">
+                <property name="text">
+                 <string>中文(Unicode编码)英文</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="M_KeyInputString_btn">
+                <property name="text">
+                 <string>ASCII字符串</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_ReleaseAllKey_btn">
+              <property name="text">
+               <string>抬起所有按键</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_16">
+              <item>
+               <widget class="QPushButton" name="onKeyMouseInfo_btn">
+                <property name="text">
+                 <string>键鼠消息回调</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="noKeyMouseInfo_btn">
+                <property name="text">
+                 <string>卸载键鼠消息回调</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item row="3" column="0">
+           <layout class="QHBoxLayout" name="horizontalLayout_10">
+            <item>
+             <widget class="QPushButton" name="M_CapsLockLedState_btn">
+              <property name="text">
+               <string>读取大小写</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_NumLockLedState_btn">
+              <property name="text">
+               <string>读取小键盘</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="M_ScrollLockLedState_btn">
+              <property name="text">
+               <string>滚动锁屏键</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item row="2" column="0">
+           <widget class="QTextEdit" name="keyMouse_edit">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>100</height>
+             </size>
+            </property>
+            <property name="html">
+             <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:13.5pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:9pt;&quot;&gt;易键鼠!&amp;quot;#$%&amp;amp;'()*+,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'SimSun'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;易键鼠!&amp;quot;#$%&amp;amp;'()*+,-./0123456789:;?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
            </widget>
           </item>
          </layout>
-        </item>
-       </layout>
-      </item>
-      <item row="0" column="1">
-       <widget class="QGroupBox" name="groupBox_7">
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+   <item row="0" column="1">
+    <widget class="QGroupBox" name="groupBox_7">
+     <property name="title">
+      <string>鼠标函数</string>
+     </property>
+     <layout class="QGridLayout" name="gridLayout_10">
+      <item row="0" column="0">
+       <widget class="QGroupBox" name="groupBox_5">
         <property name="title">
-         <string>鼠标函数</string>
+         <string>同机绝对移动</string>
         </property>
-        <layout class="QGridLayout" name="gridLayout_10">
-         <item row="0" column="0">
-          <widget class="QGroupBox" name="groupBox_5">
-           <property name="title">
-            <string>同机绝对移动</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_9">
-            <item row="6" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_31">
-              <item>
-               <widget class="QPushButton" name="M_DelayRandom_btn">
-                <property name="text">
-                 <string>随机延时</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_RandDomNbr_btn">
-                <property name="text">
-                 <string>随机数</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="5" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_29">
-              <item>
-               <widget class="QLabel" name="label_24">
-                <property name="text">
-                 <string> 最下值: </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="Min_time_edit">
-                <property name="text">
-                 <string>10</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_25">
-                <property name="text">
-                 <string> 最大值: </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="Max_time_edit">
-                <property name="text">
-                 <string>5000</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="0" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_25">
-              <item>
-               <widget class="QLabel" name="label_18">
-                <property name="text">
-                 <string> X坐标: </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="inOne_x_edit">
-                <property name="minimumSize">
-                 <size>
-                  <width>30</width>
-                  <height>0</height>
-                 </size>
-                </property>
-                <property name="text">
-                 <string>100</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="2" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_30">
-              <item>
-               <widget class="QCheckBox" name="M_GetAbsCfg_state_cbox">
-                <property name="text">
-                 <string>绝对移动</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_MoveR2_btn">
-                <property name="text">
-                 <string>指定坐标</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_MoveTo2_btn">
-                <property name="text">
-                 <string>(0,0)指定坐标</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_GetCurrMousePos2_btn">
-                <property name="text">
-                 <string>读取坐标</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="1" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_26">
-              <item>
-               <widget class="QLabel" name="label_22">
-                <property name="text">
-                 <string> Y坐标: </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="inOne_y_edit">
-                <property name="text">
-                 <string>100</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="4" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_27">
-              <item>
-               <widget class="QLabel" name="label_23">
-                <property name="text">
-                 <string> 延时: </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="time_edit">
-                <property name="text">
-                 <string>10</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_Delay_btn">
-                <property name="text">
-                 <string>延时</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="3" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_28">
-              <item>
-               <widget class="QPushButton" name="M_ResolutionUsed_btn">
-                <property name="text">
-                 <string>绝对移动</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_MoveTo3_D_btn">
-                <property name="text">
-                 <string>无轨迹移动</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_MoveTo3_btn">
-                <property name="text">
-                 <string>abs指定坐标</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
+        <layout class="QGridLayout" name="gridLayout_9">
+         <item row="6" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_31">
+           <item>
+            <widget class="QPushButton" name="M_DelayRandom_btn">
+             <property name="text">
+              <string>随机延时</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_RandDomNbr_btn">
+             <property name="text">
+              <string>随机数</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
-         <item row="1" column="0">
-          <widget class="QGroupBox" name="groupBox_10">
-           <property name="title">
-            <string>通用鼠标函数</string>
-           </property>
-           <layout class="QGridLayout" name="gridLayout_6">
-            <item row="3" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_22">
-              <item>
-               <widget class="QPushButton" name="M_ReleaseAllMouse_btn">
-                <property name="text">
-                 <string>弹起鼠标的所有按键</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_MouseKeyState_btn">
-                <property name="text">
-                 <string>读取鼠标状态</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_MouseWheel_1">
-                <property name="text">
-                 <string>滚轮+</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_MouseWheel_2">
-                <property name="text">
-                 <string>滚轮-</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="1" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_20">
-              <item>
-               <widget class="QPushButton" name="M_RightClick_btn">
-                <property name="text">
-                 <string>右键单击</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_RightDown_btn">
-                <property name="text">
-                 <string>按下右键</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_RightUp_btn">
-                <property name="text">
-                 <string>弹起右键</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="2" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_21">
-              <item>
-               <widget class="QPushButton" name="M_MiddleClick_btn">
-                <property name="text">
-                 <string>中键单击</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_MiddleDown_btn">
-                <property name="text">
-                 <string>按下中键</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_MiddleUp_btn">
-                <property name="text">
-                 <string>弹起中键</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="5" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_23">
-              <item>
-               <widget class="QLabel" name="label_14">
-                <property name="text">
-                 <string> X坐标: </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="x_edit">
-                <property name="text">
-                 <string>100</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLabel" name="label_17">
-                <property name="text">
-                 <string> Y坐标: </string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QLineEdit" name="y_edit">
-                <property name="text">
-                 <string>100</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_MoveTo_btn">
-                <property name="text">
-                 <string>移动至</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_MoveR_btn">
-                <property name="text">
-                 <string>相对移动</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_ResetMousePos_btn">
-                <property name="text">
-                 <string>鼠标复位</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="6" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_24">
-              <item>
-               <widget class="QPushButton" name="M_GetCurrMousePosX_btn">
-                <property name="text">
-                 <string>读取X坐标</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_GetCurrMousePosY_btn">
-                <property name="text">
-                 <string>读取Y坐标</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_GetCurrMousePos_btn">
-                <property name="text">
-                 <string>读取鼠标坐标</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-            <item row="0" column="0">
-             <layout class="QHBoxLayout" name="horizontalLayout_19">
-              <item>
-               <widget class="QPushButton" name="M_LeftClick_btn">
-                <property name="text">
-                 <string>左键单击</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_LeftDoubleClick_btn">
-                <property name="text">
-                 <string>左键双击</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_LeftDown_btn">
-                <property name="text">
-                 <string>按下左键</string>
-                </property>
-               </widget>
-              </item>
-              <item>
-               <widget class="QPushButton" name="M_LeftUp_btn">
-                <property name="text">
-                 <string>弹起左键</string>
-                </property>
-               </widget>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
+         <item row="5" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_29">
+           <item>
+            <widget class="QLabel" name="label_24">
+             <property name="text">
+              <string> 最下值: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Min_time_edit">
+             <property name="text">
+              <string>10</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_25">
+             <property name="text">
+              <string> 最大值: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="Max_time_edit">
+             <property name="text">
+              <string>5000</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_25">
+           <item>
+            <widget class="QLabel" name="label_18">
+             <property name="text">
+              <string> X坐标: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="inOne_x_edit">
+             <property name="minimumSize">
+              <size>
+               <width>30</width>
+               <height>0</height>
+              </size>
+             </property>
+             <property name="text">
+              <string>100</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
          <item row="2" column="0">
-          <spacer name="verticalSpacer">
-           <property name="orientation">
-            <enum>Qt::Vertical</enum>
-           </property>
-           <property name="sizeHint" stdset="0">
-            <size>
-             <width>17</width>
-             <height>214</height>
-            </size>
-           </property>
-          </spacer>
+          <layout class="QHBoxLayout" name="horizontalLayout_30">
+           <item>
+            <widget class="QCheckBox" name="M_GetAbsCfg_state_cbox">
+             <property name="text">
+              <string>绝对移动</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_MoveR2_btn">
+             <property name="text">
+              <string>指定坐标</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_MoveTo2_btn">
+             <property name="text">
+              <string>(0,0)指定坐标</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_GetCurrMousePos2_btn">
+             <property name="text">
+              <string>读取坐标</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_26">
+           <item>
+            <widget class="QLabel" name="label_22">
+             <property name="text">
+              <string> Y坐标: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="inOne_y_edit">
+             <property name="text">
+              <string>100</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="4" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_27">
+           <item>
+            <widget class="QLabel" name="label_23">
+             <property name="text">
+              <string> 延时: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="time_edit">
+             <property name="text">
+              <string>10</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_Delay_btn">
+             <property name="text">
+              <string>延时</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="3" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_28">
+           <item>
+            <widget class="QPushButton" name="M_ResolutionUsed_btn">
+             <property name="text">
+              <string>绝对移动</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_MoveTo3_D_btn">
+             <property name="text">
+              <string>无轨迹移动</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_MoveTo3_btn">
+             <property name="text">
+              <string>abs指定坐标</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
          </item>
         </layout>
        </widget>
       </item>
+      <item row="1" column="0">
+       <widget class="QGroupBox" name="groupBox_10">
+        <property name="title">
+         <string>通用鼠标函数</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_6">
+         <item row="3" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_22">
+           <item>
+            <widget class="QPushButton" name="M_ReleaseAllMouse_btn">
+             <property name="text">
+              <string>弹起鼠标的所有按键</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_MouseKeyState_btn">
+             <property name="text">
+              <string>读取鼠标状态</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_MouseWheel_1">
+             <property name="text">
+              <string>滚轮+</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_MouseWheel_2">
+             <property name="text">
+              <string>滚轮-</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="1" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_20">
+           <item>
+            <widget class="QPushButton" name="M_RightClick_btn">
+             <property name="text">
+              <string>右键单击</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_RightDown_btn">
+             <property name="text">
+              <string>按下右键</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_RightUp_btn">
+             <property name="text">
+              <string>弹起右键</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="2" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_21">
+           <item>
+            <widget class="QPushButton" name="M_MiddleClick_btn">
+             <property name="text">
+              <string>中键单击</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_MiddleDown_btn">
+             <property name="text">
+              <string>按下中键</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_MiddleUp_btn">
+             <property name="text">
+              <string>弹起中键</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="5" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_23">
+           <item>
+            <widget class="QLabel" name="label_14">
+             <property name="text">
+              <string> X坐标: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="x_edit">
+             <property name="text">
+              <string>100</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_17">
+             <property name="text">
+              <string> Y坐标: </string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLineEdit" name="y_edit">
+             <property name="text">
+              <string>100</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_MoveTo_btn">
+             <property name="text">
+              <string>移动至</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_MoveR_btn">
+             <property name="text">
+              <string>相对移动</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_ResetMousePos_btn">
+             <property name="text">
+              <string>鼠标复位</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="6" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_24">
+           <item>
+            <widget class="QPushButton" name="M_GetCurrMousePosX_btn">
+             <property name="text">
+              <string>读取X坐标</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_GetCurrMousePosY_btn">
+             <property name="text">
+              <string>读取Y坐标</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_GetCurrMousePos_btn">
+             <property name="text">
+              <string>读取鼠标坐标</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item row="0" column="0">
+          <layout class="QHBoxLayout" name="horizontalLayout_19">
+           <item>
+            <widget class="QPushButton" name="M_LeftClick_btn">
+             <property name="text">
+              <string>左键单击</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_LeftDoubleClick_btn">
+             <property name="text">
+              <string>左键双击</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_LeftDown_btn">
+             <property name="text">
+              <string>按下左键</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="M_LeftUp_btn">
+             <property name="text">
+              <string>弹起左键</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>17</width>
+          <height>214</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
      </layout>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QStatusBar" name="statusBar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>3</width>
-     <height>23</height>
-    </rect>
-   </property>
-  </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
+   <class>LogTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>Logtextedit.h</header>
+  </customwidget>
+  <customwidget>
    <class>KeyMouseQLineEdit</class>
    <extends>QLineEdit</extends>
    <header>KeyMouseQLineEdit.h</header>
-  </customwidget>
-  <customwidget>
-   <class>MyLogTextEdit</class>
-   <extends>QTextEdit</extends>
-   <header>MyLogTextEdit.h</header>
   </customwidget>
  </customwidgets>
  <resources/>

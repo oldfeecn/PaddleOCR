@@ -1,35 +1,35 @@
 #pragma once
 
-#include <QMainWindow>
+#include <QWidget>
 #include "ui_KeyMouseWidget.h"
-#include "EGlobalVariable.h"
-#include "KeyAndMouseThread.h"
-#include "YSDKdll.h"
+#include "msdk.h"
 #include <windows.h>
 #include <QDebug>
+#include "EGlobalVariable.h"
+#include "KeyAndMouseThread.h"
 #include <QTextCodec>
-#include <QStringLiteral>
-class KeyMouseWidget : public QMainWindow
+class KeyMouseWidget : public QWidget
 {
 	Q_OBJECT
 
 public:
-	KeyMouseWidget(QWidget* parent = nullptr);
+	KeyMouseWidget(QWidget* parent = Q_NULLPTR);
 	void InitConnect();
 	void InitKeyMouseThread();
 	~KeyMouseWidget();
 	HANDLE box_handle = NULL;
-	QList<QPushButton*> buttonList;//Ò³ÃæÉÏËùÓĞ°´Å¥¿Ø¼ş
+	QList<QPushButton*> buttonList;//é¡µé¢ä¸Šæ‰€æœ‰æŒ‰é’®æ§ä»¶
 	void initBox();
 	QString uncharToQstring(unsigned char* id, int len);
+
 	QThread* keyMouseThread = nullptr;
 	KeyAndMouseThread* objKeyMouseThread;
 	QString hookKeyStr;
 	int logKeyMouse = 0;
-private slots://ĞÅºÅº¯Êı
+private slots://ä¿¡å·å‡½æ•°
 
 signals:
-	void sendStartKMThreadState(int  state);//Êó±ê¼üÅÌÏûÏ¢
+	void sendStartKMThreadState(int  state);//é¼ æ ‡é”®ç›˜æ¶ˆæ¯
 private:
-	Ui::KeyMouseWidgetClass ui;
+	Ui::KeyMouseWidget ui;
 };

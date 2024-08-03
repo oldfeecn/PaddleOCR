@@ -253,7 +253,6 @@ FILE(GLOB QT_INC "src/qt_include/*.h")
 FILE(GLOB UI_FILES "./src/ui/*.ui") 
 list(APPEND CMAKE_AUTOUIC_SEARCH_PATHS "src/ui")
 
-
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Core)
 find_package(Qt${QT_VERSION_MAJOR}
     COMPONENTS
@@ -279,7 +278,8 @@ add_executable(${DEMO_NAME}
 ) 
 target_include_directories(${DEMO_NAME} PUBLIC
                                           ssrc/include src/qt_include)
-
+# 设置库文件路径
+set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/src/dll)
 target_link_libraries(${DEMO_NAME} PUBLIC
         ${DEPS}
         Qt::Core
@@ -308,7 +308,8 @@ target_link_libraries(${DEMO_NAME} PUBLIC
         uuid
         odbc32
         odbccp32
-        swdevice     
+        swdevice
+        ${LIBRARY_OUTPUT_PATH}/msdk.lib
 )
 ###########################################################################
 
@@ -325,7 +326,9 @@ if (WIN32 AND WITH_MKL)
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_det_shape.txt ./release/trt_det_shape.txt
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_rec_shape.txt ./release/trt_rec_shape.txt
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_rec_shape.txt ./release/trt_cls_shape.txt
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/src/dll/DeviceManager.dll ./release/DeviceManager.dll
+        #COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/src/dll/DeviceManager.dll ./release/DeviceManager.dll
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/src/dll/msdk.dll ./release/msdk.dll
+        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/src/dll/msdk.lib ./release/msdk.lib
     )
 endif()
 

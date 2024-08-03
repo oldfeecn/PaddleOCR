@@ -111,6 +111,20 @@
       </widget>
      </item>
      <item>
+      <widget class="QPushButton" name="keyMouseBtnOpen">
+       <property name="text">
+        <string>键盘鼠标连接</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="keyMouseBtnClose">
+       <property name="text">
+        <string>键盘鼠标断开</string>
+       </property>
+      </widget>
+     </item>
+     <item>
       <widget class="QPushButton" name="vncViewbtn">
        <property name="text">
         <string>观看</string>

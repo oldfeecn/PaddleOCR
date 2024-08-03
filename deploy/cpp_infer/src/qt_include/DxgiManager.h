@@ -21,9 +21,11 @@ public:
     DxgiManager();
     ~DxgiManager();
 
-    bool init(uint outputIndex);
+    bool init(uint outputIndex=0);
     QString lastError() const;
     QPixmap grabScreen();
+
+    void cleanup();
 
 private:
     ID3D11Device *m_device;

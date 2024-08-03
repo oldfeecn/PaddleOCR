@@ -21,6 +21,7 @@ public:
 	vncTabWidget(QWidget *parent = nullptr);
     void moveVMAndMoveToScreen(int screenIndex);
     void startVM(const QString &vmPath);
+	void findWindowByTitle(QString title, int monitorIndex);	
     ~vncTabWidget();
 	QString vmPath;
 	

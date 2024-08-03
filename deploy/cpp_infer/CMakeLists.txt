@@ -309,7 +309,7 @@ target_link_libraries(${DEMO_NAME} PUBLIC
         odbc32
         odbccp32
         swdevice
-        ${LIBRARY_OUTPUT_PATH}/msdk.lib
+        #${LIBRARY_OUTPUT_PATH}/msdk.lib
 )
 ###########################################################################
 

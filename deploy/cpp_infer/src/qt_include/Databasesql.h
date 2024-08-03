@@ -24,4 +24,6 @@
 #define SQL_f_pic_limit QString("SELECT * FROM `f_pic` WHERE if_random=0 LIMIT %1,%2")
 #define Sql_f_pic_info_6values QString("INSERT INTO `f_pic_info`  (`f_pic_id`,`left`,`right`,`top`,`botton`,`data`) VALUES (%1,%2,%3,%4,%5,'%6')")
 #define Sql_f_pic_update_withId QString("UPDATE `f_pic` set if_random=1 where id=%1")
+
+#define Sql_dnf_jietu_inserts QString("insert into `dnf_jietu` (pathName,eventInfo) values ('%1','%2') ;")
 #endif // DATABASESQL_H

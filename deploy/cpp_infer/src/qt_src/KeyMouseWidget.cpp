@@ -34,8 +34,7 @@ void KeyMouseWidget::InitKeyMouseThread() {
 KeyMouseWidget::~KeyMouseWidget()
 {
 	if (box_handle) {
-		M_Close(box_handle);
-		box_handle = NULL;
+		mSDKWrapper.M_Close(box_handle);
 	}
 	if (keyMouseThread != nullptr) {
 		emit sendStartKMThreadState(2);
@@ -85,7 +84,7 @@ void KeyMouseWidget::initBox()
 			ui.M_GetDevSn_edit->setText(QStringLiteral("%1   长度=%2").arg(uncharToQstring(xuliehao, xuliehaoLen)).arg(int(xuliehaoLen)));
 		}*/
 		// 读取当前绝对移动功能的状态 返回 : 1 : 打开; 0:关闭; 其他: 错误	
-		int M_GetAbsCfg_ret = M_GetAbsCfg(box_handle);
+		int M_GetAbsCfg_ret = mSDKWrapper.M_GetAbsCfg(box_handle);
 		if (M_GetAbsCfg_ret == 1) {
 			ui.M_GetAbsCfg_state_cbox->setChecked(true);
 		}
@@ -104,19 +103,19 @@ void KeyMouseWidget::initBox()
 void KeyMouseWidget::InitConnect() {
 	connect(ui.M_Open_VidPid_btn, &QPushButton::clicked, this, [this]() {
 		if (box_handle != NULL) {
-			M_Close(box_handle);
+			mSDKWrapper.M_Close(box_handle);
 			box_handle = NULL;
 		}
 		bool ok;
 		ui.log_textEdit->appendText(QStringLiteral("VID = %1, pid = %2").arg(ui.vid_edit->text().toInt(&ok, 16)).arg(ui.pid_edit->text().toInt(&ok, 16)));
-		box_handle = M_Open_VidPid(ui.vid_edit->text().toInt(&ok, 16), ui.pid_edit->text().toInt(&ok, 16));
+		box_handle = mSDKWrapper.M_Open_VidPid(ui.vid_edit->text().toInt(&ok, 16), ui.pid_edit->text().toInt(&ok, 16));
 		if (box_handle == NULL) {
-			ui.log_textEdit->appendText(QStringLiteral("//使用M_Open_VidPid接口可以打开指定vid pid的单头盒子或者双头盒子的主控端。必须保证电脑上只插有一个这种盒子。"));
+			ui.log_textEdit->appendText(QStringLiteral("//使用mSDKWrapper.M_Open_VidPid接口可以打开指定vid pid的单头盒子或者双头盒子的主控端。必须保证电脑上只插有一个这种盒子。"));
 			ui.log_textEdit->appendText(QStringLiteral("打开盒子失败!"));
 		}
 		else {
 			ui.log_textEdit->appendText(QStringLiteral("打开VID_PID!"));
-			M_MoveTo(box_handle, 100, 100);
+			mSDKWrapper.M_MoveTo(box_handle, 100, 100);
 			ui.log_textEdit->appendText(QStringLiteral("移动位置 (100,100)"));
 			ui.M_Open_VidPid_btn->setEnabled(false);
 			ui.M_ScanAndOpen_btn->setEnabled(false);
@@ -127,14 +126,14 @@ void KeyMouseWidget::InitConnect() {
 		});
 	connect(ui.M_Open_btn, &QPushButton::clicked, this, [this]() {
 		QString str = ui.box_num->currentText();
-		box_handle = M_Open(str.toInt());
+		box_handle = mSDKWrapper.M_Open(str.toInt());
 
 		if (box_handle == NULL) {
-			ui.log_textEdit->appendText(QStringLiteral("M_Open打开盒子失败!"));
+			ui.log_textEdit->appendText(QStringLiteral("mSDKWrapper.M_Open打开盒子失败!"));
 		}
 		else {
-			ui.log_textEdit->appendText(QStringLiteral("M_Open()打开端口:%1").arg(str));
-			M_MoveTo(box_handle, 100, 100);
+			ui.log_textEdit->appendText(QStringLiteral("mSDKWrapper.M_Open()打开端口:%1").arg(str));
+			mSDKWrapper.M_MoveTo(box_handle, 100, 100);
 			ui.log_textEdit->appendText(QStringLiteral("移动位置 (100,100)"));
 			ui.M_Open_VidPid_btn->setEnabled(false);
 			ui.M_Open_btn->setEnabled(false);
@@ -145,17 +144,17 @@ void KeyMouseWidget::InitConnect() {
 		});
 	connect(ui.M_ScanAndOpen_btn, &QPushButton::clicked, this, [this]() {
 		if (box_handle != NULL) {
-			M_Close(box_handle);
+			mSDKWrapper.M_Close(box_handle);
 			box_handle = NULL;
 		}
-		box_handle = M_ScanAndOpen();
+		box_handle = mSDKWrapper.M_ScanAndOpen();
 		if (box_handle == NULL) {
 			ui.log_textEdit->appendText(QStringLiteral("//使用M_ScanAndOpen接口扫描硬件列表，打开扫描到的第一个单头或者双头盒子"));
 			ui.log_textEdit->appendText(QStringLiteral("打开盒子失败!"));
 		}
 		else {
 			ui.log_textEdit->appendText(QStringLiteral("扫描硬件列表M_ScanAndOpen!"));
-			M_MoveTo(box_handle, 100, 100);
+			mSDKWrapper.M_MoveTo(box_handle, 100, 100);
 			ui.log_textEdit->appendText(QStringLiteral("移动位置 (100,100)"));
 			ui.M_Open_VidPid_btn->setEnabled(false);
 			ui.M_ScanAndOpen_btn->setEnabled(false);
@@ -166,7 +165,7 @@ void KeyMouseWidget::InitConnect() {
 		});
 	connect(ui.M_Close_btn, &QPushButton::clicked, this, [this]() {
 		if (box_handle != NULL) {
-			M_Close(box_handle);
+			mSDKWrapper.M_Close(box_handle);
 		    ui.log_textEdit->appendText(QStringLiteral("关闭盒子!"));
 			box_handle = NULL;
 			for (size_t i = 0; i < buttonList.size(); i++)
@@ -183,7 +182,7 @@ void KeyMouseWidget::InitConnect() {
 		});
 	connect(ui.dll_button, &QPushButton::clicked, this, [this]() {
 		QString dllName = ui.dll_lineEdit->text();
-		//int ret = GetFunAddr((LPCWSTR)dllName.unicode(), ui.log_textEdit);//msdk.dll
+		int ret = mSDKWrapper.loadLibrary(dllName);//msdk.dll
 		ui.log_textEdit->appendText(QStringLiteral("加载DLL返回值为%1").arg(1));
 		ui.M_Open_VidPid_btn->setEnabled(true);
 		ui.M_Open_btn->setEnabled(true);
@@ -232,7 +231,7 @@ void KeyMouseWidget::InitConnect() {
 	//写入用户数据
 	connect(ui.M_SetUserData_btn, &QPushButton::clicked, this, [this]() {
 		if (ui.ucp_UserData_edit->text().length() <= 256) {
-			M_SetUserData(box_handle, ui.ucp_UserData_edit->text().length(), (unsigned char*)ui.ucp_UserData_edit->text().toLatin1().data());
+			mSDKWrapper.M_SetUserData(box_handle, ui.ucp_UserData_edit->text().length(), (unsigned char*)ui.ucp_UserData_edit->text().toLatin1().data());
 		}
 		else {
 			ui.log_textEdit->appendText(QStringLiteral("用户数据不能超过256字节!!"));
@@ -241,7 +240,7 @@ void KeyMouseWidget::InitConnect() {
 	//验证用户数据
 	connect(ui.M_VerifyUserData_btn, &QPushButton::clicked, this, [this]() {
 		if (ui.ucp_UserData_edit->text().length() <= 256) {
-			M_VerifyUserData(box_handle, ui.ucp_UserData_edit->text().length(), (unsigned char*)ui.ucp_UserData_edit->text().toLatin1().data());
+			mSDKWrapper.M_VerifyUserData(box_handle, ui.ucp_UserData_edit->text().length(), (unsigned char*)ui.ucp_UserData_edit->text().toLatin1().data());
 		}
 		else {
 			ui.log_textEdit->appendText(QStringLiteral("验证用户数据不能超过256字节!!"));
@@ -250,7 +249,7 @@ void KeyMouseWidget::InitConnect() {
 
 	//盒子是否可修改
 	connect(ui.M_ChkSupportMdy_btn, &QPushButton::clicked, this, [this]() {
-		int ret = M_ChkSupportMdy(box_handle);
+		int ret = mSDKWrapper.M_ChkSupportMdy(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("%1").arg(ret));
 		if (ret == 1) {
 			ui.log_textEdit->appendText(QStringLiteral("盒子可修改"));
@@ -271,10 +270,10 @@ void KeyMouseWidget::InitConnect() {
 		QString zhukongName = ui.ucp_boxName_edit_1->text();
 		QString beikongName = ui.ucp_boxName_edit_2->text();
 		//设置主控
-		int retzhu = M_SetProdStr(box_handle, 0,
+		int retzhu = mSDKWrapper.M_SetProdStr(box_handle, 0,
 			zhukongName.length(), (unsigned char*)(zhukongName.toLatin1().data()));
 		//设置被控
-		int retbei = M_SetProdStr(box_handle, 1,
+		int retbei = mSDKWrapper.M_SetProdStr(box_handle, 1,
 			zhukongName.length(), (unsigned char*)(beikongName.toLatin1().data()));
 		ui.log_textEdit->appendText(QStringLiteral("设置主控返回值为:%1").arg(retzhu));
 		ui.log_textEdit->appendText(QStringLiteral("设置被控返回值为:%1").arg(retbei));
@@ -284,7 +283,7 @@ void KeyMouseWidget::InitConnect() {
 		});
 	//是否支持加密功能, 返回值1=支持，0=不支持；-1，失败
 	connect(ui.M_ChkSupportEnc_btn, &QPushButton::clicked, this, [this]() {
-		int ret = M_ChkSupportEnc(box_handle);
+		int ret = mSDKWrapper.M_ChkSupportEnc(box_handle);
 		if (ret == 1) {
 			ui.log_textEdit->appendText(QStringLiteral("盒子支持加密"));
 		}
@@ -294,7 +293,7 @@ void KeyMouseWidget::InitConnect() {
 		});
 	//检测密码状态; 返回值: <0 错误；255=无密码; 0~16:密码剩余有效次数
 	connect(ui.M_ChkPwStat_btn, &QPushButton::clicked, this, [this]() {
-		int ret = M_ChkPwStat(box_handle);
+		int ret = mSDKWrapper.M_ChkPwStat(box_handle);
 		if (ret < 0) {
 			ui.log_textEdit->appendText(QStringLiteral("密码错误"));
 		}
@@ -308,19 +307,19 @@ void KeyMouseWidget::InitConnect() {
 	//设置新密码
 	connect(ui.M_SetPw_btn, &QPushButton::clicked, this, [this]() {
 		QString pwd = ui.upc_pwd_edit->text();
-		int ret = M_SetPw(box_handle, pwd.length(), 16, (unsigned char*)(pwd.toLatin1().data()));
+		int ret = mSDKWrapper.M_SetPw(box_handle, pwd.length(), 16, (unsigned char*)(pwd.toLatin1().data()));
 		ui.log_textEdit->appendText(QStringLiteral("设置密码返回值:%1").arg(ret));
 		});
 	//验证密码
 	connect(ui.M_VerifyPw_btn, &QPushButton::clicked, this, [this]() {
 		QString pwd = ui.upc_pwd_edit->text();
-		int ret = M_VerifyPw(box_handle, pwd.length(), (unsigned char*)(pwd.toLatin1().data()));
+		int ret = mSDKWrapper.M_VerifyPw(box_handle, pwd.length(), (unsigned char*)(pwd.toLatin1().data()));
 		ui.log_textEdit->appendText(QStringLiteral("设置密码返回值:%1").arg(ret));
 		});
 	//写入数据
 	connect(ui.M_WrEncData_btn, &QPushButton::clicked, this, [this]() {
 		QString pwd = ui.ucp_data_edit->text();
-		int ret = M_WrEncData(box_handle, pwd.length(), (unsigned char*)(pwd.toLatin1().data()));
+		int ret = mSDKWrapper.M_WrEncData(box_handle, pwd.length(), (unsigned char*)(pwd.toLatin1().data()));
 		ui.log_textEdit->appendText(QStringLiteral("写入数据返回值:%1").arg(ret));
 		});
 	//读取数据
@@ -328,26 +327,26 @@ void KeyMouseWidget::InitConnect() {
 		QString pwd = ui.ucp_data_edit->text();
 		unsigned char ucp_data[1000];
 		int tem = 1000;
-		int ret = M_RdEncData(box_handle, tem, ucp_data);
+		int ret = mSDKWrapper.M_RdEncData(box_handle, tem, ucp_data);
 		ui.log_textEdit->appendText(QStringLiteral("读取数据返回值为:%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("读取数据值为:%1").arg(QString(QLatin1String((char*)ucp_data))));
 		});
 	//DLL内部参数恢复默认值
 	connect(ui.M_InitParam_btn, &QPushButton::clicked, this, [this]() {
-		int ret = M_InitParam(box_handle);
+		int ret = mSDKWrapper.M_InitParam(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("内部参数恢复默认值返回值为:%1").arg(ret));
 		});
 	//DLL内部参数恢复默认值
 	connect(ui.M_InitParam_btn, &QPushButton::clicked, this, [this]() {
-		int ret = M_InitParam(box_handle);
+		int ret = mSDKWrapper.M_InitParam(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("内部参数恢复默认值返回值为:%1").arg(ret));
 		});
 	//读取VID/PID; IdIndex=1/2/3/4 分别对应 主控端Vid, 主控端Pid, 被控端Vid, 被控端Pid
 	connect(ui.M_GetVidPid_btn, &QPushButton::clicked, this, [this]() {
-		int zhuVID = M_GetVidPid(box_handle, 1);
-		int zhuPID = M_GetVidPid(box_handle, 2);
-		int beiVID = M_GetVidPid(box_handle, 3);
-		int beiPID = M_GetVidPid(box_handle, 4);
+		int zhuVID = mSDKWrapper.M_GetVidPid(box_handle, 1);
+		int zhuPID = mSDKWrapper.M_GetVidPid(box_handle, 2);
+		int beiVID = mSDKWrapper.M_GetVidPid(box_handle, 3);
+		int beiPID = mSDKWrapper.M_GetVidPid(box_handle, 4);
 		ui.M_GetVid_edit1->setText(QString::number(zhuVID, 16).right(4));
 		ui.M_GetVid_edit2->setText(QString::number(zhuPID, 16).right(4));
 		ui.M_GetVid_edit3->setText(QString::number(beiVID, 16).right(4));
@@ -360,7 +359,7 @@ void KeyMouseWidget::InitConnect() {
 
 	//重置VID/PID
 	connect(ui.M_ResetVidPid_btn, &QPushButton::clicked, this, [this]() {
-		int ret = M_ResetVidPid(box_handle);
+		int ret = mSDKWrapper.M_ResetVidPid(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("重置VID/PID返回值为:%1").arg(ret));
 		});
 	//修改VID/PID
@@ -370,7 +369,7 @@ void KeyMouseWidget::InitConnect() {
 		QString id3 = ui.M_GetVid_edit3->text();
 		QString id4 = ui.M_GetVid_edit4->text();
 		bool ok;
-		int ret = M_SetNewVidPid(box_handle,
+		int ret = mSDKWrapper.M_SetNewVidPid(box_handle,
 			id1.left(2).toInt(&ok, 16),
 			id2.left(2).toInt(&ok, 16),
 			id3.left(2).toInt(&ok, 16),
@@ -382,7 +381,7 @@ void KeyMouseWidget::InitConnect() {
 	connect(ui.M_SetUserData_btn, &QPushButton::clicked, this, [this]() {
 		QString str = ui.ucp_UserData_edit->text();
 		unsigned char* UserData = (unsigned char*)(str.toLatin1().data());
-		int ret = M_SetUserData(box_handle, sizeof(UserData), UserData);
+		int ret = mSDKWrapper.M_SetUserData(box_handle, sizeof(UserData), UserData);
 		if (ret < 0) {
 			ui.log_textEdit->appendText(QStringLiteral("写入用户数据=错误,返回值为:%1").arg(ret));
 		}
@@ -394,10 +393,10 @@ void KeyMouseWidget::InitConnect() {
 		}
 		});
 	//验证用户数据
-	connect(ui.M_VerifyUserData_btn, &QPushButton::clicked, this, [this]() {
+	connect(ui.M_VerifyPw_btn, &QPushButton::clicked, this, [this]() {
 		QString str = ui.ucp_UserData_edit->text();
 		unsigned char* UserData = (unsigned char*)(str.toLatin1().data());
-		int ret = M_VerifyUserData(box_handle, sizeof(UserData), UserData);
+		int ret = mSDKWrapper.M_VerifyUserData(box_handle, sizeof(UserData), UserData);
 		if (ret < 0) {
 			ui.log_textEdit->appendText(QStringLiteral("验证用户数据=错误,返回值为:%1").arg(ret));
 		}
@@ -412,7 +411,7 @@ void KeyMouseWidget::InitConnect() {
 	connect(ui.M_VerifyUserData_btn, &QPushButton::clicked, this, [this]() {
 		QString str = ui.ucp_UserData_edit->text();
 		unsigned char* UserData = (unsigned char*)(str.toLatin1().data());
-		int ret = M_VerifyUserData(box_handle, sizeof(UserData), UserData);
+		int ret = mSDKWrapper.M_VerifyUserData(box_handle, sizeof(UserData), UserData);
 		if (ret < 0) {
 			ui.log_textEdit->appendText(QStringLiteral("验证用户数据=错误,返回值为:%1").arg(ret));
 		}
@@ -462,25 +461,25 @@ void KeyMouseWidget::InitConnect() {
 		int ret;
 		QString s = ui.M_SetParam_cbox->currentText();
 		if (s == QString::fromLocal8Bit(("单击按键0"))) {
-			ret = M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
+			ret = mSDKWrapper.M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
 		}
 		else if (s == QString::fromLocal8Bit(("多个按键2"))) {
-			ret = M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
+			ret = mSDKWrapper.M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
 		}
 		else if (s == QString::fromLocal8Bit(("单击鼠标8"))) {
-			ret = M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
+			ret = mSDKWrapper.M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
 		}
 		else if (s == QString::fromLocal8Bit(("多次单击击鼠标10"))) {
-			ret = M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
+			ret = mSDKWrapper.M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
 		}
 		else if (s == QString::fromLocal8Bit(("双击鼠标左键12"))) {
-			ret = M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
+			ret = mSDKWrapper.M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
 		}
 		else if (s == QString::fromLocal8Bit(("多次上级鼠标左键14"))) {
-			ret = M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
+			ret = mSDKWrapper.M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
 		}
 		else if (s == QString::fromLocal8Bit(("鼠标移动轨迹=20"))) {
-			ret = M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
+			ret = mSDKWrapper.M_SetParam(box_handle, 0, ui.dll_key_min_2->text().toInt(), ui.dll_key_max_2->text().toInt());
 		}
 		ui.log_textEdit->appendText(QStringLiteral("修改设备内部默认参数:%1").arg(ret));
 		});
@@ -540,9 +539,9 @@ void KeyMouseWidget::InitConnect() {
 		ui.keyMouse_edit->setFocus();
 		//按下a键
 		int anjian = STATICVar->KeyToUsbKeyCode("a");
-		int ret = M_KeyPress(box_handle, anjian, 1);
+		int ret = mSDKWrapper.M_KeyPress(box_handle, anjian, 1);
 		//读取按键状态
-		int ret1 = M_KeyState(box_handle, anjian);
+		int ret1 = mSDKWrapper.M_KeyState(box_handle, anjian);
 		//返回 0: 弹起状态；1:按下状态；-1: 失败(端口未打开)
 		ui.log_textEdit->appendText(QStringLiteral("返回 0: 弹起状态；1:按下状态；-1: 失败(端口未打开)"));
 		ui.log_textEdit->appendText(QStringLiteral("按下某键,返回值=%1").arg(ret1));
@@ -559,7 +558,7 @@ void KeyMouseWidget::InitConnect() {
 			if (arr[i] != "") {
 				int anjian = STATICVar->KeyToUsbKeyCode(arr[i]);
 				if (anjian != 0) {
-					int ret = M_KeyPress(box_handle, anjian, 1);
+					int ret = mSDKWrapper.M_KeyPress(box_handle, anjian, 1);
 					ui.log_textEdit->appendText(QStringLiteral("按键: %1   返回值= %2").arg(anjian).arg(ret));
 				}
 				else {
@@ -569,13 +568,13 @@ void KeyMouseWidget::InitConnect() {
 		}
 		ui.log_textEdit->appendText(QStringLiteral("执行完毕,避免bug,抬起所有按键"));
 		//避免bug,抬起所有按键;
-		M_ReleaseAllKey(box_handle);
+		mSDKWrapper.M_ReleaseAllKey(box_handle);
 		});
 
 	//a键位状态
 	connect(ui.M_KeyState_btn, &QPushButton::clicked, this, [this]() {
 		int anjian = STATICVar->KeyToUsbKeyCode("a");
-		int ret1 = M_KeyState(box_handle, anjian);
+		int ret1 = mSDKWrapper.M_KeyState(box_handle, anjian);
 		//返回 0: 弹起状态；1:按下状态；-1: 失败(端口未打开)
 		ui.log_textEdit->appendText(QStringLiteral("返回 0: 弹起状态；1:按下状态；-1: 失败(端口未打开)"));
 		ui.log_textEdit->appendText(QStringLiteral("a键状态,返回值=%1").arg(ret1));
@@ -585,9 +584,9 @@ void KeyMouseWidget::InitConnect() {
 		ui.keyMouse_edit->setFocus();
 		//按下a键
 		int anjian = STATICVar->KeyToUsbKeyCode("a");
-		M_KeyUp(box_handle, anjian);
+		mSDKWrapper.M_KeyUp(box_handle, anjian);
 		//读取按键状态
-		int ret1 = M_KeyState(box_handle, anjian);
+		int ret1 = mSDKWrapper.M_KeyState(box_handle, anjian);
 		ui.log_textEdit->appendText(QStringLiteral("抬起某键,返回值=%1").arg(ret1));
 		ui.log_textEdit->appendText(QStringLiteral("执行完毕,避免bug,抬起所有按键"));
 
@@ -603,7 +602,7 @@ void KeyMouseWidget::InitConnect() {
 			if (arr[i] != "") {
 				int anjian = STATICVar->KeyToWinKeyCode(arr[i]);
 				if (anjian != 0) {
-					int ret = M_KeyPress2(box_handle, anjian, 1);
+					int ret = mSDKWrapper.M_KeyPress2(box_handle, anjian, 1);
 					ui.log_textEdit->appendText(QStringLiteral("按键: %1   返回值= %2").arg(anjian).arg(ret));
 				}
 				else {
@@ -613,16 +612,16 @@ void KeyMouseWidget::InitConnect() {
 		}
 		ui.log_textEdit->appendText(QStringLiteral("执行完毕,避免bug,抬起所有按键"));
 		//避免bug,抬起所有按键;
-		M_ReleaseAllKey(box_handle);
+		mSDKWrapper.M_ReleaseAllKey(box_handle);
 		});
 	//按下a键
 	connect(ui.M_KeyDown2_btn, &QPushButton::clicked, this, [this]() {
 		ui.keyMouse_edit->setFocus();
 		//按下a键
 		int anjian = STATICVar->KeyToWinKeyCode("a");
-		int ret = M_KeyPress2(box_handle, anjian, 1);
+		int ret = mSDKWrapper.M_KeyPress2(box_handle, anjian, 1);
 		//读取按键状态
-		int ret1 = M_KeyState2(box_handle, anjian);
+		int ret1 = mSDKWrapper.M_KeyState2(box_handle, anjian);
 		//返回 0: 弹起状态；1:按下状态；-1: 失败(端口未打开)
 		ui.log_textEdit->appendText(QStringLiteral("返回 0: 弹起状态；1:按下状态；-1: 失败(端口未打开)"));
 		ui.log_textEdit->appendText(QStringLiteral("按下某键,返回值=%1").arg(ret1));
@@ -633,9 +632,9 @@ void KeyMouseWidget::InitConnect() {
 		ui.keyMouse_edit->setFocus();
 		//按下a键
 		int anjian = STATICVar->KeyToWinKeyCode("a");
-		M_KeyUp2(box_handle, anjian);
+		mSDKWrapper.M_KeyUp2(box_handle, anjian);
 		//读取按键状态
-		int ret1 = M_KeyState2(box_handle, anjian);
+		int ret1 = mSDKWrapper.M_KeyState2(box_handle, anjian);
 		ui.log_textEdit->appendText(QStringLiteral("抬起某键,返回值=%1").arg(ret1));
 		ui.log_textEdit->appendText(QStringLiteral("执行完毕,避免bug,抬起所有按键"));
 		});
@@ -643,14 +642,14 @@ void KeyMouseWidget::InitConnect() {
 	connect(ui.M_KeyState2_btn, &QPushButton::clicked, this, [this]() {
 		int anjian = STATICVar->KeyToWinKeyCode("a");
 		//int ret = keyPress2(box_handle, anjian, 1);
-		int ret1 = M_KeyState2(box_handle, anjian);
+		int ret1 = mSDKWrapper.M_KeyState2(box_handle, anjian);
 		//返回 0: 弹起状态；1:按下状态；-1: 失败(端口未打开)
 		ui.log_textEdit->appendText(QStringLiteral("返回 0: 弹起状态；1:按下状态；-1: 失败(端口未打开)"));
 		ui.log_textEdit->appendText(QStringLiteral("a键状态,返回值=%1").arg(ret1));
 		});
 	//抬起所有按键
 	connect(ui.M_ReleaseAllKey_btn, &QPushButton::clicked, this, [this]() {
-		M_ReleaseAllKey(box_handle);
+		mSDKWrapper.M_ReleaseAllKey(box_handle);
 		});
 	//中文(GBK编码)英文混合
 	connect(ui.M_KeyInputStringGBK_btn, &QPushButton::clicked, this, [this]() {
@@ -665,7 +664,7 @@ void KeyMouseWidget::InitConnect() {
 		QString strUnicode = utf8->toUnicode(str1.toLocal8Bit().data());
 		QByteArray gb_bytes = gbk->fromUnicode(strUnicode);
 		char* p = gb_bytes.data(); //获取其char *	
-		M_KeyInputStringGBK(box_handle, p, sizeof(p));
+		mSDKWrapper.M_KeyInputStringGBK(box_handle, p, sizeof(p));
 		});
 	//中文(Unicode编码)英文
 	connect(ui.M_KeyInputStringUnicode_btn, &QPushButton::clicked, this, [this]() {
@@ -674,7 +673,7 @@ void KeyMouseWidget::InitConnect() {
 		QString str1 = "char与语言";
 		QByteArray byte = str1.toUtf8();
 		char* strchar = byte.data();
-		M_KeyInputStringUnicode(box_handle, strchar, sizeof(strchar));
+		mSDKWrapper.M_KeyInputStringUnicode(box_handle, strchar, sizeof(strchar));
 		});
 	//ASCII字符串
 	connect(ui.M_KeyInputString_btn, &QPushButton::clicked, this, [this]() {
@@ -687,30 +686,30 @@ void KeyMouseWidget::InitConnect() {
 		{
 			int a1 = (int)(array.at(i));
 			QString a = QString("%1").arg(a1);
-			M_KeyInputString(box_handle, a.toLocal8Bit().data(), 1);
+			mSDKWrapper.M_KeyInputString(box_handle, a.toLocal8Bit().data(), 1);
 		}
 
 		});
 	//读取小键盘NumLock灯的状态 //返回 0:灭；1:亮；-1: 失败
 	connect(ui.M_NumLockLedState_btn, &QPushButton::clicked, this, [this]() {
-		int ret1 = M_NumLockLedState(box_handle);
+		int ret1 = mSDKWrapper.M_NumLockLedState(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("读取小键盘NumLock灯的状态 //返回 0:灭；1:亮；-1: 失败,返回值=%1").arg(ret1));
 		});
 	//读取CapsLock灯的状态 //返回 0:灭；1:亮；-1: 失败
 	connect(ui.M_CapsLockLedState_btn, &QPushButton::clicked, this, [this]() {
-		int ret1 = M_CapsLockLedState(box_handle);
+		int ret1 = mSDKWrapper.M_CapsLockLedState(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("读取CapsLock灯的状态 //返回 0:灭；1:亮；-1: 失败,返回值=%1").arg(ret1));
 		});
 	//读取ScrollLockLed灯的状态 //返回 0:灭；1:亮；-1: 失败
 	connect(ui.M_ScrollLockLedState_btn, &QPushButton::clicked, this, [this]() {
-		int ret1 = M_ScrollLockLedState(box_handle);
+		int ret1 = mSDKWrapper.M_ScrollLockLedState(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("读取ScrollLock灯的状态 //返回 0:灭；1:亮；-1: 失败,返回值=%1").arg(ret1));
 		});
 	//左键单击 
 	connect(ui.M_LeftClick_btn, &QPushButton::clicked, this, [this]() {
 		ui.log_textEdit->appendText(QStringLiteral("左键单击 开始;鼠标移动到(0,0)"));
 		ui.M_ResetMousePos_btn->clicked();
-		int ret = M_LeftClick(box_handle, 1);
+		int ret = mSDKWrapper.M_LeftClick(box_handle, 1);
 		ui.log_textEdit->appendText(QStringLiteral("左键单击 返回 0: 成功；-1: 失败,返回值=%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("左键单击 结束"));
 		});
@@ -719,7 +718,7 @@ void KeyMouseWidget::InitConnect() {
 		ui.log_textEdit->appendText(QStringLiteral("左键单击 开始;鼠标移动到(0,0)"));
 		ui.M_ResetMousePos_btn->clicked();
 		ui.log_textEdit->appendText(QStringLiteral("左键双击 开始"));
-		int ret = M_LeftDoubleClick(box_handle, 1);
+		int ret = mSDKWrapper.M_LeftDoubleClick(box_handle, 1);
 		ui.log_textEdit->appendText(QStringLiteral("左键双击 返回 0: 成功；-1: 失败,返回值=%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("左键双击 结束"));
 		});
@@ -728,7 +727,7 @@ void KeyMouseWidget::InitConnect() {
 		ui.log_textEdit->appendText(QStringLiteral("左键单击 开始;鼠标移动到(0,0)"));
 		ui.M_ResetMousePos_btn->clicked();
 		ui.log_textEdit->appendText(QStringLiteral("按下左键不弹起 开始"));
-		int ret = M_LeftDown(box_handle);
+		int ret = mSDKWrapper.M_LeftDown(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("按下左键不弹起 返回 0: 成功；-1: 失败,返回值=%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("按下左键不弹起 结束"));
 		ui.M_LeftUp_btn->clicked();
@@ -737,7 +736,7 @@ void KeyMouseWidget::InitConnect() {
 	connect(ui.M_LeftUp_btn, &QPushButton::clicked, this, [this]() {
 
 		ui.log_textEdit->appendText(QStringLiteral("弹起左键 开始"));
-		int ret = M_LeftUp(box_handle);
+		int ret = mSDKWrapper.M_LeftUp(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("弹起左键 返回 0: 成功；-1: 失败,返回值=%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("弹起左键 结束"));
 		});
@@ -746,7 +745,7 @@ void KeyMouseWidget::InitConnect() {
 		ui.log_textEdit->appendText(QStringLiteral("左键单击 开始;鼠标移动到(0,0)"));
 		ui.M_ResetMousePos_btn->clicked();
 		ui.log_textEdit->appendText(QStringLiteral("右键单击 开始"));
-		int ret = M_RightClick(box_handle, 1);
+		int ret = mSDKWrapper.M_RightClick(box_handle, 1);
 		ui.log_textEdit->appendText(QStringLiteral("右键单击 返回 0: 成功；-1: 失败,返回值=%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("右键单击 结束"));
 		});
@@ -754,7 +753,7 @@ void KeyMouseWidget::InitConnect() {
 	connect(ui.M_RightDown_btn, &QPushButton::clicked, this, [this]() {
 
 		ui.log_textEdit->appendText(QStringLiteral("按下右键不弹起 开始"));
-		int ret = M_RightDown(box_handle);
+		int ret = mSDKWrapper.M_RightDown(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("按下右键不弹起 返回 0: 成功；-1: 失败,返回值=%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("按下右键不弹起 结束"));
 
@@ -763,7 +762,7 @@ void KeyMouseWidget::InitConnect() {
 	//弹起右键 
 	connect(ui.M_RightUp_btn, &QPushButton::clicked, this, [this]() {
 		ui.log_textEdit->appendText(QStringLiteral("弹起右键 开始"));
-		int ret = M_RightUp(box_handle);
+		int ret = mSDKWrapper.M_RightUp(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("弹起右键 返回 0: 成功；-1: 失败,返回值=%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("弹起右键 结束"));
 		});
@@ -772,7 +771,7 @@ void KeyMouseWidget::InitConnect() {
 		ui.log_textEdit->appendText(QStringLiteral("左键单击 开始;鼠标移动到(0,0)"));
 		ui.M_ResetMousePos_btn->clicked();
 		ui.log_textEdit->appendText(QStringLiteral("中键单击 开始"));
-		int ret = M_MiddleClick(box_handle, 1);
+		int ret = mSDKWrapper.M_MiddleClick(box_handle, 1);
 		ui.log_textEdit->appendText(QStringLiteral("中键单击 返回 0: 成功；-1: 失败,返回值=%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("中键单击 结束"));
 		});
@@ -781,7 +780,7 @@ void KeyMouseWidget::InitConnect() {
 		ui.log_textEdit->appendText(QStringLiteral("左键单击 开始;鼠标移动到(0,0)"));
 		ui.M_ResetMousePos_btn->clicked();
 		ui.log_textEdit->appendText(QStringLiteral("按下中键不弹起 开始"));
-		int ret = M_MiddleDown(box_handle);
+		int ret = mSDKWrapper.M_MiddleDown(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("按下中键不弹起 返回 0: 成功；-1: 失败,返回值=%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("按下中键不弹起 结束"));
 		ui.M_MiddleUp_btn->clicked();
@@ -789,70 +788,70 @@ void KeyMouseWidget::InitConnect() {
 	//弹起中键 
 	connect(ui.M_MiddleUp_btn, &QPushButton::clicked, this, [this]() {
 		ui.log_textEdit->appendText(QStringLiteral("弹起中键 开始"));
-		int ret = M_MiddleUp(box_handle);
+		int ret = mSDKWrapper.M_MiddleUp(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("弹起中键 返回 0: 成功；-1: 失败,返回值=%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("弹起中键 结束"));
 		});
 	//弹起鼠标的所有按键
 	connect(ui.M_ReleaseAllMouse_btn, &QPushButton::clicked, this, [this]() {
 		ui.log_textEdit->appendText(QStringLiteral("弹起鼠标的所有按键 开始"));
-		int ret = M_ReleaseAllMouse(box_handle);
+		int ret = mSDKWrapper.M_ReleaseAllMouse(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("弹起鼠标的所有按键 返回 0: 成功；-1: 失败,返回值=%1").arg(ret));
 		ui.log_textEdit->appendText(QStringLiteral("弹起鼠标的所有按键 结束"));
 		});
 	//读取鼠标左中右键状态   //MouseKeyCode: 1=左键 2=右键 3=中键  //返回 0: 弹起状态；1:按下状态；-1: 失败
 	connect(ui.M_MouseKeyState_btn, &QPushButton::clicked, this, [this]() {
 		int mouseKeycode=0;
-		M_MouseKeyState(box_handle, mouseKeycode);
+		mSDKWrapper.M_MouseKeyState(box_handle, mouseKeycode);
 		ui.log_textEdit->appendText(QStringLiteral("读取鼠标左中右键状态   //MouseKeyCode: 1=左键 2=右键 3=中键  //返回 0: 弹起状态；1:按下状态；-1: 失败,返回值=%1").arg(mouseKeycode));
 		});
 	//滚动鼠标滚轮;  Nbr: 滚动量,  为正,向上滚动；为负, 向下滚动;
 	connect(ui.M_MouseWheel_1, &QPushButton::clicked, this, [this]() {
 		//向上
-		int ret = M_MouseWheel(box_handle, 1);
+		int ret = mSDKWrapper.M_MouseWheel(box_handle, 1);
 		ui.log_textEdit->appendText(QStringLiteral("滚动鼠标滚轮;  Nbr: 滚动量,  为正,向上滚动；为负, 向下滚动,返回值=%1").arg(ret));
 
 		});
 	connect(ui.M_MouseWheel_2, &QPushButton::clicked, this, [this]() {
 		//向下
-		int ret = M_MouseWheel(box_handle, -1);
+		int ret = mSDKWrapper.M_MouseWheel(box_handle, -1);
 		ui.log_textEdit->appendText(QStringLiteral("滚动鼠标滚轮;  Nbr: 滚动量,  为正,向上滚动；为负, 向下滚动,返回值=%1").arg(ret));
 
 		});
 	//将鼠标移动到原点(0,0) 
 	connect(ui.M_ResetMousePos_btn, &QPushButton::clicked, this, [this]() {
-		int ret = M_ResetMousePos(box_handle);
+		int ret = mSDKWrapper.M_ResetMousePos(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("将鼠标移动到原点 ,返回值=%1").arg(ret));
 		});
 	//相对移动
 	connect(ui.M_MoveR_btn, &QPushButton::clicked, this, [this]() {
 		int x = ui.x_edit->text().toInt();
 		int y = ui.y_edit->text().toInt();
-		int ret = M_MoveR(box_handle, x, y);
+		int ret = mSDKWrapper.M_MoveR(box_handle, x, y);
 		ui.log_textEdit->appendText(QStringLiteral("相对移动 ,返回值=%1").arg(ret));
 		});
 	//指定坐标移动
 	connect(ui.M_MoveTo_btn, &QPushButton::clicked, this, [this]() {
 		int x = ui.x_edit->text().toInt();
 		int y = ui.y_edit->text().toInt();
-		int ret = M_MoveTo(box_handle, x, y);
+		int ret = mSDKWrapper.M_MoveTo(box_handle, x, y);
 		ui.log_textEdit->appendText(QStringLiteral("指定坐标移动 ,返回值=%1").arg(ret));
 		});
 	//读取当前鼠标所在坐标  返回坐标在x、y中
 	connect(ui.M_GetCurrMousePos_btn, &QPushButton::clicked, this, [this]() {
 		int x;
 		int y;
-		int ret = M_GetCurrMousePos(box_handle, &x, &y);
+		int ret = mSDKWrapper.M_GetCurrMousePos(box_handle, &x, &y);
 		ui.log_textEdit->appendText(QStringLiteral("读取当前鼠标所在坐标  返回坐标在x、y中 ,返回值=(%1,%2)").arg(x).arg(y));
 		});
 	//返回当前鼠标坐标X值
 	connect(ui.M_GetCurrMousePosX_btn, &QPushButton::clicked, this, [this]() {
-		int x = M_GetCurrMousePosX(box_handle);
+		int x = mSDKWrapper.M_GetCurrMousePosX(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("读取当前鼠标所在X标  ,返回值=%1").arg(x));
 		});
 	//返回当前鼠标坐标Y值
 	connect(ui.M_GetCurrMousePosY_btn, &QPushButton::clicked, this, [this]() {
-		int y = M_GetCurrMousePosY(box_handle);
+		int y = mSDKWrapper.M_GetCurrMousePosY(box_handle);
 		ui.log_textEdit->appendText(QStringLiteral("返回当前鼠标坐标Y值 ,返回值=%1").arg(y));
 		});
 
@@ -861,63 +860,63 @@ void KeyMouseWidget::InitConnect() {
 	connect(ui.M_MoveR2_btn, &QPushButton::clicked, this, [this]() {
 		int x = ui.inOne_x_edit->text().toInt();
 		int y = ui.inOne_y_edit->text().toInt();
-		int ret = M_MoveR2(box_handle, x, y);
+		int ret = mSDKWrapper.M_MoveR2(box_handle, x, y);
 		ui.log_textEdit->appendText(QStringLiteral("指定坐标 ,返回值=%1").arg(ret));
-		int ret1 = M_GetCurrMousePos2(&x, &y);
+		int ret1 = mSDKWrapper.M_GetCurrMousePos2(&x, &y);
 		ui.log_textEdit->appendText(QStringLiteral("读取当前鼠标所在坐标  返回坐标在x、y中 ,返回值=(%1,%2)").arg(x).arg(y));
 		});
 	connect(ui.M_MoveTo2_btn, &QPushButton::clicked, this, [this]() {
 		int x = ui.inOne_x_edit->text().toInt();
 		int y = ui.inOne_y_edit->text().toInt();
-		int ret = M_MoveTo2(box_handle, x, y);
+		int ret = mSDKWrapper.M_MoveTo2(box_handle, x, y);
 		ui.log_textEdit->appendText(QStringLiteral("指定坐标 ,返回值=%1").arg(ret));
-		int ret1 = M_GetCurrMousePos2(&x, &y);
+		int ret1 = mSDKWrapper.M_GetCurrMousePos2(&x, &y);
 		ui.log_textEdit->appendText(QStringLiteral("读取当前鼠标所在坐标  返回坐标在x、y中 ,返回值=(%1,%2)").arg(x).arg(y));
 		});
 	connect(ui.M_GetCurrMousePos2_btn, &QPushButton::clicked, this, [this]() {
 		int x;
 		int y;
-		int ret1 = M_GetCurrMousePos2(&x, &y);
+		int ret1 = mSDKWrapper.M_GetCurrMousePos2(&x, &y);
 		ui.log_textEdit->appendText(QStringLiteral("读取当前鼠标所在坐标  返回坐标在x、y中 ,返回值=(%1,%2)").arg(x).arg(y));
 		});
 	//以下接口将使用绝对移动功能。该功能目前还不能支持安卓
 
 	connect(ui.M_ResolutionUsed_btn, &QPushButton::clicked, this, [this]() {
-		int ret1 = M_ResolutionUsed(box_handle ,STATICVar->screen_width, STATICVar->screen_height);
+		int ret1 = mSDKWrapper.M_ResolutionUsed(box_handle ,STATICVar->screen_width, STATICVar->screen_height);
 		if (ret1 == -10) {ui.log_textEdit->appendText(QStringLiteral("盒子不支持绝对移动"));}
 		else if (ret1 == 0) {ui.log_textEdit->appendText(QStringLiteral("盒子支持绝对移动"));}	
 		});
 	connect(ui.M_MoveTo3_btn, &QPushButton::clicked, this, [this]() {
 		int x = ui.inOne_x_edit->text().toInt();
 		int y = ui.inOne_y_edit->text().toInt();
-		int ret = M_MoveTo3(box_handle, x, y);
+		int ret = mSDKWrapper.M_MoveTo3(box_handle, x, y);
 		ui.log_textEdit->appendText(QStringLiteral("指定移动,返回值=%1").arg(ret)); 
-		int ret1 = M_GetCurrMousePos(box_handle ,&x, &y);
+		int ret1 = mSDKWrapper.M_GetCurrMousePos(box_handle ,&x, &y);
 		ui.log_textEdit->appendText(QStringLiteral("读取当前鼠标所在坐标  返回坐标在x、y中 ,返回值=(%1,%2)").arg(x).arg(y));
 		});
 	connect(ui.M_MoveTo3_D_btn, &QPushButton::clicked, this, [this]() {
 		int x = ui.inOne_x_edit->text().toInt();
 		int y = ui.inOne_y_edit->text().toInt();
-		int ret = M_MoveTo3_D(box_handle, x, y);
+		int ret = mSDKWrapper.M_MoveTo3_D(box_handle, x, y);
 		ui.log_textEdit->appendText(QStringLiteral("无轨迹移动,返回值=%1").arg(ret));
-		int ret1 = M_GetCurrMousePos(box_handle, &x, &y);
+		int ret1 = mSDKWrapper.M_GetCurrMousePos(box_handle, &x, &y);
 		ui.log_textEdit->appendText(QStringLiteral("读取当前鼠标所在坐标  返回坐标在x、y中 ,返回值=(%1,%2)").arg(x).arg(y));
 		});
 	connect(ui.M_Delay_btn, &QPushButton::clicked, this, [this]() {
 		int time = ui.time_edit->text().toInt();
-		int ret1 = M_Delay(time);
+		int ret1 = mSDKWrapper.M_Delay(time);
 		ui.log_textEdit->appendText(QStringLiteral("设置延时,返回值=%1").arg(ret1));
 		});
 	connect(ui.M_DelayRandom_btn, &QPushButton::clicked, this, [this]() {
 		int minTime = ui.Min_time_edit->text().toInt();
 		int maxTime= ui.Max_time_edit->text().toInt();
-		int ret1 = M_DelayRandom(minTime, maxTime);
+		int ret1 = mSDKWrapper.M_DelayRandom(minTime, maxTime);
 		ui.log_textEdit->appendText(QStringLiteral("设置随机延时,返回值=%1").arg(ret1));
 		});
 	connect(ui.M_RandDomNbr_btn, &QPushButton::clicked, this, [this]() {
 		int minTime = ui.Min_time_edit->text().toInt();
 		int maxTime = ui.Max_time_edit->text().toInt();
-		int ret1 = M_RandDomNbr(minTime, maxTime);
+		int ret1 = mSDKWrapper.M_RandDomNbr(minTime, maxTime);
 		ui.log_textEdit->appendText(QStringLiteral("在最小最大值之间取随机数,返回值=%1").arg(ret1));
 		});
 }

@@ -9,11 +9,11 @@ class SqlToolPool
 {
 public:
     ~SqlToolPool();
-    static void release(); // ¹Ø±ÕËùÓÐµÄÊý¾Ý¿âÁ¬½Ó
-    static QSqlDatabase openConnection();                 // »ñÈ¡Êý¾Ý¿âÁ¬½Ó
+    static void release(); // ï¿½Ø±ï¿½ï¿½ï¿½ï¿½Ðµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
+    static QSqlDatabase openConnection();                 // ï¿½ï¿½È¡ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
     static void closeConnection(QSqlDatabase connection);
     static void test();
-    // ÊÍ·ÅÊý¾Ý¿âÁ¬½Ó»ØÁ¬½Ó³Ø
+    // ï¿½Í·ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½Ó»ï¿½ï¿½ï¿½ï¿½Ó³ï¿½
     static bool insertData(const QString sqlStr);
     static bool updateData(const QString sqlStr);
     static bool selectData(const QString sqlStr, QList<QMap<QString, QVariant>>& valuesList);
@@ -25,21 +25,21 @@ private:
     SqlToolPool();
     SqlToolPool(const SqlToolPool& other);
     SqlToolPool& operator=(const SqlToolPool& other);
-    QSqlDatabase createConnection(const QString& connectionName); // ´´½¨Êý¾Ý¿âÁ¬½Ó
-    QQueue<QString> usedConnectionNames;   // ÒÑÊ¹ÓÃµÄÊý¾Ý¿âÁ¬½ÓÃû
-    QQueue<QString> unusedConnectionNames; // Î´Ê¹ÓÃµÄÊý¾Ý¿âÁ¬½ÓÃû 
-   // QQueue<QMap<QString, int>> usedConnectionNames;   // ÒÑÊ¹ÓÃµÄÊý¾Ý¿âÁ¬½ÓÃû¶¨Ê±¹Ø±Õ
-   // QQueue<QMap<QString, int>> unusedConnectionNames; // Î´Ê¹ÓÃµÄÊý¾Ý¿âÁ¬½ÓÃû¶¨Ê±¹Ø±Õ  
+    QSqlDatabase createConnection(const QString& connectionName); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½
+    QQueue<QString> usedConnectionNames;   // ï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+    QQueue<QString> unusedConnectionNames; // Î´Ê¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 
+   // QQueue<QMap<QString, int>> usedConnectionNames;   // ï¿½ï¿½Ê¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ø±ï¿½
+   // QQueue<QMap<QString, int>> unusedConnectionNames; // Î´Ê¹ï¿½Ãµï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Ø±ï¿½  
     QString hostName;
     QString databaseName;
     QString username;
     QString password;
     QString databaseType;
-    bool    testOnBorrow;    // È¡µÃÁ¬½ÓµÄÊ±ºòÑéÖ¤Á¬½ÓÊÇ·ñÓÐÐ§
-    QString testOnBorrowSql; // ²âÊÔ·ÃÎÊÊý¾Ý¿âµÄ SQL
-    int maxWaitTime;  // »ñÈ¡Á¬½Ó×î´óµÈ´ýÊ±¼ä
-    int waitInterval; // ³¢ÊÔ»ñÈ¡Á¬½ÓÊ±µÈ´ý¼ä¸ôÊ±¼ä
-    int maxConnectionCount; // ×î´óÁ¬½ÓÊý
+    bool    testOnBorrow;    // È¡ï¿½ï¿½ï¿½ï¿½ï¿½Óµï¿½Ê±ï¿½ï¿½ï¿½ï¿½Ö¤ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ï¿½ï¿½Ð§
+    QString testOnBorrowSql; // ï¿½ï¿½ï¿½Ô·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ý¿ï¿½ï¿½ SQL
+    int maxWaitTime;  // ï¿½ï¿½È¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È´ï¿½Ê±ï¿½ï¿½
+    int waitInterval; // ï¿½ï¿½ï¿½Ô»ï¿½È¡ï¿½ï¿½ï¿½ï¿½Ê±ï¿½È´ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½
+    int maxConnectionCount; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
     static QWaitCondition waitConnection;
     static QMutex mutex;

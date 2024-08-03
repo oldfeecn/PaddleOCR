@@ -2,7 +2,8 @@
 
 #include <QWidget>
 #include "ui_KeyMouseWidget.h"
-#include "msdk.h"
+//#include "msdk.h"
+#include "MSDKWrapper.h"
 #include <windows.h>
 #include <QDebug>
 #include "EGlobalVariable.h"
@@ -13,6 +14,7 @@ class KeyMouseWidget : public QWidget
 	Q_OBJECT
 
 public:
+	MSDKWrapper mSDKWrapper;
 	KeyMouseWidget(QWidget* parent = Q_NULLPTR);
 	void InitConnect();
 	void InitKeyMouseThread();
@@ -32,4 +34,5 @@ signals:
 	void sendStartKMThreadState(int  state);//鼠标键盘消息
 private:
 	Ui::KeyMouseWidget ui;
+	
 };

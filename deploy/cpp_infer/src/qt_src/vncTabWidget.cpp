@@ -7,7 +7,9 @@ vncTabWidget::vncTabWidget(QWidget *parent)
    
 	ui.setupUi(this);
    	ui.vncDisConnectbtn->setDisabled(true);
-	SqlToolPool::test();
+    
+    ui.vnc_widget->changeImgPath(ui.SaveImg_lineEdit->text());
+	//SqlToolPool::test();
 	//连接截图
     connect(ui.vncConnectbtn, &QPushButton::clicked,
 		 this, [this](bool checked) {
@@ -27,11 +29,16 @@ vncTabWidget::vncTabWidget(QWidget *parent)
             vmPath = "D:\\神盾虚拟机\\810648297\\810648297.vmx";
             startVM(vmPath);
 		});
-    //启动虚拟机
+    //移动虚拟机
     connect(ui.moveVMBtn, &QPushButton::clicked,
         this, [this](bool checked) {
             moveVMAndMoveToScreen(2);
-		});   
+		});  
+    //复位虚拟机
+    connect(ui.moveVMBtn2, &QPushButton::clicked,
+        this, [this](bool checked) {
+            moveVMAndMoveToScreen(0);
+        });
          //连接键盘
     connect(ui.keyMouseBtnOpen, &QPushButton::clicked,
         this, [this](bool checked) {
@@ -42,11 +49,15 @@ vncTabWidget::vncTabWidget(QWidget *parent)
         this, [this](bool checked) {
             ui.vnc_widget->CloseVIDPID();
 		});   
-
+          //图片保存路径
+    connect(ui.SaveImg_lineEdit, &QLineEdit::textChanged,
+        this, [this](QString path) {
+            ui.vnc_widget->imgPath=path;
+		});   
     
 }
-void vncTabWidget::moveVMAndMoveToScreen(int screenIndex) {
-    findWindowByTitle(QString("810648297 - VMware Workstation"));
+void vncTabWidget::moveVMAndMoveToScreen(int screenIndex=2) {
+    findWindowByTitle(QString("810648297 - VMware Workstation"),screenIndex);
 }
 void vncTabWidget::startVM(const QString& vmPath) {
         // 启动虚拟机
@@ -56,7 +67,9 @@ void vncTabWidget::startVM(const QString& vmPath) {
 // 回调函数，用于枚举窗口
 BOOL CALLBACK EnumWindowsProc(HWND hwnd, LPARAM lParam) {
     // lParam 传递的是指向 QString 的指针
-    QString* targetTitle = reinterpret_cast<QString*>(lParam);
+    auto* params = reinterpret_cast<std::pair<QString*, int>*>(lParam);
+    QString* targetTitle =  params->first;
+    int monitorIndex = params->second;
 
     wchar_t windowTitle[256];
     GetWindowTextW(hwnd, windowTitle, sizeof(windowTitle) / sizeof(wchar_t));
@@ -66,7 +79,7 @@ BOOL CALLBACK EnumWindowsProc(HWND hwnd, LPARAM lParam) {
     if (currentTitle.contains(*targetTitle, Qt::CaseInsensitive)) {
         qDebug() << "找到包含目标子串的窗口句柄:" << hwnd << "标题:" << currentTitle;
         // 获取第三显示屏的矩形区域
-        RECT monitorRect = getMonitors()[2]; // 第三显示屏的索引是2（从0开始计数）
+        RECT monitorRect = getMonitors()[monitorIndex]; // 第三显示屏的索引是2（从0开始计数）
 
         // 确保获取到有效的显示器矩形区域
         if (monitorRect.right > monitorRect.left && monitorRect.bottom > monitorRect.top) {
@@ -108,9 +121,15 @@ std::vector<RECT> getMonitors() {
 
     return monitors;
 }
-void findWindowByTitle(const QString& title) {
-    // 将 QString 转换为 LPARAM（指针）
-    EnumWindows(EnumWindowsProc, reinterpret_cast<LPARAM>(&title));
+// 定义一个结构体来存储参数
+struct EnumParams {
+    QString* targetTitle;
+    int monitorIndex;
+};
+// 查找窗口并处理
+void vncTabWidget::findWindowByTitle(QString title, int monitorIndex) {
+    EnumParams params = { &title, monitorIndex };
+    EnumWindows(EnumWindowsProc, reinterpret_cast<LPARAM>(&params));
 }
 
 vncTabWidget::~vncTabWidget()

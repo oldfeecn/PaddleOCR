@@ -54,7 +54,7 @@
        <enum>QTabWidget::Triangular</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>3</number>
       </property>
       <property name="tabsClosable">
        <bool>false</bool>
@@ -75,6 +75,11 @@
       <widget class="vncTabWidget" name="vnc_tab">
        <attribute name="title">
         <string>VNC</string>
+       </attribute>
+      </widget>
+      <widget class="ImgTabWidget" name="tab">
+       <attribute name="title">
+        <string>图片处理</string>
        </attribute>
       </widget>
      </widget>
@@ -106,6 +111,12 @@
    <class>KeyMouseWidget</class>
    <extends>QWidget</extends>
    <header>KeyMouseWidget.h</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>ImgTabWidget</class>
+   <extends>QWidget</extends>
+   <header>ImgTabWidget.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

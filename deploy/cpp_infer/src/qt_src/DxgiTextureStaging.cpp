@@ -4,22 +4,28 @@
 DxgiTextureStaging::DxgiTextureStaging(ID3D11Device *device, ID3D11DeviceContext *context)
     : m_device(device), m_context(context), m_texture(nullptr)
 {
-    if (m_device) m_device->AddRef();
-    if (m_context) m_context->AddRef();
+    if (m_device)
+        m_device->AddRef();
+    if (m_context)
+        m_context->AddRef();
 }
 
 DxgiTextureStaging::~DxgiTextureStaging()
 {
-    if (m_texture) m_texture->Release();
-    if (m_device) m_device->Release();
-    if (m_context) m_context->Release();
+    if (m_texture)
+        m_texture->Release();
+    if (m_device)
+        m_device->Release();
+    if (m_context)
+        m_context->Release();
 }
 
 QPixmap DxgiTextureStaging::copyToImage(IDXGIResource *res)
 {
     ID3D11Texture2D *textureRes = nullptr;
     HRESULT hr = res->QueryInterface(__uuidof(ID3D11Texture2D), reinterpret_cast<void **>(&textureRes));
-    if (FAILED(hr)) {
+    if (FAILED(hr))
+    {
         qDebug() << "Failed to ID3D11Texture2D result =" << QString::number(hr, 16);
         return QPixmap();
     }
@@ -40,7 +46,8 @@ QPixmap DxgiTextureStaging::copyToImage(IDXGIResource *res)
     texDesc.CPUAccessFlags = D3D11_CPU_ACCESS_READ;
 
     hr = m_device->CreateTexture2D(&texDesc, nullptr, &m_texture);
-    if (FAILED(hr)) {
+    if (FAILED(hr))
+    {
         qDebug() << "Failed to CreateTexture2D result =" << QString::number(hr, 16);
         textureRes->Release();
         return QPixmap();
@@ -50,7 +57,8 @@ QPixmap DxgiTextureStaging::copyToImage(IDXGIResource *res)
 
     IDXGISurface1 *surface = nullptr;
     hr = m_texture->QueryInterface(__uuidof(IDXGISurface1), reinterpret_cast<void **>(&surface));
-    if (FAILED(hr)) {
+    if (FAILED(hr))
+    {
         qDebug() << "Failed to QueryInterface IDXGISurface1 ErrorCode =" << QString::number(hr, 16);
         textureRes->Release();
         m_texture->Release();
@@ -59,7 +67,8 @@ QPixmap DxgiTextureStaging::copyToImage(IDXGIResource *res)
 
     DXGI_MAPPED_RECT map;
     hr = surface->Map(&map, DXGI_MAP_READ);
-    if (FAILED(hr)) {
+    if (FAILED(hr))
+    {
         qDebug() << "Failed to Map surface ErrorCode =" << QString::number(hr, 16);
         surface->Release();
         textureRes->Release();

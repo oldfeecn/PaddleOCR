@@ -24,7 +24,7 @@ class PPOCR {
 public:
   explicit PPOCR();
   ~PPOCR() = default;
-
+  void reInit();
   std::vector<std::vector<OCRPredictResult>> ocr(std::vector<cv::Mat> img_list,
                                                  bool det = true,
                                                  bool rec = true,

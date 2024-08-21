@@ -323,12 +323,12 @@ if (WIN32 AND WITH_MKL)
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PADDLE_LIB}/third_party/install/mklml/lib/mklml.dll ./release/mklml.dll
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PADDLE_LIB}/third_party/install/mklml/lib/libiomp5md.dll ./release/libiomp5md.dll
         COMMAND ${CMAKE_COMMAND} -E copy_if_different ${PADDLE_LIB}/third_party/install/mkldnn/lib/mkldnn.dll ./release/mkldnn.dll
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_det_shape.txt ./release/trt_det_shape.txt
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_rec_shape.txt ./release/trt_rec_shape.txt
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_rec_shape.txt ./release/trt_cls_shape.txt
+        #COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_det_shape.txt ./release/trt_det_shape.txt
+        #COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_rec_shape.txt ./release/trt_rec_shape.txt
+        #COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/trt_rec_shape.txt ./release/trt_cls_shape.txt
         #COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/src/dll/DeviceManager.dll ./release/DeviceManager.dll
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/src/dll/msdk.dll ./release/msdk.dll
-        COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/src/dll/msdk.lib ./release/msdk.lib
+        #COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/src/dll/msdk.dll ./release/msdk.dll
+        #COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_SOURCE_DIR}/src/dll/msdk.lib ./release/msdk.lib
     )
 endif()
 

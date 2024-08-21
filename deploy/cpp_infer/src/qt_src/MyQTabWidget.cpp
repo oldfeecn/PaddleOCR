@@ -3,14 +3,13 @@
 MyQTabWidget::MyQTabWidget(QWidget *parent)
 	: QTabWidget(parent)
 {
-	//setStyleSheet("background-color:#FFFFCC");
+	// setStyleSheet("background-color:#FFFFCC");
 }
 
 MyQTabWidget::~MyQTabWidget()
-{}
+{
+}
 
 void MyQTabWidget::Init()
 {
-    
-
 }

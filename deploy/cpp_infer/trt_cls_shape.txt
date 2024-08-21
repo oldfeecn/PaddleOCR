@@ -1,11 +1,5 @@
 shape_range_info {
-  name: "batch_norm_0.b_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_0.tmp_3"
+  name: "batch_norm_0.tmp_2"
   min_shape: 1
   min_shape: 8
   min_shape: 24
@@ -20,31 +14,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_0.w_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_0.w_1"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_0.w_2"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_1.b_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_1.tmp_3"
+  name: "batch_norm_1.tmp_2"
   min_shape: 1
   min_shape: 8
   min_shape: 24
@@ -59,31 +29,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_1.w_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_1.w_1"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_1.w_2"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_10.b_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_10.tmp_3"
+  name: "batch_norm_10.tmp_2"
   min_shape: 1
   min_shape: 32
   min_shape: 6
@@ -98,31 +44,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_10.w_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_10.w_1"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_10.w_2"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_11.b_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_11.tmp_3"
+  name: "batch_norm_11.tmp_2"
   min_shape: 1
   min_shape: 32
   min_shape: 3
@@ -137,31 +59,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_11.w_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_11.w_1"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_11.w_2"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_12.b_0"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_12.tmp_3"
+  name: "batch_norm_12.tmp_2"
   min_shape: 1
   min_shape: 16
   min_shape: 3
@@ -176,109 +74,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_12.w_0"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_12.w_1"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_12.w_2"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_13.b_0"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_13.tmp_3"
-  min_shape: 1
-  min_shape: 88
-  min_shape: 3
-  min_shape: 96
-  max_shape: 1
-  max_shape: 88
-  max_shape: 3
-  max_shape: 96
-  opt_shape: 1
-  opt_shape: 88
-  opt_shape: 3
-  opt_shape: 96
-}
-shape_range_info {
-  name: "batch_norm_13.w_0"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_13.w_1"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_13.w_2"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_14.b_0"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_14.tmp_3"
-  min_shape: 1
-  min_shape: 88
-  min_shape: 3
-  min_shape: 96
-  max_shape: 1
-  max_shape: 88
-  max_shape: 3
-  max_shape: 96
-  opt_shape: 1
-  opt_shape: 88
-  opt_shape: 3
-  opt_shape: 96
-}
-shape_range_info {
-  name: "batch_norm_14.w_0"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_14.w_1"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_14.w_2"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_15.b_0"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_15.tmp_3"
+  name: "batch_norm_12.tmp_2.quantized.dequantized"
   min_shape: 1
   min_shape: 16
   min_shape: 3
@@ -293,31 +89,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_15.w_0"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_15.w_1"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_15.w_2"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_16.b_0"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_16.tmp_3"
+  name: "batch_norm_13.tmp_2"
   min_shape: 1
   min_shape: 88
   min_shape: 3
@@ -332,31 +104,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_16.w_0"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_16.w_1"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_16.w_2"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_17.b_0"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_17.tmp_3"
+  name: "batch_norm_14.tmp_2"
   min_shape: 1
   min_shape: 88
   min_shape: 3
@@ -371,31 +119,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_17.w_0"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_17.w_1"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_17.w_2"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "batch_norm_18.b_0"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_18.tmp_3"
+  name: "batch_norm_15.tmp_2"
   min_shape: 1
   min_shape: 16
   min_shape: 3
@@ -410,31 +134,52 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_18.w_0"
+  name: "batch_norm_16.tmp_2"
+  min_shape: 1
+  min_shape: 88
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 88
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 88
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
+  name: "batch_norm_17.tmp_2"
+  min_shape: 1
+  min_shape: 88
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 88
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 88
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
+  name: "batch_norm_18.tmp_2"
+  min_shape: 1
   min_shape: 16
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
   max_shape: 16
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
   opt_shape: 16
+  opt_shape: 3
+  opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_18.w_1"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_18.w_2"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_19.b_0"
-  min_shape: 40
-  max_shape: 40
-  opt_shape: 40
-}
-shape_range_info {
-  name: "batch_norm_19.tmp_3"
+  name: "batch_norm_19.tmp_2"
   min_shape: 1
   min_shape: 40
   min_shape: 3
@@ -449,31 +194,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_19.w_0"
-  min_shape: 40
-  max_shape: 40
-  opt_shape: 40
-}
-shape_range_info {
-  name: "batch_norm_19.w_1"
-  min_shape: 40
-  max_shape: 40
-  opt_shape: 40
-}
-shape_range_info {
-  name: "batch_norm_19.w_2"
-  min_shape: 40
-  max_shape: 40
-  opt_shape: 40
-}
-shape_range_info {
-  name: "batch_norm_2.b_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_2.tmp_3"
+  name: "batch_norm_2.tmp_2"
   min_shape: 1
   min_shape: 8
   min_shape: 12
@@ -488,31 +209,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_2.w_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_2.w_1"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_2.w_2"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_20.b_0"
-  min_shape: 40
-  max_shape: 40
-  opt_shape: 40
-}
-shape_range_info {
-  name: "batch_norm_20.tmp_3"
+  name: "batch_norm_20.tmp_2"
   min_shape: 1
   min_shape: 40
   min_shape: 3
@@ -527,31 +224,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_20.w_0"
-  min_shape: 40
-  max_shape: 40
-  opt_shape: 40
-}
-shape_range_info {
-  name: "batch_norm_20.w_1"
-  min_shape: 40
-  max_shape: 40
-  opt_shape: 40
-}
-shape_range_info {
-  name: "batch_norm_20.w_2"
-  min_shape: 40
-  max_shape: 40
-  opt_shape: 40
-}
-shape_range_info {
-  name: "batch_norm_21.b_0"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_21.tmp_3"
+  name: "batch_norm_21.tmp_2"
   min_shape: 1
   min_shape: 16
   min_shape: 3
@@ -566,31 +239,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_21.w_0"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_21.w_1"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_21.w_2"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_22.b_0"
-  min_shape: 48
-  max_shape: 48
-  opt_shape: 48
-}
-shape_range_info {
-  name: "batch_norm_22.tmp_3"
+  name: "batch_norm_22.tmp_2"
   min_shape: 1
   min_shape: 48
   min_shape: 3
@@ -605,31 +254,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_22.w_0"
-  min_shape: 48
-  max_shape: 48
-  opt_shape: 48
-}
-shape_range_info {
-  name: "batch_norm_22.w_1"
-  min_shape: 48
-  max_shape: 48
-  opt_shape: 48
-}
-shape_range_info {
-  name: "batch_norm_22.w_2"
-  min_shape: 48
-  max_shape: 48
-  opt_shape: 48
-}
-shape_range_info {
-  name: "batch_norm_23.b_0"
-  min_shape: 48
-  max_shape: 48
-  opt_shape: 48
-}
-shape_range_info {
-  name: "batch_norm_23.tmp_3"
+  name: "batch_norm_23.tmp_2"
   min_shape: 1
   min_shape: 48
   min_shape: 3
@@ -644,31 +269,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_23.w_0"
-  min_shape: 48
-  max_shape: 48
-  opt_shape: 48
-}
-shape_range_info {
-  name: "batch_norm_23.w_1"
-  min_shape: 48
-  max_shape: 48
-  opt_shape: 48
-}
-shape_range_info {
-  name: "batch_norm_23.w_2"
-  min_shape: 48
-  max_shape: 48
-  opt_shape: 48
-}
-shape_range_info {
-  name: "batch_norm_24.b_0"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_24.tmp_3"
+  name: "batch_norm_24.tmp_2"
   min_shape: 1
   min_shape: 16
   min_shape: 3
@@ -683,31 +284,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_24.w_0"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_24.w_1"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_24.w_2"
-  min_shape: 16
-  max_shape: 16
-  opt_shape: 16
-}
-shape_range_info {
-  name: "batch_norm_25.b_0"
-  min_shape: 104
-  max_shape: 104
-  opt_shape: 104
-}
-shape_range_info {
-  name: "batch_norm_25.tmp_3"
+  name: "batch_norm_25.tmp_2"
   min_shape: 1
   min_shape: 104
   min_shape: 3
@@ -722,31 +299,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_25.w_0"
-  min_shape: 104
-  max_shape: 104
-  opt_shape: 104
-}
-shape_range_info {
-  name: "batch_norm_25.w_1"
-  min_shape: 104
-  max_shape: 104
-  opt_shape: 104
-}
-shape_range_info {
-  name: "batch_norm_25.w_2"
-  min_shape: 104
-  max_shape: 104
-  opt_shape: 104
-}
-shape_range_info {
-  name: "batch_norm_26.b_0"
-  min_shape: 104
-  max_shape: 104
-  opt_shape: 104
-}
-shape_range_info {
-  name: "batch_norm_26.tmp_3"
+  name: "batch_norm_26.tmp_2"
   min_shape: 1
   min_shape: 104
   min_shape: 2
@@ -761,31 +314,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_26.w_0"
-  min_shape: 104
-  max_shape: 104
-  opt_shape: 104
-}
-shape_range_info {
-  name: "batch_norm_26.w_1"
-  min_shape: 104
-  max_shape: 104
-  opt_shape: 104
-}
-shape_range_info {
-  name: "batch_norm_26.w_2"
-  min_shape: 104
-  max_shape: 104
-  opt_shape: 104
-}
-shape_range_info {
-  name: "batch_norm_27.b_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_27.tmp_3"
+  name: "batch_norm_27.tmp_2"
   min_shape: 1
   min_shape: 32
   min_shape: 2
@@ -800,31 +329,22 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_27.w_0"
+  name: "batch_norm_27.tmp_2.quantized.dequantized"
+  min_shape: 1
   min_shape: 32
+  min_shape: 2
+  min_shape: 96
+  max_shape: 1
   max_shape: 32
+  max_shape: 2
+  max_shape: 96
+  opt_shape: 1
   opt_shape: 32
+  opt_shape: 2
+  opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_27.w_1"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_27.w_2"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_28.b_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_28.tmp_3"
+  name: "batch_norm_28.tmp_2"
   min_shape: 1
   min_shape: 200
   min_shape: 2
@@ -839,31 +359,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_28.w_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_28.w_1"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_28.w_2"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_29.b_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_29.tmp_3"
+  name: "batch_norm_29.tmp_2"
   min_shape: 1
   min_shape: 200
   min_shape: 2
@@ -878,31 +374,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_29.w_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_29.w_1"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_29.w_2"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_3.b_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_3.tmp_3"
+  name: "batch_norm_3.tmp_2"
   min_shape: 1
   min_shape: 8
   min_shape: 12
@@ -917,31 +389,22 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_3.w_0"
+  name: "batch_norm_3.tmp_2.quantized.dequantized"
+  min_shape: 1
   min_shape: 8
+  min_shape: 12
+  min_shape: 96
+  max_shape: 1
   max_shape: 8
+  max_shape: 12
+  max_shape: 96
+  opt_shape: 1
   opt_shape: 8
+  opt_shape: 12
+  opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_3.w_1"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_3.w_2"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_30.b_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_30.tmp_3"
+  name: "batch_norm_30.tmp_2"
   min_shape: 1
   min_shape: 32
   min_shape: 2
@@ -956,31 +419,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_30.w_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_30.w_1"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_30.w_2"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_31.b_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_31.tmp_3"
+  name: "batch_norm_31.tmp_2"
   min_shape: 1
   min_shape: 200
   min_shape: 2
@@ -995,31 +434,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_31.w_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_31.w_1"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_31.w_2"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_32.b_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_32.tmp_3"
+  name: "batch_norm_32.tmp_2"
   min_shape: 1
   min_shape: 200
   min_shape: 2
@@ -1034,31 +449,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_32.w_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_32.w_1"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_32.w_2"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_33.b_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_33.tmp_3"
+  name: "batch_norm_33.tmp_2"
   min_shape: 1
   min_shape: 32
   min_shape: 2
@@ -1073,31 +464,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_33.w_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_33.w_1"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_33.w_2"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_34.b_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_34.tmp_3"
+  name: "batch_norm_34.tmp_2"
   min_shape: 1
   min_shape: 200
   min_shape: 2
@@ -1112,31 +479,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_34.w_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_34.w_1"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_34.w_2"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "batch_norm_4.b_0"
-  min_shape: 24
-  max_shape: 24
-  opt_shape: 24
-}
-shape_range_info {
-  name: "batch_norm_4.tmp_3"
+  name: "batch_norm_4.tmp_2"
   min_shape: 1
   min_shape: 24
   min_shape: 12
@@ -1151,31 +494,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_4.w_0"
-  min_shape: 24
-  max_shape: 24
-  opt_shape: 24
-}
-shape_range_info {
-  name: "batch_norm_4.w_1"
-  min_shape: 24
-  max_shape: 24
-  opt_shape: 24
-}
-shape_range_info {
-  name: "batch_norm_4.w_2"
-  min_shape: 24
-  max_shape: 24
-  opt_shape: 24
-}
-shape_range_info {
-  name: "batch_norm_5.b_0"
-  min_shape: 24
-  max_shape: 24
-  opt_shape: 24
-}
-shape_range_info {
-  name: "batch_norm_5.tmp_3"
+  name: "batch_norm_5.tmp_2"
   min_shape: 1
   min_shape: 24
   min_shape: 6
@@ -1190,31 +509,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_5.w_0"
-  min_shape: 24
-  max_shape: 24
-  opt_shape: 24
-}
-shape_range_info {
-  name: "batch_norm_5.w_1"
-  min_shape: 24
-  max_shape: 24
-  opt_shape: 24
-}
-shape_range_info {
-  name: "batch_norm_5.w_2"
-  min_shape: 24
-  max_shape: 24
-  opt_shape: 24
-}
-shape_range_info {
-  name: "batch_norm_6.b_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_6.tmp_3"
+  name: "batch_norm_6.tmp_2"
   min_shape: 1
   min_shape: 8
   min_shape: 6
@@ -1229,109 +524,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_6.w_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_6.w_1"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_6.w_2"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_7.b_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_7.tmp_3"
-  min_shape: 1
-  min_shape: 32
-  min_shape: 6
-  min_shape: 96
-  max_shape: 1
-  max_shape: 32
-  max_shape: 6
-  max_shape: 96
-  opt_shape: 1
-  opt_shape: 32
-  opt_shape: 6
-  opt_shape: 96
-}
-shape_range_info {
-  name: "batch_norm_7.w_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_7.w_1"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_7.w_2"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_8.b_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_8.tmp_3"
-  min_shape: 1
-  min_shape: 32
-  min_shape: 6
-  min_shape: 96
-  max_shape: 1
-  max_shape: 32
-  max_shape: 6
-  max_shape: 96
-  opt_shape: 1
-  opt_shape: 32
-  opt_shape: 6
-  opt_shape: 96
-}
-shape_range_info {
-  name: "batch_norm_8.w_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_8.w_1"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_8.w_2"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "batch_norm_9.b_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_9.tmp_3"
+  name: "batch_norm_6.tmp_2.quantized.dequantized"
   min_shape: 1
   min_shape: 8
   min_shape: 6
@@ -1346,571 +539,76 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "batch_norm_9.w_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_9.w_1"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "batch_norm_9.w_2"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "conv2d_0.w_0"
-  min_shape: 8
-  min_shape: 3
-  min_shape: 3
-  min_shape: 3
-  max_shape: 8
-  max_shape: 3
-  max_shape: 3
-  max_shape: 3
-  opt_shape: 8
-  opt_shape: 3
-  opt_shape: 3
-  opt_shape: 3
-}
-shape_range_info {
-  name: "conv2d_1.w_0"
-  min_shape: 8
-  min_shape: 8
+  name: "batch_norm_7.tmp_2"
   min_shape: 1
-  min_shape: 1
-  max_shape: 8
-  max_shape: 8
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 8
-  opt_shape: 8
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_10.w_0"
   min_shape: 32
-  min_shape: 1
-  min_shape: 3
-  min_shape: 3
-  max_shape: 32
+  min_shape: 6
+  min_shape: 96
   max_shape: 1
-  max_shape: 3
-  max_shape: 3
-  opt_shape: 32
+  max_shape: 32
+  max_shape: 6
+  max_shape: 96
   opt_shape: 1
-  opt_shape: 3
-  opt_shape: 3
+  opt_shape: 32
+  opt_shape: 6
+  opt_shape: 96
 }
 shape_range_info {
-  name: "conv2d_11.w_0"
-  min_shape: 8
+  name: "batch_norm_8.tmp_2"
+  min_shape: 1
   min_shape: 32
-  min_shape: 1
-  min_shape: 1
-  max_shape: 8
+  min_shape: 6
+  min_shape: 96
+  max_shape: 1
   max_shape: 32
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 8
+  max_shape: 6
+  max_shape: 96
+  opt_shape: 1
   opt_shape: 32
-  opt_shape: 1
-  opt_shape: 1
+  opt_shape: 6
+  opt_shape: 96
 }
 shape_range_info {
-  name: "conv2d_12.w_0"
-  min_shape: 32
+  name: "batch_norm_9.tmp_2"
+  min_shape: 1
   min_shape: 8
-  min_shape: 1
-  min_shape: 1
-  max_shape: 32
+  min_shape: 6
+  min_shape: 96
+  max_shape: 1
   max_shape: 8
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 32
+  max_shape: 6
+  max_shape: 96
+  opt_shape: 1
   opt_shape: 8
-  opt_shape: 1
-  opt_shape: 1
+  opt_shape: 6
+  opt_shape: 96
 }
 shape_range_info {
-  name: "conv2d_13.w_0"
-  min_shape: 32
-  min_shape: 1
-  min_shape: 5
-  min_shape: 5
-  max_shape: 32
-  max_shape: 1
-  max_shape: 5
-  max_shape: 5
-  opt_shape: 32
-  opt_shape: 1
-  opt_shape: 5
-  opt_shape: 5
-}
-shape_range_info {
-  name: "conv2d_14.b_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "conv2d_14.w_0"
-  min_shape: 8
-  min_shape: 32
-  min_shape: 1
-  min_shape: 1
-  max_shape: 8
-  max_shape: 32
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 8
-  opt_shape: 32
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_15.b_0"
-  min_shape: 32
-  max_shape: 32
-  opt_shape: 32
-}
-shape_range_info {
-  name: "conv2d_15.w_0"
-  min_shape: 32
-  min_shape: 8
-  min_shape: 1
-  min_shape: 1
-  max_shape: 32
-  max_shape: 8
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 32
-  opt_shape: 8
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_16.w_0"
-  min_shape: 16
-  min_shape: 32
-  min_shape: 1
-  min_shape: 1
-  max_shape: 16
-  max_shape: 32
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 16
-  opt_shape: 32
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_17.w_0"
-  min_shape: 88
-  min_shape: 16
-  min_shape: 1
-  min_shape: 1
-  max_shape: 88
-  max_shape: 16
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 88
-  opt_shape: 16
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_18.w_0"
-  min_shape: 88
-  min_shape: 1
-  min_shape: 5
-  min_shape: 5
-  max_shape: 88
-  max_shape: 1
-  max_shape: 5
-  max_shape: 5
-  opt_shape: 88
-  opt_shape: 1
-  opt_shape: 5
-  opt_shape: 5
-}
-shape_range_info {
-  name: "conv2d_19.b_0"
-  min_shape: 22
-  max_shape: 22
-  opt_shape: 22
-}
-shape_range_info {
-  name: "conv2d_19.w_0"
-  min_shape: 22
-  min_shape: 88
-  min_shape: 1
-  min_shape: 1
-  max_shape: 22
-  max_shape: 88
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 22
-  opt_shape: 88
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_2.w_0"
-  min_shape: 8
-  min_shape: 1
-  min_shape: 3
-  min_shape: 3
-  max_shape: 8
-  max_shape: 1
-  max_shape: 3
-  max_shape: 3
-  opt_shape: 8
-  opt_shape: 1
-  opt_shape: 3
-  opt_shape: 3
-}
-shape_range_info {
-  name: "conv2d_20.b_0"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "conv2d_20.w_0"
-  min_shape: 88
-  min_shape: 22
-  min_shape: 1
-  min_shape: 1
-  max_shape: 88
-  max_shape: 22
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 88
-  opt_shape: 22
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_21.w_0"
-  min_shape: 16
-  min_shape: 88
-  min_shape: 1
-  min_shape: 1
-  max_shape: 16
-  max_shape: 88
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 16
-  opt_shape: 88
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_22.w_0"
-  min_shape: 88
-  min_shape: 16
-  min_shape: 1
-  min_shape: 1
-  max_shape: 88
-  max_shape: 16
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 88
-  opt_shape: 16
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_23.w_0"
-  min_shape: 88
-  min_shape: 1
-  min_shape: 5
-  min_shape: 5
-  max_shape: 88
-  max_shape: 1
-  max_shape: 5
-  max_shape: 5
-  opt_shape: 88
-  opt_shape: 1
-  opt_shape: 5
-  opt_shape: 5
-}
-shape_range_info {
-  name: "conv2d_24.b_0"
-  min_shape: 22
-  max_shape: 22
-  opt_shape: 22
-}
-shape_range_info {
-  name: "conv2d_24.w_0"
-  min_shape: 22
-  min_shape: 88
-  min_shape: 1
-  min_shape: 1
-  max_shape: 22
-  max_shape: 88
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 22
-  opt_shape: 88
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_25.b_0"
-  min_shape: 88
-  max_shape: 88
-  opt_shape: 88
-}
-shape_range_info {
-  name: "conv2d_25.w_0"
-  min_shape: 88
-  min_shape: 22
-  min_shape: 1
-  min_shape: 1
-  max_shape: 88
-  max_shape: 22
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 88
-  opt_shape: 22
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_26.w_0"
-  min_shape: 16
-  min_shape: 88
-  min_shape: 1
-  min_shape: 1
-  max_shape: 16
-  max_shape: 88
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 16
-  opt_shape: 88
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_27.w_0"
-  min_shape: 40
-  min_shape: 16
-  min_shape: 1
-  min_shape: 1
-  max_shape: 40
-  max_shape: 16
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 40
-  opt_shape: 16
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_28.w_0"
-  min_shape: 40
-  min_shape: 1
-  min_shape: 5
-  min_shape: 5
-  max_shape: 40
-  max_shape: 1
-  max_shape: 5
-  max_shape: 5
-  opt_shape: 40
-  opt_shape: 1
-  opt_shape: 5
-  opt_shape: 5
-}
-shape_range_info {
-  name: "conv2d_29.b_0"
-  min_shape: 10
-  max_shape: 10
-  opt_shape: 10
-}
-shape_range_info {
-  name: "conv2d_29.w_0"
-  min_shape: 10
-  min_shape: 40
-  min_shape: 1
-  min_shape: 1
-  max_shape: 10
-  max_shape: 40
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 10
-  opt_shape: 40
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_3.b_0"
-  min_shape: 2
-  max_shape: 2
-  opt_shape: 2
-}
-shape_range_info {
-  name: "conv2d_3.w_0"
-  min_shape: 2
-  min_shape: 8
-  min_shape: 1
-  min_shape: 1
-  max_shape: 2
-  max_shape: 8
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 2
-  opt_shape: 8
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_30.b_0"
-  min_shape: 40
-  max_shape: 40
-  opt_shape: 40
-}
-shape_range_info {
-  name: "conv2d_30.w_0"
-  min_shape: 40
-  min_shape: 10
-  min_shape: 1
-  min_shape: 1
-  max_shape: 40
-  max_shape: 10
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 40
-  opt_shape: 10
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_31.w_0"
-  min_shape: 16
-  min_shape: 40
-  min_shape: 1
-  min_shape: 1
-  max_shape: 16
-  max_shape: 40
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 16
-  opt_shape: 40
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_32.w_0"
-  min_shape: 48
-  min_shape: 16
-  min_shape: 1
-  min_shape: 1
-  max_shape: 48
-  max_shape: 16
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 48
-  opt_shape: 16
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_33.w_0"
-  min_shape: 48
-  min_shape: 1
-  min_shape: 5
-  min_shape: 5
-  max_shape: 48
-  max_shape: 1
-  max_shape: 5
-  max_shape: 5
-  opt_shape: 48
-  opt_shape: 1
-  opt_shape: 5
-  opt_shape: 5
-}
-shape_range_info {
-  name: "conv2d_34.b_0"
-  min_shape: 12
-  max_shape: 12
-  opt_shape: 12
-}
-shape_range_info {
-  name: "conv2d_34.w_0"
-  min_shape: 12
-  min_shape: 48
-  min_shape: 1
-  min_shape: 1
-  max_shape: 12
-  max_shape: 48
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 12
-  opt_shape: 48
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_35.b_0"
-  min_shape: 48
-  max_shape: 48
-  opt_shape: 48
-}
-shape_range_info {
-  name: "conv2d_35.w_0"
-  min_shape: 48
-  min_shape: 12
-  min_shape: 1
-  min_shape: 1
-  max_shape: 48
-  max_shape: 12
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 48
-  opt_shape: 12
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_36.w_0"
-  min_shape: 16
-  min_shape: 48
-  min_shape: 1
-  min_shape: 1
-  max_shape: 16
-  max_shape: 48
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 16
-  opt_shape: 48
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_37.w_0"
+  name: "conv10_depthwise_bn_mean"
   min_shape: 104
-  min_shape: 16
-  min_shape: 1
-  min_shape: 1
   max_shape: 104
-  max_shape: 16
-  max_shape: 1
-  max_shape: 1
   opt_shape: 104
-  opt_shape: 16
-  opt_shape: 1
-  opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_38.w_0"
+  name: "conv10_depthwise_bn_offset"
+  min_shape: 104
+  max_shape: 104
+  opt_shape: 104
+}
+shape_range_info {
+  name: "conv10_depthwise_bn_scale"
+  min_shape: 104
+  max_shape: 104
+  opt_shape: 104
+}
+shape_range_info {
+  name: "conv10_depthwise_bn_variance"
+  min_shape: 104
+  max_shape: 104
+  opt_shape: 104
+}
+shape_range_info {
+  name: "conv10_depthwise_weights"
   min_shape: 104
   min_shape: 1
   min_shape: 5
@@ -1925,13 +623,136 @@ shape_range_info {
   opt_shape: 5
 }
 shape_range_info {
-  name: "conv2d_39.b_0"
+  name: "conv10_depthwise_weights.quantized.dequantized"
+  min_shape: 104
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 104
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 104
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv10_expand_bn_mean"
+  min_shape: 104
+  max_shape: 104
+  opt_shape: 104
+}
+shape_range_info {
+  name: "conv10_expand_bn_offset"
+  min_shape: 104
+  max_shape: 104
+  opt_shape: 104
+}
+shape_range_info {
+  name: "conv10_expand_bn_scale"
+  min_shape: 104
+  max_shape: 104
+  opt_shape: 104
+}
+shape_range_info {
+  name: "conv10_expand_bn_variance"
+  min_shape: 104
+  max_shape: 104
+  opt_shape: 104
+}
+shape_range_info {
+  name: "conv10_expand_weights"
+  min_shape: 104
+  min_shape: 16
+  min_shape: 1
+  min_shape: 1
+  max_shape: 104
+  max_shape: 16
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 104
+  opt_shape: 16
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv10_expand_weights.quantized.dequantized"
+  min_shape: 104
+  min_shape: 16
+  min_shape: 1
+  min_shape: 1
+  max_shape: 104
+  max_shape: 16
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 104
+  opt_shape: 16
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv10_linear_bn_mean"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv10_linear_bn_offset"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv10_linear_bn_scale"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv10_linear_bn_variance"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv10_linear_weights"
+  min_shape: 32
+  min_shape: 104
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 104
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 104
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv10_linear_weights.quantized.dequantized"
+  min_shape: 32
+  min_shape: 104
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 104
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 104
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv10_se_1_offset"
   min_shape: 26
   max_shape: 26
   opt_shape: 26
 }
 shape_range_info {
-  name: "conv2d_39.w_0"
+  name: "conv10_se_1_weights"
   min_shape: 26
   min_shape: 104
   min_shape: 1
@@ -1946,34 +767,28 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_4.b_0"
-  min_shape: 8
-  max_shape: 8
-  opt_shape: 8
-}
-shape_range_info {
-  name: "conv2d_4.w_0"
-  min_shape: 8
-  min_shape: 2
+  name: "conv10_se_1_weights.quantized.dequantized"
+  min_shape: 26
+  min_shape: 104
   min_shape: 1
   min_shape: 1
-  max_shape: 8
-  max_shape: 2
+  max_shape: 26
+  max_shape: 104
   max_shape: 1
   max_shape: 1
-  opt_shape: 8
-  opt_shape: 2
+  opt_shape: 26
+  opt_shape: 104
   opt_shape: 1
   opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_40.b_0"
+  name: "conv10_se_2_offset"
   min_shape: 104
   max_shape: 104
   opt_shape: 104
 }
 shape_range_info {
-  name: "conv2d_40.w_0"
+  name: "conv10_se_2_weights"
   min_shape: 104
   min_shape: 26
   min_shape: 1
@@ -1988,22 +803,100 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_41.w_0"
-  min_shape: 32
+  name: "conv10_se_2_weights.quantized.dequantized"
   min_shape: 104
+  min_shape: 26
   min_shape: 1
   min_shape: 1
-  max_shape: 32
   max_shape: 104
+  max_shape: 26
   max_shape: 1
   max_shape: 1
-  opt_shape: 32
   opt_shape: 104
+  opt_shape: 26
   opt_shape: 1
   opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_42.w_0"
+  name: "conv11_depthwise_bn_mean"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv11_depthwise_bn_offset"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv11_depthwise_bn_scale"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv11_depthwise_bn_variance"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv11_depthwise_weights"
+  min_shape: 200
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 200
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv11_depthwise_weights.quantized.dequantized"
+  min_shape: 200
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 200
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv11_expand_bn_mean"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv11_expand_bn_offset"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv11_expand_bn_scale"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv11_expand_bn_variance"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv11_expand_weights"
   min_shape: 200
   min_shape: 32
   min_shape: 1
@@ -2018,79 +911,7 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_43.w_0"
-  min_shape: 200
-  min_shape: 1
-  min_shape: 5
-  min_shape: 5
-  max_shape: 200
-  max_shape: 1
-  max_shape: 5
-  max_shape: 5
-  opt_shape: 200
-  opt_shape: 1
-  opt_shape: 5
-  opt_shape: 5
-}
-shape_range_info {
-  name: "conv2d_44.b_0"
-  min_shape: 50
-  max_shape: 50
-  opt_shape: 50
-}
-shape_range_info {
-  name: "conv2d_44.w_0"
-  min_shape: 50
-  min_shape: 200
-  min_shape: 1
-  min_shape: 1
-  max_shape: 50
-  max_shape: 200
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 50
-  opt_shape: 200
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_45.b_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "conv2d_45.w_0"
-  min_shape: 200
-  min_shape: 50
-  min_shape: 1
-  min_shape: 1
-  max_shape: 200
-  max_shape: 50
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 200
-  opt_shape: 50
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_46.w_0"
-  min_shape: 32
-  min_shape: 200
-  min_shape: 1
-  min_shape: 1
-  max_shape: 32
-  max_shape: 200
-  max_shape: 1
-  max_shape: 1
-  opt_shape: 32
-  opt_shape: 200
-  opt_shape: 1
-  opt_shape: 1
-}
-shape_range_info {
-  name: "conv2d_47.w_0"
+  name: "conv11_expand_weights.quantized.dequantized"
   min_shape: 200
   min_shape: 32
   min_shape: 1
@@ -2105,7 +926,157 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_48.w_0"
+  name: "conv11_linear_bn_mean"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv11_linear_bn_offset"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv11_linear_bn_scale"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv11_linear_bn_variance"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv11_linear_weights"
+  min_shape: 32
+  min_shape: 200
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 200
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv11_linear_weights.quantized.dequantized"
+  min_shape: 32
+  min_shape: 200
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 200
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv11_se_1_offset"
+  min_shape: 50
+  max_shape: 50
+  opt_shape: 50
+}
+shape_range_info {
+  name: "conv11_se_1_weights"
+  min_shape: 50
+  min_shape: 200
+  min_shape: 1
+  min_shape: 1
+  max_shape: 50
+  max_shape: 200
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 50
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv11_se_1_weights.quantized.dequantized"
+  min_shape: 50
+  min_shape: 200
+  min_shape: 1
+  min_shape: 1
+  max_shape: 50
+  max_shape: 200
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 50
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv11_se_2_offset"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv11_se_2_weights"
+  min_shape: 200
+  min_shape: 50
+  min_shape: 1
+  min_shape: 1
+  max_shape: 200
+  max_shape: 50
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 200
+  opt_shape: 50
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv11_se_2_weights.quantized.dequantized"
+  min_shape: 200
+  min_shape: 50
+  min_shape: 1
+  min_shape: 1
+  max_shape: 200
+  max_shape: 50
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 200
+  opt_shape: 50
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv12_depthwise_bn_mean"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv12_depthwise_bn_offset"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv12_depthwise_bn_scale"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv12_depthwise_bn_variance"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv12_depthwise_weights"
   min_shape: 200
   min_shape: 1
   min_shape: 5
@@ -2120,13 +1091,136 @@ shape_range_info {
   opt_shape: 5
 }
 shape_range_info {
-  name: "conv2d_49.b_0"
+  name: "conv12_depthwise_weights.quantized.dequantized"
+  min_shape: 200
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 200
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv12_expand_bn_mean"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv12_expand_bn_offset"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv12_expand_bn_scale"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv12_expand_bn_variance"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv12_expand_weights"
+  min_shape: 200
+  min_shape: 32
+  min_shape: 1
+  min_shape: 1
+  max_shape: 200
+  max_shape: 32
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 200
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv12_expand_weights.quantized.dequantized"
+  min_shape: 200
+  min_shape: 32
+  min_shape: 1
+  min_shape: 1
+  max_shape: 200
+  max_shape: 32
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 200
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv12_linear_bn_mean"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv12_linear_bn_offset"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv12_linear_bn_scale"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv12_linear_bn_variance"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv12_linear_weights"
+  min_shape: 32
+  min_shape: 200
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 200
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv12_linear_weights.quantized.dequantized"
+  min_shape: 32
+  min_shape: 200
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 200
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv12_se_1_offset"
   min_shape: 50
   max_shape: 50
   opt_shape: 50
 }
 shape_range_info {
-  name: "conv2d_49.w_0"
+  name: "conv12_se_1_weights"
   min_shape: 50
   min_shape: 200
   min_shape: 1
@@ -2141,7 +1235,190 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_5.w_0"
+  name: "conv12_se_1_weights.quantized.dequantized"
+  min_shape: 50
+  min_shape: 200
+  min_shape: 1
+  min_shape: 1
+  max_shape: 50
+  max_shape: 200
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 50
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv12_se_2_offset"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv12_se_2_weights"
+  min_shape: 200
+  min_shape: 50
+  min_shape: 1
+  min_shape: 1
+  max_shape: 200
+  max_shape: 50
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 200
+  opt_shape: 50
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv12_se_2_weights.quantized.dequantized"
+  min_shape: 200
+  min_shape: 50
+  min_shape: 1
+  min_shape: 1
+  max_shape: 200
+  max_shape: 50
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 200
+  opt_shape: 50
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv1_bn_mean"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv1_bn_offset"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv1_bn_scale"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv1_bn_variance"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv1_weights"
+  min_shape: 8
+  min_shape: 3
+  min_shape: 3
+  min_shape: 3
+  max_shape: 8
+  max_shape: 3
+  max_shape: 3
+  max_shape: 3
+  opt_shape: 8
+  opt_shape: 3
+  opt_shape: 3
+  opt_shape: 3
+}
+shape_range_info {
+  name: "conv1_weights.quantized.dequantized"
+  min_shape: 8
+  min_shape: 3
+  min_shape: 3
+  min_shape: 3
+  max_shape: 8
+  max_shape: 3
+  max_shape: 3
+  max_shape: 3
+  opt_shape: 8
+  opt_shape: 3
+  opt_shape: 3
+  opt_shape: 3
+}
+shape_range_info {
+  name: "conv2_depthwise_bn_mean"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_depthwise_bn_offset"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_depthwise_bn_scale"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_depthwise_bn_variance"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_depthwise_weights"
+  min_shape: 8
+  min_shape: 1
+  min_shape: 3
+  min_shape: 3
+  max_shape: 8
+  max_shape: 1
+  max_shape: 3
+  max_shape: 3
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 3
+  opt_shape: 3
+}
+shape_range_info {
+  name: "conv2_depthwise_weights.quantized.dequantized"
+  min_shape: 8
+  min_shape: 1
+  min_shape: 3
+  min_shape: 3
+  max_shape: 8
+  max_shape: 1
+  max_shape: 3
+  max_shape: 3
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 3
+  opt_shape: 3
+}
+shape_range_info {
+  name: "conv2_expand_bn_mean"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_expand_bn_offset"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_expand_bn_scale"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_expand_bn_variance"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_expand_weights"
   min_shape: 8
   min_shape: 8
   min_shape: 1
@@ -2156,54 +1433,438 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_50.b_0"
-  min_shape: 200
-  max_shape: 200
-  opt_shape: 200
-}
-shape_range_info {
-  name: "conv2d_50.w_0"
-  min_shape: 200
-  min_shape: 50
+  name: "conv2_expand_weights.quantized.dequantized"
+  min_shape: 8
+  min_shape: 8
   min_shape: 1
   min_shape: 1
-  max_shape: 200
-  max_shape: 50
+  max_shape: 8
+  max_shape: 8
   max_shape: 1
   max_shape: 1
-  opt_shape: 200
-  opt_shape: 50
+  opt_shape: 8
+  opt_shape: 8
   opt_shape: 1
   opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_51.w_0"
-  min_shape: 32
-  min_shape: 200
+  name: "conv2_linear_bn_mean"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_linear_bn_offset"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_linear_bn_scale"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_linear_bn_variance"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_linear_weights"
+  min_shape: 8
+  min_shape: 8
   min_shape: 1
   min_shape: 1
-  max_shape: 32
-  max_shape: 200
+  max_shape: 8
+  max_shape: 8
   max_shape: 1
   max_shape: 1
-  opt_shape: 32
-  opt_shape: 200
+  opt_shape: 8
+  opt_shape: 8
   opt_shape: 1
   opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_52.w_0"
-  min_shape: 200
-  min_shape: 32
+  name: "conv2_linear_weights.quantized.dequantized"
+  min_shape: 8
+  min_shape: 8
   min_shape: 1
   min_shape: 1
-  max_shape: 200
-  max_shape: 32
+  max_shape: 8
+  max_shape: 8
   max_shape: 1
   max_shape: 1
-  opt_shape: 200
-  opt_shape: 32
+  opt_shape: 8
+  opt_shape: 8
   opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2_se_1_offset"
+  min_shape: 2
+  max_shape: 2
+  opt_shape: 2
+}
+shape_range_info {
+  name: "conv2_se_1_weights"
+  min_shape: 2
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 2
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 2
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2_se_1_weights.quantized.dequantized"
+  min_shape: 2
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 2
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 2
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2_se_2_offset"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv2_se_2_weights"
+  min_shape: 8
+  min_shape: 2
+  min_shape: 1
+  min_shape: 1
+  max_shape: 8
+  max_shape: 2
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 8
+  opt_shape: 2
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2_se_2_weights.quantized.dequantized"
+  min_shape: 8
+  min_shape: 2
+  min_shape: 1
+  min_shape: 1
+  max_shape: 8
+  max_shape: 2
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 8
+  opt_shape: 2
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_0.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_1.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_10.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_11.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_12.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_13.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_14.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_15.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_16.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_17.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_18.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_19.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_2.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_20.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_21.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_22.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_23.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_24.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_25.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_26.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_27.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_28.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_29.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_3.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_30.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_31.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_32.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_33.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_34.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_35.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_36.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_37.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_38.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_39.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_4.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_40.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_41.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_42.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_43.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_44.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_45.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_46.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_47.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_48.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_49.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_5.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_50.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_51.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv2d_52.scale_0"
+  min_shape: 1
+  max_shape: 1
   opt_shape: 1
 }
 shape_range_info {
@@ -2342,18 +2003,9 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "conv2d_6.w_0"
-  min_shape: 24
-  min_shape: 8
+  name: "conv2d_6.scale_0"
   min_shape: 1
-  min_shape: 1
-  max_shape: 24
-  max_shape: 8
   max_shape: 1
-  max_shape: 1
-  opt_shape: 24
-  opt_shape: 8
-  opt_shape: 1
   opt_shape: 1
 }
 shape_range_info {
@@ -2567,19 +2219,10 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "conv2d_7.w_0"
-  min_shape: 24
+  name: "conv2d_7.scale_0"
   min_shape: 1
-  min_shape: 3
-  min_shape: 3
-  max_shape: 24
   max_shape: 1
-  max_shape: 3
-  max_shape: 3
-  opt_shape: 24
   opt_shape: 1
-  opt_shape: 3
-  opt_shape: 3
 }
 shape_range_info {
   name: "conv2d_70.tmp_0"
@@ -2807,18 +2450,9 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "conv2d_8.w_0"
-  min_shape: 8
-  min_shape: 24
+  name: "conv2d_8.scale_0"
   min_shape: 1
-  min_shape: 1
-  max_shape: 8
-  max_shape: 24
   max_shape: 1
-  max_shape: 1
-  opt_shape: 8
-  opt_shape: 24
-  opt_shape: 1
   opt_shape: 1
 }
 shape_range_info {
@@ -3047,18 +2681,9 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "conv2d_9.w_0"
-  min_shape: 32
-  min_shape: 8
+  name: "conv2d_9.scale_0"
   min_shape: 1
-  min_shape: 1
-  max_shape: 32
-  max_shape: 8
   max_shape: 1
-  max_shape: 1
-  opt_shape: 32
-  opt_shape: 8
-  opt_shape: 1
   opt_shape: 1
 }
 shape_range_info {
@@ -3165,6 +2790,1554 @@ shape_range_info {
   opt_shape: 200
   opt_shape: 2
   opt_shape: 96
+}
+shape_range_info {
+  name: "conv3_depthwise_bn_mean"
+  min_shape: 24
+  max_shape: 24
+  opt_shape: 24
+}
+shape_range_info {
+  name: "conv3_depthwise_bn_offset"
+  min_shape: 24
+  max_shape: 24
+  opt_shape: 24
+}
+shape_range_info {
+  name: "conv3_depthwise_bn_scale"
+  min_shape: 24
+  max_shape: 24
+  opt_shape: 24
+}
+shape_range_info {
+  name: "conv3_depthwise_bn_variance"
+  min_shape: 24
+  max_shape: 24
+  opt_shape: 24
+}
+shape_range_info {
+  name: "conv3_depthwise_weights"
+  min_shape: 24
+  min_shape: 1
+  min_shape: 3
+  min_shape: 3
+  max_shape: 24
+  max_shape: 1
+  max_shape: 3
+  max_shape: 3
+  opt_shape: 24
+  opt_shape: 1
+  opt_shape: 3
+  opt_shape: 3
+}
+shape_range_info {
+  name: "conv3_depthwise_weights.quantized.dequantized"
+  min_shape: 24
+  min_shape: 1
+  min_shape: 3
+  min_shape: 3
+  max_shape: 24
+  max_shape: 1
+  max_shape: 3
+  max_shape: 3
+  opt_shape: 24
+  opt_shape: 1
+  opt_shape: 3
+  opt_shape: 3
+}
+shape_range_info {
+  name: "conv3_expand_bn_mean"
+  min_shape: 24
+  max_shape: 24
+  opt_shape: 24
+}
+shape_range_info {
+  name: "conv3_expand_bn_offset"
+  min_shape: 24
+  max_shape: 24
+  opt_shape: 24
+}
+shape_range_info {
+  name: "conv3_expand_bn_scale"
+  min_shape: 24
+  max_shape: 24
+  opt_shape: 24
+}
+shape_range_info {
+  name: "conv3_expand_bn_variance"
+  min_shape: 24
+  max_shape: 24
+  opt_shape: 24
+}
+shape_range_info {
+  name: "conv3_expand_weights"
+  min_shape: 24
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 24
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 24
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv3_expand_weights.quantized.dequantized"
+  min_shape: 24
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 24
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 24
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv3_linear_bn_mean"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv3_linear_bn_offset"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv3_linear_bn_scale"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv3_linear_bn_variance"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv3_linear_weights"
+  min_shape: 8
+  min_shape: 24
+  min_shape: 1
+  min_shape: 1
+  max_shape: 8
+  max_shape: 24
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 8
+  opt_shape: 24
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv3_linear_weights.quantized.dequantized"
+  min_shape: 8
+  min_shape: 24
+  min_shape: 1
+  min_shape: 1
+  max_shape: 8
+  max_shape: 24
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 8
+  opt_shape: 24
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv4_depthwise_bn_mean"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv4_depthwise_bn_offset"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv4_depthwise_bn_scale"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv4_depthwise_bn_variance"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv4_depthwise_weights"
+  min_shape: 32
+  min_shape: 1
+  min_shape: 3
+  min_shape: 3
+  max_shape: 32
+  max_shape: 1
+  max_shape: 3
+  max_shape: 3
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 3
+  opt_shape: 3
+}
+shape_range_info {
+  name: "conv4_depthwise_weights.quantized.dequantized"
+  min_shape: 32
+  min_shape: 1
+  min_shape: 3
+  min_shape: 3
+  max_shape: 32
+  max_shape: 1
+  max_shape: 3
+  max_shape: 3
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 3
+  opt_shape: 3
+}
+shape_range_info {
+  name: "conv4_expand_bn_mean"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv4_expand_bn_offset"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv4_expand_bn_scale"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv4_expand_bn_variance"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv4_expand_weights"
+  min_shape: 32
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv4_expand_weights.quantized.dequantized"
+  min_shape: 32
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv4_linear_bn_mean"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv4_linear_bn_offset"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv4_linear_bn_scale"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv4_linear_bn_variance"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv4_linear_weights"
+  min_shape: 8
+  min_shape: 32
+  min_shape: 1
+  min_shape: 1
+  max_shape: 8
+  max_shape: 32
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 8
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv4_linear_weights.quantized.dequantized"
+  min_shape: 8
+  min_shape: 32
+  min_shape: 1
+  min_shape: 1
+  max_shape: 8
+  max_shape: 32
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 8
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv5_depthwise_bn_mean"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv5_depthwise_bn_offset"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv5_depthwise_bn_scale"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv5_depthwise_bn_variance"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv5_depthwise_weights"
+  min_shape: 32
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 32
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv5_depthwise_weights.quantized.dequantized"
+  min_shape: 32
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 32
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv5_expand_bn_mean"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv5_expand_bn_offset"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv5_expand_bn_scale"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv5_expand_bn_variance"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv5_expand_weights"
+  min_shape: 32
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv5_expand_weights.quantized.dequantized"
+  min_shape: 32
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv5_linear_bn_mean"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv5_linear_bn_offset"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv5_linear_bn_scale"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv5_linear_bn_variance"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv5_linear_weights"
+  min_shape: 16
+  min_shape: 32
+  min_shape: 1
+  min_shape: 1
+  max_shape: 16
+  max_shape: 32
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 16
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv5_linear_weights.quantized.dequantized"
+  min_shape: 16
+  min_shape: 32
+  min_shape: 1
+  min_shape: 1
+  max_shape: 16
+  max_shape: 32
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 16
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv5_se_1_offset"
+  min_shape: 8
+  max_shape: 8
+  opt_shape: 8
+}
+shape_range_info {
+  name: "conv5_se_1_weights"
+  min_shape: 8
+  min_shape: 32
+  min_shape: 1
+  min_shape: 1
+  max_shape: 8
+  max_shape: 32
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 8
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv5_se_1_weights.quantized.dequantized"
+  min_shape: 8
+  min_shape: 32
+  min_shape: 1
+  min_shape: 1
+  max_shape: 8
+  max_shape: 32
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 8
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv5_se_2_offset"
+  min_shape: 32
+  max_shape: 32
+  opt_shape: 32
+}
+shape_range_info {
+  name: "conv5_se_2_weights"
+  min_shape: 32
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv5_se_2_weights.quantized.dequantized"
+  min_shape: 32
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 32
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 32
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv6_depthwise_bn_mean"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv6_depthwise_bn_offset"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv6_depthwise_bn_scale"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv6_depthwise_bn_variance"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv6_depthwise_weights"
+  min_shape: 88
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 88
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv6_depthwise_weights.quantized.dequantized"
+  min_shape: 88
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 88
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv6_expand_bn_mean"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv6_expand_bn_offset"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv6_expand_bn_scale"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv6_expand_bn_variance"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv6_expand_weights"
+  min_shape: 88
+  min_shape: 16
+  min_shape: 1
+  min_shape: 1
+  max_shape: 88
+  max_shape: 16
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 88
+  opt_shape: 16
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv6_expand_weights.quantized.dequantized"
+  min_shape: 88
+  min_shape: 16
+  min_shape: 1
+  min_shape: 1
+  max_shape: 88
+  max_shape: 16
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 88
+  opt_shape: 16
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv6_linear_bn_mean"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv6_linear_bn_offset"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv6_linear_bn_scale"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv6_linear_bn_variance"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv6_linear_weights"
+  min_shape: 16
+  min_shape: 88
+  min_shape: 1
+  min_shape: 1
+  max_shape: 16
+  max_shape: 88
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 16
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv6_linear_weights.quantized.dequantized"
+  min_shape: 16
+  min_shape: 88
+  min_shape: 1
+  min_shape: 1
+  max_shape: 16
+  max_shape: 88
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 16
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv6_se_1_offset"
+  min_shape: 22
+  max_shape: 22
+  opt_shape: 22
+}
+shape_range_info {
+  name: "conv6_se_1_weights"
+  min_shape: 22
+  min_shape: 88
+  min_shape: 1
+  min_shape: 1
+  max_shape: 22
+  max_shape: 88
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 22
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv6_se_1_weights.quantized.dequantized"
+  min_shape: 22
+  min_shape: 88
+  min_shape: 1
+  min_shape: 1
+  max_shape: 22
+  max_shape: 88
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 22
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv6_se_2_offset"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv6_se_2_weights"
+  min_shape: 88
+  min_shape: 22
+  min_shape: 1
+  min_shape: 1
+  max_shape: 88
+  max_shape: 22
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 88
+  opt_shape: 22
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv6_se_2_weights.quantized.dequantized"
+  min_shape: 88
+  min_shape: 22
+  min_shape: 1
+  min_shape: 1
+  max_shape: 88
+  max_shape: 22
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 88
+  opt_shape: 22
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv7_depthwise_bn_mean"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv7_depthwise_bn_offset"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv7_depthwise_bn_scale"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv7_depthwise_bn_variance"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv7_depthwise_weights"
+  min_shape: 88
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 88
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv7_depthwise_weights.quantized.dequantized"
+  min_shape: 88
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 88
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv7_expand_bn_mean"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv7_expand_bn_offset"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv7_expand_bn_scale"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv7_expand_bn_variance"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv7_expand_weights"
+  min_shape: 88
+  min_shape: 16
+  min_shape: 1
+  min_shape: 1
+  max_shape: 88
+  max_shape: 16
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 88
+  opt_shape: 16
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv7_expand_weights.quantized.dequantized"
+  min_shape: 88
+  min_shape: 16
+  min_shape: 1
+  min_shape: 1
+  max_shape: 88
+  max_shape: 16
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 88
+  opt_shape: 16
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv7_linear_bn_mean"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv7_linear_bn_offset"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv7_linear_bn_scale"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv7_linear_bn_variance"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv7_linear_weights"
+  min_shape: 16
+  min_shape: 88
+  min_shape: 1
+  min_shape: 1
+  max_shape: 16
+  max_shape: 88
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 16
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv7_linear_weights.quantized.dequantized"
+  min_shape: 16
+  min_shape: 88
+  min_shape: 1
+  min_shape: 1
+  max_shape: 16
+  max_shape: 88
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 16
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv7_se_1_offset"
+  min_shape: 22
+  max_shape: 22
+  opt_shape: 22
+}
+shape_range_info {
+  name: "conv7_se_1_weights"
+  min_shape: 22
+  min_shape: 88
+  min_shape: 1
+  min_shape: 1
+  max_shape: 22
+  max_shape: 88
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 22
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv7_se_1_weights.quantized.dequantized"
+  min_shape: 22
+  min_shape: 88
+  min_shape: 1
+  min_shape: 1
+  max_shape: 22
+  max_shape: 88
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 22
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv7_se_2_offset"
+  min_shape: 88
+  max_shape: 88
+  opt_shape: 88
+}
+shape_range_info {
+  name: "conv7_se_2_weights"
+  min_shape: 88
+  min_shape: 22
+  min_shape: 1
+  min_shape: 1
+  max_shape: 88
+  max_shape: 22
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 88
+  opt_shape: 22
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv7_se_2_weights.quantized.dequantized"
+  min_shape: 88
+  min_shape: 22
+  min_shape: 1
+  min_shape: 1
+  max_shape: 88
+  max_shape: 22
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 88
+  opt_shape: 22
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv8_depthwise_bn_mean"
+  min_shape: 40
+  max_shape: 40
+  opt_shape: 40
+}
+shape_range_info {
+  name: "conv8_depthwise_bn_offset"
+  min_shape: 40
+  max_shape: 40
+  opt_shape: 40
+}
+shape_range_info {
+  name: "conv8_depthwise_bn_scale"
+  min_shape: 40
+  max_shape: 40
+  opt_shape: 40
+}
+shape_range_info {
+  name: "conv8_depthwise_bn_variance"
+  min_shape: 40
+  max_shape: 40
+  opt_shape: 40
+}
+shape_range_info {
+  name: "conv8_depthwise_weights"
+  min_shape: 40
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 40
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 40
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv8_depthwise_weights.quantized.dequantized"
+  min_shape: 40
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 40
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 40
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv8_expand_bn_mean"
+  min_shape: 40
+  max_shape: 40
+  opt_shape: 40
+}
+shape_range_info {
+  name: "conv8_expand_bn_offset"
+  min_shape: 40
+  max_shape: 40
+  opt_shape: 40
+}
+shape_range_info {
+  name: "conv8_expand_bn_scale"
+  min_shape: 40
+  max_shape: 40
+  opt_shape: 40
+}
+shape_range_info {
+  name: "conv8_expand_bn_variance"
+  min_shape: 40
+  max_shape: 40
+  opt_shape: 40
+}
+shape_range_info {
+  name: "conv8_expand_weights"
+  min_shape: 40
+  min_shape: 16
+  min_shape: 1
+  min_shape: 1
+  max_shape: 40
+  max_shape: 16
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 40
+  opt_shape: 16
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv8_expand_weights.quantized.dequantized"
+  min_shape: 40
+  min_shape: 16
+  min_shape: 1
+  min_shape: 1
+  max_shape: 40
+  max_shape: 16
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 40
+  opt_shape: 16
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv8_linear_bn_mean"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv8_linear_bn_offset"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv8_linear_bn_scale"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv8_linear_bn_variance"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv8_linear_weights"
+  min_shape: 16
+  min_shape: 40
+  min_shape: 1
+  min_shape: 1
+  max_shape: 16
+  max_shape: 40
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 16
+  opt_shape: 40
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv8_linear_weights.quantized.dequantized"
+  min_shape: 16
+  min_shape: 40
+  min_shape: 1
+  min_shape: 1
+  max_shape: 16
+  max_shape: 40
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 16
+  opt_shape: 40
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv8_se_1_offset"
+  min_shape: 10
+  max_shape: 10
+  opt_shape: 10
+}
+shape_range_info {
+  name: "conv8_se_1_weights"
+  min_shape: 10
+  min_shape: 40
+  min_shape: 1
+  min_shape: 1
+  max_shape: 10
+  max_shape: 40
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 10
+  opt_shape: 40
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv8_se_1_weights.quantized.dequantized"
+  min_shape: 10
+  min_shape: 40
+  min_shape: 1
+  min_shape: 1
+  max_shape: 10
+  max_shape: 40
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 10
+  opt_shape: 40
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv8_se_2_offset"
+  min_shape: 40
+  max_shape: 40
+  opt_shape: 40
+}
+shape_range_info {
+  name: "conv8_se_2_weights"
+  min_shape: 40
+  min_shape: 10
+  min_shape: 1
+  min_shape: 1
+  max_shape: 40
+  max_shape: 10
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 40
+  opt_shape: 10
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv8_se_2_weights.quantized.dequantized"
+  min_shape: 40
+  min_shape: 10
+  min_shape: 1
+  min_shape: 1
+  max_shape: 40
+  max_shape: 10
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 40
+  opt_shape: 10
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv9_depthwise_bn_mean"
+  min_shape: 48
+  max_shape: 48
+  opt_shape: 48
+}
+shape_range_info {
+  name: "conv9_depthwise_bn_offset"
+  min_shape: 48
+  max_shape: 48
+  opt_shape: 48
+}
+shape_range_info {
+  name: "conv9_depthwise_bn_scale"
+  min_shape: 48
+  max_shape: 48
+  opt_shape: 48
+}
+shape_range_info {
+  name: "conv9_depthwise_bn_variance"
+  min_shape: 48
+  max_shape: 48
+  opt_shape: 48
+}
+shape_range_info {
+  name: "conv9_depthwise_weights"
+  min_shape: 48
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 48
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 48
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv9_depthwise_weights.quantized.dequantized"
+  min_shape: 48
+  min_shape: 1
+  min_shape: 5
+  min_shape: 5
+  max_shape: 48
+  max_shape: 1
+  max_shape: 5
+  max_shape: 5
+  opt_shape: 48
+  opt_shape: 1
+  opt_shape: 5
+  opt_shape: 5
+}
+shape_range_info {
+  name: "conv9_expand_bn_mean"
+  min_shape: 48
+  max_shape: 48
+  opt_shape: 48
+}
+shape_range_info {
+  name: "conv9_expand_bn_offset"
+  min_shape: 48
+  max_shape: 48
+  opt_shape: 48
+}
+shape_range_info {
+  name: "conv9_expand_bn_scale"
+  min_shape: 48
+  max_shape: 48
+  opt_shape: 48
+}
+shape_range_info {
+  name: "conv9_expand_bn_variance"
+  min_shape: 48
+  max_shape: 48
+  opt_shape: 48
+}
+shape_range_info {
+  name: "conv9_expand_weights"
+  min_shape: 48
+  min_shape: 16
+  min_shape: 1
+  min_shape: 1
+  max_shape: 48
+  max_shape: 16
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 48
+  opt_shape: 16
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv9_expand_weights.quantized.dequantized"
+  min_shape: 48
+  min_shape: 16
+  min_shape: 1
+  min_shape: 1
+  max_shape: 48
+  max_shape: 16
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 48
+  opt_shape: 16
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv9_linear_bn_mean"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv9_linear_bn_offset"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv9_linear_bn_scale"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv9_linear_bn_variance"
+  min_shape: 16
+  max_shape: 16
+  opt_shape: 16
+}
+shape_range_info {
+  name: "conv9_linear_weights"
+  min_shape: 16
+  min_shape: 48
+  min_shape: 1
+  min_shape: 1
+  max_shape: 16
+  max_shape: 48
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 16
+  opt_shape: 48
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv9_linear_weights.quantized.dequantized"
+  min_shape: 16
+  min_shape: 48
+  min_shape: 1
+  min_shape: 1
+  max_shape: 16
+  max_shape: 48
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 16
+  opt_shape: 48
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv9_se_1_offset"
+  min_shape: 12
+  max_shape: 12
+  opt_shape: 12
+}
+shape_range_info {
+  name: "conv9_se_1_weights"
+  min_shape: 12
+  min_shape: 48
+  min_shape: 1
+  min_shape: 1
+  max_shape: 12
+  max_shape: 48
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 12
+  opt_shape: 48
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv9_se_1_weights.quantized.dequantized"
+  min_shape: 12
+  min_shape: 48
+  min_shape: 1
+  min_shape: 1
+  max_shape: 12
+  max_shape: 48
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 12
+  opt_shape: 48
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv9_se_2_offset"
+  min_shape: 48
+  max_shape: 48
+  opt_shape: 48
+}
+shape_range_info {
+  name: "conv9_se_2_weights"
+  min_shape: 48
+  min_shape: 12
+  min_shape: 1
+  min_shape: 1
+  max_shape: 48
+  max_shape: 12
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 48
+  opt_shape: 12
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv9_se_2_weights.quantized.dequantized"
+  min_shape: 48
+  min_shape: 12
+  min_shape: 1
+  min_shape: 1
+  max_shape: 48
+  max_shape: 12
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 48
+  opt_shape: 12
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv_last_bn_mean"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv_last_bn_offset"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv_last_bn_scale"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv_last_bn_variance"
+  min_shape: 200
+  max_shape: 200
+  opt_shape: 200
+}
+shape_range_info {
+  name: "conv_last_weights"
+  min_shape: 200
+  min_shape: 32
+  min_shape: 1
+  min_shape: 1
+  max_shape: 200
+  max_shape: 32
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 200
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "conv_last_weights.quantized.dequantized"
+  min_shape: 200
+  min_shape: 32
+  min_shape: 1
+  min_shape: 1
+  max_shape: 200
+  max_shape: 32
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 200
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 1
 }
 shape_range_info {
   name: "depthwise_conv2d_0.tmp_0"
@@ -3347,7 +4520,37 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "elementwise_add_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 8
+  min_shape: 6
+  min_shape: 96
+  max_shape: 1
+  max_shape: 8
+  max_shape: 6
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 8
+  opt_shape: 6
+  opt_shape: 96
+}
+shape_range_info {
   name: "elementwise_add_1"
+  min_shape: 1
+  min_shape: 16
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 16
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 16
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
+  name: "elementwise_add_1.quantized.dequantized"
   min_shape: 1
   min_shape: 16
   min_shape: 3
@@ -3377,7 +4580,37 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "elementwise_add_2.quantized.dequantized"
+  min_shape: 1
+  min_shape: 16
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 16
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 16
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
   name: "elementwise_add_3"
+  min_shape: 1
+  min_shape: 16
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 16
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 16
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
+  name: "elementwise_add_3.quantized.dequantized"
   min_shape: 1
   min_shape: 16
   min_shape: 3
@@ -3407,7 +4640,37 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "elementwise_add_4.quantized.dequantized"
+  min_shape: 1
+  min_shape: 16
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 16
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 16
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
   name: "elementwise_add_5"
+  min_shape: 1
+  min_shape: 32
+  min_shape: 2
+  min_shape: 96
+  max_shape: 1
+  max_shape: 32
+  max_shape: 2
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 32
+  opt_shape: 2
+  opt_shape: 96
+}
+shape_range_info {
+  name: "elementwise_add_5.quantized.dequantized"
   min_shape: 1
   min_shape: 32
   min_shape: 2
@@ -3437,6 +4700,21 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "elementwise_add_6.quantized.dequantized"
+  min_shape: 1
+  min_shape: 32
+  min_shape: 2
+  min_shape: 96
+  max_shape: 1
+  max_shape: 32
+  max_shape: 2
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 32
+  opt_shape: 2
+  opt_shape: 96
+}
+shape_range_info {
   name: "fc_0.b_0"
   min_shape: 2
   max_shape: 2
@@ -3452,16 +4730,16 @@ shape_range_info {
   opt_shape: 2
 }
 shape_range_info {
-  name: "fill_constant_1.tmp_0"
-  min_shape: 1
-  max_shape: 1
-  opt_shape: 1
-  min_value: 200
-  max_value: 200
-  opt_value: 200
+  name: "fc_0.w_0.quantized.dequantized"
+  min_shape: 200
+  min_shape: 2
+  max_shape: 200
+  max_shape: 2
+  opt_shape: 200
+  opt_shape: 2
 }
 shape_range_info {
-  name: "hardsigmoid_0.tmp_0"
+  name: "hard_sigmoid_0.tmp_0"
   min_shape: 1
   min_shape: 8
   min_shape: 1
@@ -3476,7 +4754,7 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "hardsigmoid_1.tmp_0"
+  name: "hard_sigmoid_1.tmp_0"
   min_shape: 1
   min_shape: 32
   min_shape: 1
@@ -3491,7 +4769,7 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "hardsigmoid_2.tmp_0"
+  name: "hard_sigmoid_2.tmp_0"
   min_shape: 1
   min_shape: 88
   min_shape: 1
@@ -3506,7 +4784,7 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "hardsigmoid_3.tmp_0"
+  name: "hard_sigmoid_3.tmp_0"
   min_shape: 1
   min_shape: 88
   min_shape: 1
@@ -3521,7 +4799,7 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "hardsigmoid_4.tmp_0"
+  name: "hard_sigmoid_4.tmp_0"
   min_shape: 1
   min_shape: 40
   min_shape: 1
@@ -3536,7 +4814,7 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "hardsigmoid_5.tmp_0"
+  name: "hard_sigmoid_5.tmp_0"
   min_shape: 1
   min_shape: 48
   min_shape: 1
@@ -3551,7 +4829,7 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "hardsigmoid_6.tmp_0"
+  name: "hard_sigmoid_6.tmp_0"
   min_shape: 1
   min_shape: 104
   min_shape: 1
@@ -3566,7 +4844,7 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "hardsigmoid_7.tmp_0"
+  name: "hard_sigmoid_7.tmp_0"
   min_shape: 1
   min_shape: 200
   min_shape: 1
@@ -3581,7 +4859,7 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "hardsigmoid_8.tmp_0"
+  name: "hard_sigmoid_8.tmp_0"
   min_shape: 1
   min_shape: 200
   min_shape: 1
@@ -3596,7 +4874,7 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
-  name: "hardswish_0.tmp_0"
+  name: "hard_swish_0.tmp_0"
   min_shape: 1
   min_shape: 8
   min_shape: 24
@@ -3611,7 +4889,22 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_1.tmp_0"
+  name: "hard_swish_0.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 8
+  min_shape: 24
+  min_shape: 96
+  max_shape: 1
+  max_shape: 8
+  max_shape: 24
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 8
+  opt_shape: 24
+  opt_shape: 96
+}
+shape_range_info {
+  name: "hard_swish_1.tmp_0"
   min_shape: 1
   min_shape: 32
   min_shape: 6
@@ -3626,7 +4919,22 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_10.tmp_0"
+  name: "hard_swish_1.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 32
+  min_shape: 6
+  min_shape: 96
+  max_shape: 1
+  max_shape: 32
+  max_shape: 6
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 32
+  opt_shape: 6
+  opt_shape: 96
+}
+shape_range_info {
+  name: "hard_swish_10.tmp_0"
   min_shape: 1
   min_shape: 48
   min_shape: 3
@@ -3641,7 +4949,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_11.tmp_0"
+  name: "hard_swish_11.tmp_0"
   min_shape: 1
   min_shape: 104
   min_shape: 3
@@ -3656,7 +4964,22 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_12.tmp_0"
+  name: "hard_swish_11.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 104
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 104
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 104
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
+  name: "hard_swish_12.tmp_0"
   min_shape: 1
   min_shape: 104
   min_shape: 2
@@ -3671,7 +4994,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_13.tmp_0"
+  name: "hard_swish_13.tmp_0"
   min_shape: 1
   min_shape: 200
   min_shape: 2
@@ -3686,7 +5009,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_14.tmp_0"
+  name: "hard_swish_13.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 200
   min_shape: 2
@@ -3701,7 +5024,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_15.tmp_0"
+  name: "hard_swish_14.tmp_0"
   min_shape: 1
   min_shape: 200
   min_shape: 2
@@ -3716,7 +5039,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_16.tmp_0"
+  name: "hard_swish_15.tmp_0"
   min_shape: 1
   min_shape: 200
   min_shape: 2
@@ -3731,7 +5054,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_17.tmp_0"
+  name: "hard_swish_15.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 200
   min_shape: 2
@@ -3746,7 +5069,37 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_2.tmp_0"
+  name: "hard_swish_16.tmp_0"
+  min_shape: 1
+  min_shape: 200
+  min_shape: 2
+  min_shape: 96
+  max_shape: 1
+  max_shape: 200
+  max_shape: 2
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 200
+  opt_shape: 2
+  opt_shape: 96
+}
+shape_range_info {
+  name: "hard_swish_17.tmp_0"
+  min_shape: 1
+  min_shape: 200
+  min_shape: 2
+  min_shape: 96
+  max_shape: 1
+  max_shape: 200
+  max_shape: 2
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 200
+  opt_shape: 2
+  opt_shape: 96
+}
+shape_range_info {
+  name: "hard_swish_2.tmp_0"
   min_shape: 1
   min_shape: 32
   min_shape: 3
@@ -3761,7 +5114,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_3.tmp_0"
+  name: "hard_swish_3.tmp_0"
   min_shape: 1
   min_shape: 88
   min_shape: 3
@@ -3776,7 +5129,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_4.tmp_0"
+  name: "hard_swish_3.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 88
   min_shape: 3
@@ -3791,7 +5144,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_5.tmp_0"
+  name: "hard_swish_4.tmp_0"
   min_shape: 1
   min_shape: 88
   min_shape: 3
@@ -3806,7 +5159,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_6.tmp_0"
+  name: "hard_swish_5.tmp_0"
   min_shape: 1
   min_shape: 88
   min_shape: 3
@@ -3821,7 +5174,37 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_7.tmp_0"
+  name: "hard_swish_5.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 88
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 88
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 88
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
+  name: "hard_swish_6.tmp_0"
+  min_shape: 1
+  min_shape: 88
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 88
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 88
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
+  name: "hard_swish_7.tmp_0"
   min_shape: 1
   min_shape: 40
   min_shape: 3
@@ -3836,7 +5219,7 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_8.tmp_0"
+  name: "hard_swish_7.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 40
   min_shape: 3
@@ -3851,7 +5234,22 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
-  name: "hardswish_9.tmp_0"
+  name: "hard_swish_8.tmp_0"
+  min_shape: 1
+  min_shape: 40
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 40
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 40
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
+  name: "hard_swish_9.tmp_0"
   min_shape: 1
   min_shape: 48
   min_shape: 3
@@ -3864,6 +5262,27 @@ shape_range_info {
   opt_shape: 48
   opt_shape: 3
   opt_shape: 96
+}
+shape_range_info {
+  name: "hard_swish_9.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 48
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 48
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 48
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
+  name: "linear_0.scale_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
 }
 shape_range_info {
   name: "linear_1.tmp_0"
@@ -3899,7 +5318,37 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
+  name: "pool2d_0.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
   name: "pool2d_1.tmp_0"
+  min_shape: 1
+  min_shape: 32
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 32
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 32
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "pool2d_1.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 32
   min_shape: 1
@@ -3944,7 +5393,37 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
+  name: "pool2d_2.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 88
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 88
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
   name: "pool2d_3.tmp_0"
+  min_shape: 1
+  min_shape: 88
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 88
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 88
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "pool2d_3.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 88
   min_shape: 1
@@ -3974,7 +5453,37 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
+  name: "pool2d_4.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 40
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 40
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 40
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
   name: "pool2d_5.tmp_0"
+  min_shape: 1
+  min_shape: 48
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 48
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 48
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "pool2d_5.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 48
   min_shape: 1
@@ -4004,6 +5513,21 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
+  name: "pool2d_6.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 104
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 104
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 104
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
   name: "pool2d_7.tmp_0"
   min_shape: 1
   min_shape: 200
@@ -4019,7 +5543,37 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
+  name: "pool2d_7.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 200
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 200
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
   name: "pool2d_8.tmp_0"
+  min_shape: 1
+  min_shape: 200
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 200
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 200
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "pool2d_8.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 200
   min_shape: 1
@@ -4064,6 +5618,21 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "relu_0.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 8
+  min_shape: 24
+  min_shape: 96
+  max_shape: 1
+  max_shape: 8
+  max_shape: 24
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 8
+  opt_shape: 24
+  opt_shape: 96
+}
+shape_range_info {
   name: "relu_1.tmp_0"
   min_shape: 1
   min_shape: 8
@@ -4094,7 +5663,37 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
+  name: "relu_10.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 10
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 10
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 10
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
   name: "relu_11.tmp_0"
+  min_shape: 1
+  min_shape: 12
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 12
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 12
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "relu_11.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 12
   min_shape: 1
@@ -4124,7 +5723,37 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
+  name: "relu_12.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 26
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 26
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 26
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
   name: "relu_13.tmp_0"
+  min_shape: 1
+  min_shape: 50
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 50
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 50
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "relu_13.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 50
   min_shape: 1
@@ -4154,7 +5783,37 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
+  name: "relu_14.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 50
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 50
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 50
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
   name: "relu_2.tmp_0"
+  min_shape: 1
+  min_shape: 2
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 2
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 2
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "relu_2.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 2
   min_shape: 1
@@ -4184,7 +5843,37 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "relu_3.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 24
+  min_shape: 12
+  min_shape: 96
+  max_shape: 1
+  max_shape: 24
+  max_shape: 12
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 24
+  opt_shape: 12
+  opt_shape: 96
+}
+shape_range_info {
   name: "relu_4.tmp_0"
+  min_shape: 1
+  min_shape: 24
+  min_shape: 6
+  min_shape: 96
+  max_shape: 1
+  max_shape: 24
+  max_shape: 6
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 24
+  opt_shape: 6
+  opt_shape: 96
+}
+shape_range_info {
+  name: "relu_4.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 24
   min_shape: 6
@@ -4214,7 +5903,37 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "relu_5.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 32
+  min_shape: 6
+  min_shape: 96
+  max_shape: 1
+  max_shape: 32
+  max_shape: 6
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 32
+  opt_shape: 6
+  opt_shape: 96
+}
+shape_range_info {
   name: "relu_6.tmp_0"
+  min_shape: 1
+  min_shape: 32
+  min_shape: 6
+  min_shape: 96
+  max_shape: 1
+  max_shape: 32
+  max_shape: 6
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 32
+  opt_shape: 6
+  opt_shape: 96
+}
+shape_range_info {
+  name: "relu_6.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 32
   min_shape: 6
@@ -4244,7 +5963,37 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
+  name: "relu_7.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 8
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 8
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 8
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
   name: "relu_8.tmp_0"
+  min_shape: 1
+  min_shape: 22
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 22
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 22
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
+  name: "relu_8.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 22
   min_shape: 1
@@ -4274,7 +6023,31 @@ shape_range_info {
   opt_shape: 1
 }
 shape_range_info {
+  name: "relu_9.tmp_0.quantized.dequantized"
+  min_shape: 1
+  min_shape: 22
+  min_shape: 1
+  min_shape: 1
+  max_shape: 1
+  max_shape: 22
+  max_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  opt_shape: 22
+  opt_shape: 1
+  opt_shape: 1
+}
+shape_range_info {
   name: "reshape2_0.tmp_0"
+  min_shape: 1
+  min_shape: 200
+  max_shape: 1
+  max_shape: 200
+  opt_shape: 1
+  opt_shape: 200
+}
+shape_range_info {
+  name: "reshape2_0.tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 200
   max_shape: 1
@@ -4310,7 +6083,58 @@ shape_range_info {
   opt_value: 1
 }
 shape_range_info {
+  name: "shape_1.tmp_0"
+  min_shape: 4
+  max_shape: 4
+  opt_shape: 4
+  min_value: 1
+  min_value: 200
+  min_value: 1
+  min_value: 1
+  max_value: 1
+  max_value: 200
+  max_value: 1
+  max_value: 1
+  opt_value: 1
+  opt_value: 200
+  opt_value: 1
+  opt_value: 1
+}
+shape_range_info {
+  name: "shape_1.tmp_0_slice_0"
+  min_shape: 1
+  max_shape: 1
+  opt_shape: 1
+  min_value: 200
+  max_value: 200
+  opt_value: 200
+}
+shape_range_info {
+  name: "softmax_0.tmp_0"
+  min_shape: 1
+  min_shape: 2
+  max_shape: 1
+  max_shape: 2
+  opt_shape: 1
+  opt_shape: 2
+}
+shape_range_info {
   name: "tmp_0"
+  min_shape: 1
+  min_shape: 8
+  min_shape: 12
+  min_shape: 96
+  max_shape: 1
+  max_shape: 8
+  max_shape: 12
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 8
+  opt_shape: 12
+  opt_shape: 96
+}
+shape_range_info {
+  name: "tmp_0.quantized.dequantized"
   min_shape: 1
   min_shape: 8
   min_shape: 12
@@ -4340,7 +6164,37 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "tmp_1.quantized.dequantized"
+  min_shape: 1
+  min_shape: 32
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 32
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 32
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
   name: "tmp_2"
+  min_shape: 1
+  min_shape: 88
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 88
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 88
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
+  name: "tmp_2.quantized.dequantized"
   min_shape: 1
   min_shape: 88
   min_shape: 3
@@ -4370,7 +6224,37 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "tmp_3.quantized.dequantized"
+  min_shape: 1
+  min_shape: 88
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 88
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 88
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
   name: "tmp_4"
+  min_shape: 1
+  min_shape: 40
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 40
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 40
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
+  name: "tmp_4.quantized.dequantized"
   min_shape: 1
   min_shape: 40
   min_shape: 3
@@ -4400,7 +6284,37 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "tmp_5.quantized.dequantized"
+  min_shape: 1
+  min_shape: 48
+  min_shape: 3
+  min_shape: 96
+  max_shape: 1
+  max_shape: 48
+  max_shape: 3
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 48
+  opt_shape: 3
+  opt_shape: 96
+}
+shape_range_info {
   name: "tmp_6"
+  min_shape: 1
+  min_shape: 104
+  min_shape: 2
+  min_shape: 96
+  max_shape: 1
+  max_shape: 104
+  max_shape: 2
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 104
+  opt_shape: 2
+  opt_shape: 96
+}
+shape_range_info {
+  name: "tmp_6.quantized.dequantized"
   min_shape: 1
   min_shape: 104
   min_shape: 2
@@ -4430,6 +6344,21 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "tmp_7.quantized.dequantized"
+  min_shape: 1
+  min_shape: 200
+  min_shape: 2
+  min_shape: 96
+  max_shape: 1
+  max_shape: 200
+  max_shape: 2
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 200
+  opt_shape: 2
+  opt_shape: 96
+}
+shape_range_info {
   name: "tmp_8"
   min_shape: 1
   min_shape: 200
@@ -4445,7 +6374,37 @@ shape_range_info {
   opt_shape: 96
 }
 shape_range_info {
+  name: "tmp_8.quantized.dequantized"
+  min_shape: 1
+  min_shape: 200
+  min_shape: 2
+  min_shape: 96
+  max_shape: 1
+  max_shape: 200
+  max_shape: 2
+  max_shape: 96
+  opt_shape: 1
+  opt_shape: 200
+  opt_shape: 2
+  opt_shape: 96
+}
+shape_range_info {
   name: "x"
+  min_shape: 1
+  min_shape: 3
+  min_shape: 48
+  min_shape: 192
+  max_shape: 1
+  max_shape: 3
+  max_shape: 48
+  max_shape: 192
+  opt_shape: 1
+  opt_shape: 3
+  opt_shape: 48
+  opt_shape: 192
+}
+shape_range_info {
+  name: "x.quantized.dequantized"
   min_shape: 1
   min_shape: 3
   min_shape: 48

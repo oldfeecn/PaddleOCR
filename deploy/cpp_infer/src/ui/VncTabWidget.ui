@@ -19,40 +19,33 @@
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>服务器:</string>
+        <string>模型:</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="vncIP_Edit">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
+      <widget class="QComboBox" name="comboBox">
+       <item>
+        <property name="text">
+         <string>--model_dir=D:/workspace/PaddleDetection/output_inference/rtdetr_r50vd_6x_coco</string>
+        </property>
+       </item>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="openCv_one_ImgBtn">
        <property name="text">
-        <string>127.0.0.1</string>
+        <string>选择图片</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLabel" name="label_2">
+      <widget class="QCheckBox" name="saveImgAndInsert">
        <property name="text">
-        <string>端口:</string>
+        <string>保存图片和插入</string>
        </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="vncPort_Edit">
-       <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
-         <horstretch>0</horstretch>
-         <verstretch>0</verstretch>
-        </sizepolicy>
-       </property>
-       <property name="text">
-        <string>5900</string>
+       <property name="checked">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
@@ -188,6 +181,9 @@
        </item>
        <item>
         <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
          <property name="sizeHint" stdset="0">
           <size>
            <width>20</width>
@@ -200,6 +196,9 @@
      </item>
      <item>
       <spacer name="horizontalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>40</width>

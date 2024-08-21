@@ -4,14 +4,11 @@
 
 QMutex SqlToolPool::mutex;
 QWaitCondition SqlToolPool::waitConnection;
-SqlToolPool* SqlToolPool::instance = NULL;
+SqlToolPool* SqlToolPool::instance = nullptr;
 
 SqlToolPool::SqlToolPool() {
-    // �������ݿ����ӵ���Щ��Ϣ��ʵ�ʿ�����ʱ����Ҫͨ����ȡ�����ļ��õ���
-    // ����Ϊ����ʾ��������д�����˴����
-    //bool wirtejson = JsonTool::wirteJson("setting.json");
-    //bool readjson= JsonTool::readJson("setting.json");
-
+    // 创建数据库连接的这些信息在实际开发中都需要通过读取配置文件得到，
+    // 这里为了演示方便所以写死在了代码里。
     hostName = "eTB5NEExSHdFdzVKbUs4WA==";
     databaseName = "d2RuQkUybmFwZFc9";
     username = "eU1XNEQydmFwZFc9";
@@ -25,71 +22,67 @@ SqlToolPool::SqlToolPool() {
 }
 
 SqlToolPool& SqlToolPool::getInstance() {
-    if (NULL == instance) {
-        QMutexLocker locker(&mutex);
-        if (NULL == instance) {
-            instance = new SqlToolPool();
-        }
+    static QMutex initMutex;
+    QMutexLocker locker(&initMutex);
+    if (instance == nullptr) {
+        instance = new SqlToolPool();
     }
-
     return *instance;
 }
-SqlToolPool::~SqlToolPool()
-{
-    // �������ӳص�ʱ��ɾ�����е�����
+
+SqlToolPool::~SqlToolPool() {
+    // 销毁连接池的时候删除所有的连接
     foreach(QString connectionName, usedConnectionNames) {
         QSqlDatabase::removeDatabase(connectionName);
     }
-
     foreach(QString connectionName, unusedConnectionNames) {
         QSqlDatabase::removeDatabase(connectionName);
     }
-
 }
+
 void SqlToolPool::release() {
     QMutexLocker locker(&mutex);
     delete instance;
-    instance = NULL;
+    instance = nullptr;
 }
 
 QSqlDatabase SqlToolPool::openConnection() {
-    //QThread::currentThreadId();
     SqlToolPool& pool = SqlToolPool::getInstance();
     QString connectionName;
     QMutexLocker locker(&mutex);
-    // �Ѵ���������
+
+    // 已创建连接数
     int connectionCount = pool.unusedConnectionNames.size() + pool.usedConnectionNames.size();
-    // ��������Ѿ����꣬�ȴ� waitInterval ���뿴���Ƿ��п������ӣ���ȴ� maxWaitTime ����
-    for (int i = 0;
-        i < pool.maxWaitTime
-        && pool.unusedConnectionNames.size() == 0
-        && connectionCount == pool.maxConnectionCount;
-        i += pool.waitInterval) {
+
+    // 如果连接已经用完，等待 waitInterval 毫秒看看是否有可用连接，最长等待 maxWaitTime 毫秒
+    for (int i = 0; i < pool.maxWaitTime && pool.unusedConnectionNames.size() == 0 && connectionCount == pool.maxConnectionCount; i += pool.waitInterval) {
         waitConnection.wait(&mutex, pool.waitInterval);
-        // ���¼����Ѵ���������
+        // 重新计算已创建连接数
         connectionCount = pool.unusedConnectionNames.size() + pool.usedConnectionNames.size();
     }
-    qDebug() << "unusedConnectionNames." << pool.unusedConnectionNames.size() << endl;;
+
     if (pool.unusedConnectionNames.size() > 0) {
-        // ���Ѿ����յ����ӣ���������
+        // 有已经回收的连接，复用它们
         connectionName = pool.unusedConnectionNames.dequeue();
-    }
-    else if (connectionCount < pool.maxConnectionCount) {
-        // û���Ѿ����յ����ӣ�����û�дﵽ������������򴴽��µ�����
+    } else if (connectionCount < pool.maxConnectionCount) {
+        // 没有已经回收的连接，但是没有达到最大连接数，则创建新的连接
         connectionName = QString("Connection-%1").arg(connectionCount + 1);
-        //connectionName = QStringLiteral("@0x%1").arg(quintptr(QThread::currentThreadId()), 16, 16, QLatin1Char('0'));;
-    }
-    else {
-        // �Ѿ��ﵽ���������
+
+    } else {
+        // 已经达到最大连接数
         qDebug() << "Cannot create more connections.";
         return QSqlDatabase();
     }
-    qDebug() << connectionName << endl;;
-    // ��������
+
+    qDebug() << connectionName;
+
+    // 创建连接
     QSqlDatabase db = pool.createConnection(connectionName);
-    // ��Ч�����Ӳŷ��� usedConnectionNames
+    // 有效的连接才放入 usedConnectionNames
     if (db.isOpen()) {
         pool.usedConnectionNames.enqueue(connectionName);
+    } else {
+        qDebug() << "Failed to open database connection.";
     }
     return db;
 }
@@ -97,9 +90,8 @@ QSqlDatabase SqlToolPool::openConnection() {
 void SqlToolPool::closeConnection(QSqlDatabase connection) {
     SqlToolPool& pool = SqlToolPool::getInstance();
     QString connectionName = connection.connectionName();
-    // ��������Ǵ��������ӣ��� used ��ɾ�������� unused ��
-    if (pool.usedConnectionNames.contains(connectionName)
-        ) {
+    // 如果是我们创建的连接，从 used 里删除，放入 unused 里
+    if (pool.usedConnectionNames.contains(connectionName)) {
         QMutexLocker locker(&mutex);
         pool.usedConnectionNames.removeOne(connectionName);
         pool.unusedConnectionNames.enqueue(connectionName);
@@ -107,172 +99,163 @@ void SqlToolPool::closeConnection(QSqlDatabase connection) {
     }
 }
 
-
-
 QSqlDatabase SqlToolPool::createConnection(const QString& connectionName) {
-    // �����Ѿ��������ˣ������������������´���
+    // 连接已经创建过了，复用它，而不是重新创建
     if (QSqlDatabase::contains(connectionName)) {
         QSqlDatabase db1 = QSqlDatabase::database(connectionName);
         if (testOnBorrow) {
-            // ��������ǰ�������ݿ⣬������ӶϿ������½�������
+            // 返回连接前访问数据库，如果连接断开，重新建立连接
             qDebug() << "Test connection on borrow, execute:" << testOnBorrowSql << ", for" << connectionName;
             QSqlQuery query(testOnBorrowSql, db1);
             if (query.lastError().type() != QSqlError::NoError || !db1.open()) {
-                qDebug() << "testOnBorrow datatabase error:" << db1.lastError().text();
-                //return QSqlDatabase();
-                //����������ݿ����ӳ����ͷ���һ���µ����ݿ�����
-            }
-            else {
+                qDebug() << "testOnBorrow database error:" << db1.lastError().text();
+            } else {
                 return db1;
             }
-
         }
     }
-   // ����һ���µ�����
+
+    // 创建一个新的连接
     QSqlDatabase db = QSqlDatabase::addDatabase(JsonTool::myEncryptUncrypt(databaseType, "oldfee"), connectionName);
     db.setHostName(JsonTool::myEncryptUncrypt(hostName, "oldfee"));
     db.setDatabaseName(JsonTool::myEncryptUncrypt(databaseName, "oldfee"));
     db.setUserName(JsonTool::myEncryptUncrypt(username, "oldfee"));
     db.setPassword(JsonTool::myEncryptUncrypt(password, "oldfee"));
-    qDebug() << QString(JsonTool::myEncryptUncrypt(databaseType, "oldfee"));
-    qDebug() << QString(JsonTool::myEncryptUncrypt(hostName, "oldfee"));
-    qDebug() << QString(JsonTool::myEncryptUncrypt(databaseName, "oldfee"));
-    qDebug() << QString(JsonTool::myEncryptUncrypt(username, "oldfee"));
-    qDebug() << QString(JsonTool::myEncryptUncrypt(password, "oldfee"));
-    //QSqlDatabase db = QSqlDatabase::addDatabase("QPSQL", connectionName);
-    // db.setHostName("localhost");
-    // db.setDatabaseName("cfsl");
-    // db.setUserName("postgres");
-    // db.setPassword("iaiib.com");
 
-    //  QSqlDatabase db = QSqlDatabase::addDatabase("QMYSQL", connectionName);
-    // db.setHostName("localhost");
-    // db.setPort(3306);
-    // db.setDatabaseName("cfsl");
-    // db.setUserName("root");
-    // db.setPassword("CFSLoldfee.cn@345");
-   
     if (!db.open()) {
-        qDebug() << "Open datatabase error:" << db.lastError().text();
+        qDebug() << "Open database error:" << db.lastError().text();
         return QSqlDatabase();
     }
     return db;
 }
 
-
-void SqlToolPool::test() {
-    // 1. �����ݿ����ӳ���ȡ������
-    QSqlDatabase db = SqlToolPool::openConnection();
-    // 2. ʹ�����Ӳ�ѯ���ݿ�
-    QSqlQuery query(db);
-    query.exec("SELECT * FROM dnf_info where id=1");
-    while (query.next()) {
-        qDebug() << query.value("qq").toString();
+bool SqlToolPool::insertDataWithQmap(const QMap<QString, QVariant>& data) {
+    
+    // Get table name
+    QString tableName = data.value("tableName").toString();
+    if (tableName.isEmpty()) {
+        qWarning() << "Table name is missing.";
+        return false;
     }
-    // 3. ����ʹ�������Ҫ�ͷŻ����ݿ����ӳ�
-    SqlToolPool::closeConnection(db);
-    //���������ʱ��
-    SqlToolPool::release(); // 4. �ͷ����ݿ�����
-
-}
-
-bool SqlToolPool::insertData(const QString sqlStr)
-{
-    // 1. �����ݿ����ӳ���ȡ������
     QSqlDatabase db = SqlToolPool::openConnection();
-    // 2. ʹ�����Ӳ�ѯ���ݿ�
+    if (!db.isOpen()) {
+        qWarning("[SQL] Database is not open.");
+        return false;
+    }
+
+    // Prepare SQL statement
+    QStringList columns;
+    QStringList placeholders;
     QSqlQuery sql_query(db);
+
+    QStringList keys = data.keys();
+    for (const QString& key : keys) {
+        if (key != "tableName") {  // Skip the tableName key
+            columns << key;
+            placeholders << QString(":%1").arg(key);  // Use :key format
+        }
+    }
+
+    QString sqlStr = QString("INSERT INTO `%1` (%2) VALUES (%3);")
+                        .arg(tableName)
+                        .arg(columns.join(", "))
+                        .arg(placeholders.join(", "));
+
+    sql_query.prepare(sqlStr);
+
+    // Bind values
+    for (const QString& key : keys) {
+        if (key != "tableName") {
+            sql_query.bindValue(QString(":%1").arg(key), data.value(key));
+        }
+    }
+
+    // Execute query
     qInfo("[SQL] %s", qPrintable(sqlStr));
-    if (!sql_query.exec(sqlStr))
-    {
+    if (!sql_query.exec()) {
         qWarning("[SQL] %s", qPrintable(sql_query.lastError().text()));
         return false;
     }
-    // 3. ����ʹ�������Ҫ�ͷŻ����ݿ����ӳ�
     SqlToolPool::closeConnection(db);
     return true;
 }
-bool SqlToolPool::updateData(const QString sqlStr)
-{
+bool SqlToolPool::insertData(const QString sqlStr) {
     QSqlDatabase db = SqlToolPool::openConnection();
+    if (!db.isOpen()) {
+        qWarning("[SQL] Database is not open.");
+        return false;
+    }
+
     QSqlQuery sql_query(db);
     qInfo("[SQL] %s", qPrintable(sqlStr));
-    if (!sql_query.exec(sqlStr))
-    {
+    if (!sql_query.exec(sqlStr)) {
         qWarning("[SQL] %s", qPrintable(sql_query.lastError().text()));
         return false;
     }
-    // 3. ����ʹ�������Ҫ�ͷŻ����ݿ����ӳ�
+
     SqlToolPool::closeConnection(db);
     return true;
 }
-bool SqlToolPool::selectData(const QString sqlStr, QList<QMap<QString, QVariant>>& valuesList)
-{
+
+bool SqlToolPool::updateData(const QString sqlStr) {
     QSqlDatabase db = SqlToolPool::openConnection();
+    if (!db.isOpen()) {
+        qWarning("[SQL] Database is not open.");
+        return false;
+    }
+
     QSqlQuery sql_query(db);
     qInfo("[SQL] %s", qPrintable(sqlStr));
-    if (!sql_query.exec(sqlStr))
-    {
+    if (!sql_query.exec(sqlStr)) {
         qWarning("[SQL] %s", qPrintable(sql_query.lastError().text()));
         return false;
     }
-    for (int r = 0; sql_query.next(); r++)
-    {
+
+    SqlToolPool::closeConnection(db);
+    return true;
+}
+
+bool SqlToolPool::selectData(const QString sqlStr, QList<QMap<QString, QVariant>>& valuesList) {
+    QSqlDatabase db = SqlToolPool::openConnection();
+    if (!db.isOpen()) {
+        qWarning("[SQL] Database is not open.");
+        return false;
+    }
+
+    QSqlQuery sql_query(db);
+    qInfo("[SQL] %s", qPrintable(sqlStr));
+    if (!sql_query.exec(sqlStr)) {
+        qWarning("[SQL] %s", qPrintable(sql_query.lastError().text()));
+        return false;
+    }
+
+    while (sql_query.next()) {
         QSqlRecord rec = sql_query.record();
         QMap<QString, QVariant> valueMap;
-        valueMap.clear();
-        for (int c = 0; c < rec.count(); c++)
-        {
+        for (int c = 0; c < rec.count(); c++) {
             valueMap[rec.fieldName(c)] = rec.value(c);
         }
         valuesList.append(valueMap);
     }
-    // 3. ����ʹ�������Ҫ�ͷŻ����ݿ����ӳ�
+
     SqlToolPool::closeConnection(db);
     return true;
 }
 
-bool SqlToolPool::deleteData(const QString sqlStr)
-{
+bool SqlToolPool::deleteData(const QString sqlStr) {
     QSqlDatabase db = SqlToolPool::openConnection();
+    if (!db.isOpen()) {
+        qWarning("[SQL] Database is not open.");
+        return false;
+    }
+
     QSqlQuery sql_query(db);
     qInfo("[SQL] %s", qPrintable(sqlStr));
-    if (!sql_query.exec(sqlStr))
-    {
+    if (!sql_query.exec(sqlStr)) {
         qWarning("[SQL] %s", qPrintable(sql_query.lastError().text()));
         return false;
     }
-    // 3. ����ʹ�������Ҫ�ͷŻ����ݿ����ӳ�
+
     SqlToolPool::closeConnection(db);
     return true;
-}
-bool SqlToolPool::initDatabase()
-{
-    QSqlDatabase db = SqlToolPool::openConnection();
-    if (db.open())
-    {
-        QSqlQuery sql_query(db);
-
-        //������loginInfo
-        //qInfo("[SQL] %s", qPrintable(SQL_CREATE_LOGININFO));
-       /* if (!sql_query.exec(SQL_CREATE_LOGININFO))
-        {
-            qWarning("[SQL] %s", qPrintable(sql_query.lastError().text()));
-            return false;
-        }*/
-        //������userInfo
-        //qInfo("[SQL] %s", qPrintable(SQL_CREATE_USERINFO));
-        /*if (!sql_query.exec(SQL_CREATE_USERINFO))
-        {
-            qWarning("[SQL] %s", qPrintable(sql_query.lastError().text()));
-            return false;
-        }*/
-        return true;
-    }
-    else
-    {
-        qWarning("Init database failed,database is not open.");
-        return false;
-    }
-
 }

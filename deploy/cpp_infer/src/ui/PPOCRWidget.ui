@@ -206,7 +206,7 @@
                <item>
                 <widget class="QLineEdit" name="lineEdit_image_dir">
                  <property name="text">
-                  <string>D:\CFSL\身份证\杨立祥</string>
+                  <string>D:\img</string>
                  </property>
                 </widget>
                </item>
@@ -319,6 +319,20 @@
                  <width>200</width>
                  <height>200</height>
                 </size>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="recImgsBtn">
+               <property name="text">
+                <string>循环识别</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="stopRecImgsBtn">
+               <property name="text">
+                <string>停止循环</string>
                </property>
               </widget>
              </item>
@@ -525,7 +539,7 @@
            <item>
             <widget class="QLineEdit" name="det_model_dir">
              <property name="text">
-              <string>C:\CUDA\ppocrv4\ch_PP-OCRv4_det_infer</string>
+              <string>C:\CUDA\ppocrv4\ch_PP-OCRv4_det_server_infer</string>
              </property>
             </widget>
            </item>
@@ -628,7 +642,7 @@
            <item>
             <widget class="QLineEdit" name="cls_model_dir">
              <property name="text">
-              <string>C:\CUDA\ppocrv4\ch_ppocr_mobile_v2.0_cls_infer</string>
+              <string>C:\CUDA\ppocrv4\ch_ppocr_mobile_v2.0_cls_slim_infer\ch_ppocr_mobile_v2.0_cls_slim_infer</string>
              </property>
             </widget>
            </item>
@@ -681,7 +695,7 @@
            <item>
             <widget class="QLineEdit" name="rec_model_dir">
              <property name="text">
-              <string>C:\CUDA\ppocrv4\ch_PP-OCRv4_rec_infer</string>
+              <string>C:\CUDA\ppocrv4\ch_PP-OCRv4_rec_server_infer</string>
              </property>
             </widget>
            </item>

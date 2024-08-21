@@ -1,6 +1,6 @@
 #include "KeyMouseQLineEdit.h"
 
-KeyMouseQLineEdit::KeyMouseQLineEdit(QWidget* parent)
+KeyMouseQLineEdit::KeyMouseQLineEdit(QWidget *parent)
 	: QLineEdit(parent)
 {
 }
@@ -14,11 +14,11 @@ void KeyMouseQLineEdit::appendText(QString msg)
 	this->setText(this->text().append(",").append(msg));
 }
 
-void KeyMouseQLineEdit::focusInEvent(QFocusEvent* event)
+void KeyMouseQLineEdit::focusInEvent(QFocusEvent *event)
 {
 	emit KeyMouseQLineEditMsg(4);
 }
-void KeyMouseQLineEdit::focusOutEvent(QFocusEvent* event)
+void KeyMouseQLineEdit::focusOutEvent(QFocusEvent *event)
 {
 	emit KeyMouseQLineEditMsg(5);
 }

@@ -20,19 +20,23 @@
 #include <QImageWriter>
 #include "SqlToolPool.h"
 #include "Databasesql.h"
+#include "PaddleDWrapper.h"
 class vncWidget : public QWidget
 {
     Q_OBJECT
 
 public:
     explicit vncWidget(QWidget *parent = nullptr);
+    void initPaddleDll();
     void changeImgPath(QString m_imgPath);
     ~vncWidget();
     QString imgPath;
-   
+    PaddleDWrapper paddleWrapper;
+    cv::Mat QPixmapToCvMat(const QPixmap& pixmap);
 public slots:
     void startCapture(int outputIndex);
     void stopCapture();
+    
     void openVIDPID();
     void CloseVIDPID();
     void logEvent(KeyMessage type, EventStatus status);
